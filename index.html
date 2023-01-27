@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en-US">
+<html>
+ <head>
+   <title>Three Letter Word Assigner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+   <center>
+
+   <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<link rel="stylesheet"href="style.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+</style>
+</head>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+  <div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</style>
+</head>
+<body>
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <button class="onoff" onclick="onoff(this)"><div>off</div></button>
+
+
+<input type="button" id="btnSearch" value="See word and definition" onclick="GetValue();" />
+<p id="message" ></p>
+
+<script>
+function GetValue()
+{
+    var myarray= new Array("aad","aah",
+    "aak",
+    "aal",
+    "aam",
+    "aba",
+    "abb",
+    "abo",
+    "abs",
+    "aby",
+    "ace",
+    "ach",
+    "ack",
+    "act",
+    "add",
+    "ado",
+    "ads",
+    "adz",
+    "aft",
+    "age",
+    "ago",
+    "aha",
+    "aid",
+    "aim",
+    "air",
+    "ale",
+    "all",
+    "and",
+    "ant",
+    "any",
+    "ape",
+    "app",
+    "apt",
+    "arc",
+    "are",
+    "arf",
+    "ark",
+    "arm",
+    "aro",
+    "ars",
+    "art",
+    "ash",
+    "ask",
+    "ass",
+    "ate",
+    "awe",
+    "awk",
+    "aww",
+
+"axe",
+"aye",
+"ayu",
+"baa",
+"bac",
+"bad",
+"bae",
+"bag",
+"bah",
+"bam",
+"ban",
+"bar",
+"bat",
+"bay",
+"baz",
+"bed",
+"bee",
+"beg",
+"ben",
+"bet",
+"bib",
+"bid",
+"big",
+"bin",
+"bit",
+"bix",
+"boa",
+"bog",
+"boi",
+"boo",
+"bop",
+"bot",
+"bow",
+"box",
+"boy",
+"bra",
+"bro",
+"brr",
+"bud",
+"bug",
+"bum",
+"bun",
+"bus",
+"but",
+"buy",
+"bye",
+"bzz",
+"cab",
+"cam",
+"can",
+"cap",
+"car",
+"cat",
+"caw",
+"cel",
+"chi",
+"cob",
+"cod",
+"cog",
+"com",
+"con",
+"coo",
+"cop",
+"cot",
+"cum",
+"cwm",
+"dam",
+"der",
+"die",
+"dig",
+"dim",
+"din",
+"dog",
+"dry",
+"ego",
+"emo",
+"erg",
+"ess",
+"exe",
+"exy",
+"fab",
+"fad",
+"fag",
+"fam",
+"fan",
+"far",
+"fat",
+"few",
+"fin",
+"fit",
+"gal",
+"gap",
+"gas",
+"gel",
+"get",
+"ghi",
+"gin",
+"goy",
+"gum",
+"gun",
+"gut",
+"guy",
+"ham",
+"hat",
+"her",
+"hit",
+"hod",
+"hog",
+"hot",
+"how",
+"hut",
+"ich",
+"ick",
+"imu",
+"ire",
+"ivy",
+"jam",
+"kar",
+"kin",
+"las",
+"law",
+"lay",
+"lie",
+"lin",
+"lol",
+"low",
+"lox",
+"mad",
+"mag",
+"map",
+"mas",
+"max",
+"mid",
+"mix",
+"mun",
+"nef",
+"nil",
+"nim",
+"nop",
+"now",
+"nun",
+"oak",
+"odd",
+"off",
+"oho",
+"pad",
+"pan",
+"pay",
+"peg",
+"pel",
+"pen",
+"pet",
+"pin",
+"pix",
+"pox",
+"pyx",
+"qin",
+"ram",
+"red",
+"rim",
+"rod",
+"rye",
+"sac",
+"sad",
+"sen",
+"sig",
+"sin",
+"sit",
+"sly",
+"sny",
+"son",
+"sub",
+"sun",
+"ted",
+"tee",
+"tel",
+"the",
+"tho",
+"til",
+"tin",
+"uck",
+"use",
+"vac",
+"vai",
+"van",
+"var",
+"vas",
+"vat",
+"vau",
+"vav",
+"vaw",
+"vee",
+"veg",
+"vet",
+"vex",
+"via",
+"vie",
+"vig",
+"vim",
+"vis",
+"voe",
+"vow",
+"vox",
+"vug",
+"wad",
+"wae",
+"wag",
+"wan",
+"wap",
+"war",
+"was",
+"watv",
+"waw",
+"wax",
+"way",
+"web",
+"wed",
+"wee",
+"wen",
+"wet",
+"wha",
+"who",
+"why",
+"wig",
+"win",
+"wis",
+"wit",
+"wiz",
+"woe",
+"wog",
+"wok",
+"won",
+"woo",
+"wop",
+"wos",
+"wot",
+"wow",
+"wry",
+"wud",
+"wye",
+"wyn",
+"xat",
+"xis",
+"yah",
+"yak",
+"yam",
+"yap",
+"yar",
+"yaw",
+"yay",
+"yea",
+"yee",
+"yeh",
+"yen",
+"yep",
+"yes",
+"yet",
+"yew",
+"yex",
+"yid",
+"yin",
+"yip",
+"yob",
+"yod",
+"yok",
+"yon",
+"you",
+"yow",
+"yuk",
+"yum",
+"yup",
+"zag",
+"zap",
+"zax",
+"zed",
+"zee",
+"zek",
+"zen",
+"zho",
+"zig",
+"zin",
+"zip",
+"zit",
+"zoa",
+"zoo",);
+    var random = myarray[Math.floor(Math.random() * myarray.length)];
+    //alert(random);
+    document.getElementById("message").innerHTML=random;
+}
+</script>
+<script>
+var buttonstate=0;
+function onoff(element)
+{
+  buttonstate= 1 - buttonstate;
+  var blabel, bstyle, bcolor;
+  if(buttonstate)
+  {
+    blabel="on";
+    bstyle="green";
+    bcolor="white";
+  }
+  else
+  {
+    blabel="off";
+    bstyle="red";
+    bcolor="white";
+  }
+  var child=element.firstChild;
+  child.style.background=bstyle;
+  child.style.color=bcolor;
+  child.innerHTML=blabel;
+}
+</script>
+</body>
+</html>
+</html>
