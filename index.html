@@ -27,6 +27,38 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body>
 
+  <!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Text To Speech in JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Text To Speech</header>
+      <form action="#">
+        <div class="row">
+          <label>Enter Text</label>
+          <textarea></textarea>
+        </div>
+        <div class="row">
+          <label>Select Voice</label>
+          <div class="outer">
+            <select></select>
+          </div>
+        </div>
+        <button>Convert To Speech</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
   <div id="google_translate_element"></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -54,6 +86,66 @@ function googleTranslateElementInit() {
 
 <input type="button" id="btnSearch" value="See word and definition" onclick="GetValue();" />
 <p id="message" ></p>
+
+<script>
+const textarea = document.querySelector("textarea"),
+voiceList = document.querySelector("select"),
+speechBtn = document.querySelector("button");
+
+let synth = speechSynthesis,
+isSpeaking = true;
+
+voices();
+
+function voices(){
+    for(let voice of synth.getVoices()){
+        let selected = voice.name === "Google US English" ? "selected" : "";
+        let option = `<option value="${voice.name}" ${selected}>${voice.name} (${voice.lang})</option>`;
+        voiceList.insertAdjacentHTML("beforeend", option);
+    }
+}
+
+synth.addEventListener("voiceschanged", voices);
+
+function textToSpeech(text){
+    let utterance = new SpeechSynthesisUtterance(text);
+    for(let voice of synth.getVoices()){
+        if(voice.name === voiceList.value){
+            utterance.voice = voice;
+        }
+    }
+    synth.speak(utterance);
+}
+
+speechBtn.addEventListener("click", e =>{
+    e.preventDefault();
+    if(textarea.value !== ""){
+        if(!synth.speaking){
+            textToSpeech(textarea.value);
+        }
+        if(textarea.value.length > 80){
+            setInterval(()=>{
+                if(!synth.speaking && !isSpeaking){
+                    isSpeaking = true;
+                    speechBtn.innerText = "Convert To Speech";
+                }else{
+                }
+            }, 500);
+            if(isSpeaking){
+                synth.resume();
+                isSpeaking = false;
+                speechBtn.innerText = "Pause Speech";
+            }else{
+                synth.pause();
+                isSpeaking = true;
+                speechBtn.innerText = "Resume Speech";
+            }
+        }else{
+            speechBtn.innerText = "Convert To Speech";
+        }
+    }
+});
+</script>
 
 <script>
 function GetValue()
@@ -396,6 +488,8 @@ function GetValue()
     document.getElementById("message").innerHTML=random;
 }
 </script>
+
+
 <script>
 var buttonstate=0;
 function onoff(element)
@@ -419,6 +513,46 @@ function onoff(element)
   child.style.color=bcolor;
   child.innerHTML=blabel;
 }
+</script>
+
+<script>
+$(function(){
+  if ('speechSynthesis' in window) {
+    speechSynthesis.onvoiceschanged = function() {
+      var $voicelist = $('#voices');
+
+      if($voicelist.find('option').length == 0) {
+        speechSynthesis.getVoices().forEach(function(voice, index) {
+          var $option = $('<option>')
+          .val(index)
+          .html(voice.name + (voice.default ? ' (default)' :''));
+
+          $voicelist.append($option);
+        });
+
+        $voicelist.material_select();
+      }
+    }
+
+    $('#speak').click(function(){
+      var text = $('#message').val();
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[$('#voices').val()];
+      msg.rate = $('#rate').val() / 10;
+      msg.pitch = $('#pitch').val();
+      msg.text = text;
+
+      msg.onend = function(e) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+
+      speechSynthesis.speak(msg);
+    })
+  } else {
+    $('#modal1').openModal();
+  }
+});
 </script>
 </body>
 </html>
