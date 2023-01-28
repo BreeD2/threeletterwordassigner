@@ -27,40 +27,70 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body>
 
-  <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Text To Speech in JavaScript | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>Text To Speech</header>
-      <form action="#">
-        <div class="row">
-          <label>Enter Text</label>
-          <textarea></textarea>
-        </div>
-        <div class="row">
-          <label>Select Voice</label>
-          <div class="outer">
-            <select></select>
-          </div>
-        </div>
-        <button>Convert To Speech</button>
-      </form>
-    </div>
-
-    <script src="script.js"></script>
-
-  </body>
-</html>
-
   <div id="google_translate_element"></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<p>Date/Time: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
+</script>
+
+
+
+
+<label class="toggle">
+
+
+  <div class="onoff">OFF</div>
+
+  <input type="checkbox" id="togBtn" value="false" name="disableYXLogo">
+
+  <span class="slider round"></span>
+
+
+
+
+</div>
+
+
+</label>
+<div id="item"></div>
+<input type="button" id="btnSearch" value="Click to See Word" onclick="GetValue();" />
+<p id="message" ></p>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      console.log('Checked');
+    } else {
+      // do that
+      console.log('Not checked');
+    }
+  });
+});
+</script>
+
+
+<script>
+
+
+To switch the display-style between block and none you can do something like this:
+
+function toggleDiv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
+</script>
 
 <script type="text/javascript">
 function googleTranslateElementInit() {
@@ -81,71 +111,24 @@ function googleTranslateElementInit() {
 
 <head>
 
-  <button class="onoff" onclick="onoff(this)"><div>off</div></button>
+<br>
+
+<span id="buttonAppear"></span>
+
+<div id="btnSearch" style="display:none;">Here's the hidden content</div>
 
 
-<input type="button" id="btnSearch" value="See word and definition" onclick="GetValue();" />
-<p id="message" ></p>
 
-<script>
-const textarea = document.querySelector("textarea"),
-voiceList = document.querySelector("select"),
-speechBtn = document.querySelector("button");
+<div id="myDIV">.
 
-let synth = speechSynthesis,
-isSpeaking = true;
 
-voices();
 
-function voices(){
-    for(let voice of synth.getVoices()){
-        let selected = voice.name === "Google US English" ? "selected" : "";
-        let option = `<option value="${voice.name}" ${selected}>${voice.name} (${voice.lang})</option>`;
-        voiceList.insertAdjacentHTML("beforeend", option);
-    }
-}
 
-synth.addEventListener("voiceschanged", voices);
 
-function textToSpeech(text){
-    let utterance = new SpeechSynthesisUtterance(text);
-    for(let voice of synth.getVoices()){
-        if(voice.name === voiceList.value){
-            utterance.voice = voice;
-        }
-    }
-    synth.speak(utterance);
-}
 
-speechBtn.addEventListener("click", e =>{
-    e.preventDefault();
-    if(textarea.value !== ""){
-        if(!synth.speaking){
-            textToSpeech(textarea.value);
-        }
-        if(textarea.value.length > 80){
-            setInterval(()=>{
-                if(!synth.speaking && !isSpeaking){
-                    isSpeaking = true;
-                    speechBtn.innerText = "Convert To Speech";
-                }else{
-                }
-            }, 500);
-            if(isSpeaking){
-                synth.resume();
-                isSpeaking = false;
-                speechBtn.innerText = "Pause Speech";
-            }else{
-                synth.pause();
-                isSpeaking = true;
-                speechBtn.innerText = "Resume Speech";
-            }
-        }else{
-            speechBtn.innerText = "Convert To Speech";
-        }
-    }
-});
-</script>
+
+
+
 
 <script>
 function GetValue()
@@ -490,70 +473,63 @@ function GetValue()
 </script>
 
 
+
+
+
 <script>
-var buttonstate=0;
-function onoff(element)
-{
-  buttonstate= 1 - buttonstate;
-  var blabel, bstyle, bcolor;
-  if(buttonstate)
-  {
-    blabel="on";
-    bstyle="green";
-    bcolor="white";
-  }
-  else
-  {
-    blabel="off";
-    bstyle="red";
-    bcolor="white";
-  }
-  var child=element.firstChild;
-  child.style.background=bstyle;
-  child.style.color=bcolor;
-  child.innerHTML=blabel;
+const toggle = document.querySelector('.toggle input')
+
+toggle.addEventListener('click', () => {
+    const onOff = toggle.parentNode.querySelector('.onoff',  '.btnSearch')
+    onOff.textContent = toggle.checked ? 'ON' : 'OFF'
+    toggle.parentNode
+
+})
+
+</script>
+<script>
+var button = document.getElementsByClassName("button");
+for (var i = 0; i < buttons.length; i++) {
+    buttons.item(i).addEventListener("click", function () {
+         this.parentNode.parentNode.classList.toggle("flip");
+    });
 }
 </script>
 
+
+
 <script>
-$(function(){
-  if ('speechSynthesis' in window) {
-    speechSynthesis.onvoiceschanged = function() {
-      var $voicelist = $('#voices');
+btnSearch.addEventListener('click', () => {
+    const  = toggle.parentNode.querySelector( '.btnSearch')
 
-      if($voicelist.find('option').length == 0) {
-        speechSynthesis.getVoices().forEach(function(voice, index) {
-          var $option = $('<option>')
-          .val(index)
-          .html(voice.name + (voice.default ? ' (default)' :''));
 
-          $voicelist.append($option);
-        });
-
-        $voicelist.material_select();
-      }
-    }
-
-    $('#speak').click(function(){
-      var text = $('#message').val();
-      var msg = new SpeechSynthesisUtterance();
-      var voices = window.speechSynthesis.getVoices();
-      msg.voice = voices[$('#voices').val()];
-      msg.rate = $('#rate').val() / 10;
-      msg.pitch = $('#pitch').val();
-      msg.text = text;
-
-      msg.onend = function(e) {
-        console.log('Finished in ' + event.elapsedTime + ' seconds.');
-      };
-
-      speechSynthesis.speak(msg);
-    })
-  } else {
-    $('#modal1').openModal();
-  }
-});
+})
 </script>
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script>
+function showDiv() {
+   document.getElementById('welcomeDiv').style.display = "block";
+}
+</script>
+
+
+
 </body>
 </html>
 </html>
