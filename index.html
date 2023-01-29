@@ -32,8 +32,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 
 
-<p>Date/Time: <span id="datetime"></span></p>
 
+
+<h1 style="color:white; font-size:55px;text-shadow: 2px 2px royalblue">Word Assigner
+  <p style="color:white; background-color:royalblue;border:2px solid white ;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -47,7 +49,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
   <div class="onoff">OFF</div>
 
-  <input type="checkbox" id="togBtn" value="false" name="disableYXLogo">
+  <input type="checkbox" id="togBtn" value="sup" >
 
   <span class="slider round"></span>
 
@@ -58,8 +60,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 </label>
-<div id="item"></div>
-<input type="button" id="btnSearch" value="Click to See Word" onclick="GetValue();" />
+
+
+<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
 <p id="message" ></p>
 </div>
 
@@ -104,22 +107,6 @@ function googleTranslateElementInit() {
 </style>
 </head>
 <body>
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<br>
-
-<span id="buttonAppear"></span>
-
-<div id="btnSearch" style="display:none;">Here's the hidden content</div>
-
-
-
-<div id="myDIV">.
 
 
 
@@ -480,7 +467,7 @@ function GetValue()
 const toggle = document.querySelector('.toggle input')
 
 toggle.addEventListener('click', () => {
-    const onOff = toggle.parentNode.querySelector('.onoff',  '.btnSearch')
+    const onOff = toggle.parentNode.querySelector('.onoff',  '.btnSearch' )
     onOff.textContent = toggle.checked ? 'ON' : 'OFF'
     toggle.parentNode
 

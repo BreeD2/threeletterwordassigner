@@ -106,7 +106,7 @@ p {
   color:white;
   width: 30%;
   font-size: 20px;
-  border:2px solid white;
+
 }
 
 p:hover {
@@ -166,7 +166,7 @@ p:hover {
         .slider:before {
           content: "";
 
-button onclick {
+button  {
   color:red;
 }
 
