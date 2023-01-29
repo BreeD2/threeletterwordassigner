@@ -27,15 +27,43 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body>
 
+
   <div id="google_translate_element"></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+
+<h2 style="color:black ;font-size:10px;">
+<button onclick="myFunction()">Toggle dark mode</button><h2>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
 
 
 
 
-<h1 style="color:white; font-size:55px;text-shadow: 2px 2px royalblue">Word Assigner
-  <p style="color:white; background-color:royalblue;border:2px solid white ;">Date/Time: <span id="datetime"></span></p>
+<h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite">Three Letter Words Assigner<h1>
+  <p style="color:white; background-color:royalblue ;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -44,19 +72,6 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 
 
 
-<label class="toggle">
-
-
-  <div class="onoff">OFF</div>
-
-  <input type="checkbox" id="togBtn" value="sup" >
-
-  <span class="slider round"></span>
-
-
-
-
-</div>
 
 
 </label>
@@ -137,19 +152,31 @@ function GetValue()
     "ado",
     "ads",
     "adz",
+    "aff",
     "aft",
     "age",
     "ago",
+    "ags",
     "aha",
+    "ahs",
     "aid",
     "aim",
+    "ain",
     "air",
+    "ala",
+    "alb",
     "ale",
     "all",
+    "alt",
     "and",
     "ant",
     "any",
+    "ama",
+    "amu",
+    "amp",
+    "ane",
     "ape",
+    "apo",
     "app",
     "apt",
     "arc",
@@ -459,6 +486,19 @@ function GetValue()
 }
 </script>
 
+<label class="toggle">
+
+
+  <div class="onoff">OFF</div>
+
+  <input type="checkbox" id="togBtn" value="sup" >
+
+  <span class="slider round"></span>
+
+
+
+
+</div>
 
 
 
@@ -483,7 +523,23 @@ for (var i = 0; i < buttons.length; i++) {
 }
 </script>
 
+<title>JavaScript Practice: Ask name</title>
+<meta charset='utf-8'>
 
+</head>
+<body>
+
+
+
+<script>
+
+  // Prompt the user for their name
+  var name = prompt("What is your name?", "Type your name here");
+
+  // Show personalized message
+  alert("Hi, " + name + "! It is very nice to meet you. Welcome to Three Letter Words Assigner");
+
+</script>
 
 <script>
 btnSearch.addEventListener('click', () => {

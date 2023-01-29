@@ -28,6 +28,13 @@ margin-top: 10%;
   height: 0;
 }
 
+button {
+  color: black;
+  background-color: white;
+  font-size: 1px;
+  padding: 2px;
+}
+
 /* The slider */
 .slider {
   position: absolute;
@@ -55,7 +62,7 @@ margin-top: 10%;
 }
 
 input:checked + .slider {
-  background-color: royalblue;
+  background-color: mediumseagreen;
 }
 
 input:focus + .slider {
@@ -78,6 +85,7 @@ input:checked + .slider:before {
 }
 
 
+
     <!-- for styling -->
     <style>
         table {
@@ -87,14 +95,14 @@ input:checked + .slider:before {
         }
 
         input[type="button"] {
-          margin-top: 5%;
+          margin-top: 0%;
             width:30%;
             padding: 20px 20px;
-            background-color: royalblue;
+            background-color: mediumpurple;
             color: white;
             font-size: 25px;
             font-weight: bold;
-            border: 2px solid white;
+
             border-radius: 5px;
         }
 
@@ -102,27 +110,24 @@ input:checked + .slider:before {
     display: none;
   }
 p {
-  background-color:blue;
+  background-color:royalblue;
+  width:7%;
   color:white;
-  width: 30%;
+
+  width: 29.5%;
   font-size: 20px;
 
 }
 
-p:hover {
-  background-color:mediumpurple;
-  color:white;
-  width: 30%;
-  font-size: 20px;
-  border:2px solid white;
-}
+
+
         input {
           display: inline;
         }
 
         input:hover {
           color:white;
-          background-color: mediumpurple
+          background-color: mediumgrey
         }
 
 
@@ -139,7 +144,7 @@ p:hover {
         }
 
         .toggle .onoff {
-          color: #fff;
+          color: mediumgrey;
           font-size: 15px;
           text-align: center;
           display: block;
@@ -157,7 +162,7 @@ p:hover {
           position: relative;
           display: block;
           cursor: pointer;
-          background-color: #333;
+          background-color: red;
           transition: 0.4s;
           width: 70px;
           height: 33px;
@@ -182,7 +187,7 @@ p {
   color:black;
   background-color: white;
   border:2px solid pink;
-  width:25%;
+  width:28%;
   padding: 10px 10px;
 }
 #button:active {
@@ -222,7 +227,6 @@ p {
 
 }
 
-#button{
-  display: none
-}
+
+
     </style>
