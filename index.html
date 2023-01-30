@@ -45,14 +45,37 @@ function myFunction() {
    element.classList.toggle("dark-mode");
 }
 </script>
+<style>
+h1 {
+  animation-duration: 3s;
+  animation-name: slideout;
+  animation-direction: normal;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slideout {
+  from {
+    margin-right: 100%;
+    width: 300%;
+    right: 0%;
+  }
 
 
 
+  to {
+    margin-right: 0%;
+    width: 100%;
+    right: 100%;
+  }
+}
+</style>
 
-<h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three Letter Words Assigner</h1>
+
+<div class="header2">
+<h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three Letter Words Assigner</h1></div>
 <h2 style="color:white ;font-size:10px;margin-bottom:0%">
 <button onclick="myFunction()">Toggle dark mode</button><h2>
-  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;">Date/Time: <span id="datetime"></span></p>
+  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;width:30%;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
