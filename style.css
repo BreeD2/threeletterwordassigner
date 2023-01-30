@@ -32,12 +32,12 @@ a {
 }
 
 .footer1 {
-  background-color: mediumpurple;
+  background-color: tomato;
   color:white;
   width:100%;
   font-size:15px;
-  margin-top:6.7%;
-  height: 20%;
+  margin-top:7.2%;
+  height: 15%;
 
 }
 
@@ -77,12 +77,16 @@ body {
 
 button {
   color: white;
-  background-color: mediumpurple;
+  background-color: tomato;
   font-size: 10px;
   padding: 2px;
 
 }
 
+button:hover {
+  color:black;
+  background-color: lightsalmon;
+}
 /* The slider */
 .slider {
   position: absolute;
@@ -160,7 +164,7 @@ body {
           margin-top: 1%;
             width:30%;
             padding: 20px 20px;
-            background-color: mediumpurple;
+            background-color: tomato;
             color: white;
             font-size: 20px;
             text-align: center;
@@ -169,6 +173,18 @@ body {
             border-radius: 5px;
         }
 
+        input:hover[type="button"] {
+          margin-top: 1%;
+            width:30%;
+            padding: 20px 20px;
+            background-color: coral;
+            color: mediumgray;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+
+            border-radius: 5px;
+        }
   .button {
     display: none;
   }
@@ -176,21 +192,31 @@ p {
   background-color:royalblue;
   width:8%;
   color:white;
-
   width: 29.5%;
+  padding: 10px;
   font-size: 20px;
 
 }
 
 
+#message::after {
+  padding-top:10px;
+
+
+}
+
+#message:default {
+  padding-top:10px;
+
+}
 
          {
           display: inline;
         }
 
         input:hover {
-          color:white;
-          background-color: mediumgrey
+          color:black;
+          background-color: lightsalmon
         }
 
 
@@ -298,6 +324,9 @@ p {
 
 }
 
+a:hover {
+  color:black
+}
 
 
     </style>

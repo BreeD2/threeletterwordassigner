@@ -52,7 +52,7 @@ function myFunction() {
 <h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three Letter Words Assigner</h1>
 <h2 style="color:white ;font-size:10px;margin-bottom:0%">
 <button onclick="myFunction()">Toggle dark mode</button><h2>
-  <p style="color:white; background-color:royalblue;margin-bottom:-3%;">Date/Time: <span id="datetime"></span></p>
+  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -61,7 +61,9 @@ document.getElementById("datetime").innerHTML = dt.toLocaleString();
 <br><br>
 
 <input type="button" id="btnSearch" value="New Word" onclick="GetValue();" /><br><br>
-<p id="message" ></p>
+<p id="message">Click "New Word"</p>
+
+
 
 
 
@@ -465,9 +467,9 @@ function GetValue()
 
   <span class="slider round"></span></label>
 
-<div class="footer1"><h3><br>© 2023 Three Letter Word Assigner<h3>
+<div class="footer1"><h5><br>© 2023 Three Letter Word Assigner<h5>
 
-  <p style="font-size:15px; background-color:mediumpurple; color:white">Coded by Bree Dorman<br><br><a href="mailto:dormanb@vcu.edu">dormanb@vcu.edu</a></p></div>
+  <h5 style="font-size:15px; background-color:tomato; color:white">Coded by Bree Dorman<br><br><u><a href="mailto:dormanb@vcu.edu">dormanb@vcu.edu</a><u></h5></div>
 
 
 
