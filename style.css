@@ -2,17 +2,64 @@
   box-sizing: border-box;
 }
 
+.footers {
+  width:100%;
+  background-color: black;
+  color:white;
 
+}
 
+.w3-container {
+  background-color: white;
 
-body {
-background: grey;
-margin:auto;
-margin-top: 10%;
+}
+
+/* Container holding the image and the text */
+.container {
+  position:  relative;
+  text-align: center;
+  color: white;
+
 
 
 }
 
+a {
+  background-color: black;
+  color:white;
+  width:100%;
+  font-size:15px
+}
+
+.footer1 {
+  background-color: mediumpurple;
+  color:white;
+  width:100%;
+  font-size:15px;
+  margin-top:6.7%;
+  height: 20%;
+
+}
+
+
+body {
+
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+
+
+/* Container holding the image and the text */
+.container {
+  position:  relative;
+  text-align: center;
+  color: white;
+
+
+
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -29,10 +76,11 @@ margin-top: 10%;
 }
 
 button {
-  color: black;
-  background-color: white;
-  font-size: 1px;
+  color: white;
+  background-color: mediumpurple;
+  font-size: 10px;
   padding: 2px;
+
 }
 
 /* The slider */
@@ -54,8 +102,8 @@ button {
   content: "";
   height: 26px;
   width: 26px;
-  left: 4px;
-  bottom: 4px;
+  left: 9px;
+  bottom: 2px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -85,6 +133,20 @@ input:checked + .slider:before {
 }
 
 
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
+
 
     <!-- for styling -->
     <style>
@@ -95,12 +157,13 @@ input:checked + .slider:before {
         }
 
         input[type="button"] {
-          margin-top: 0%;
+          margin-top: 1%;
             width:30%;
             padding: 20px 20px;
             background-color: mediumpurple;
             color: white;
-            font-size: 25px;
+            font-size: 20px;
+            text-align: center;
             font-weight: bold;
 
             border-radius: 5px;
@@ -111,7 +174,7 @@ input:checked + .slider:before {
   }
 p {
   background-color:royalblue;
-  width:7%;
+  width:8%;
   color:white;
 
   width: 29.5%;
@@ -121,7 +184,7 @@ p {
 
 
 
-        input {
+         {
           display: inline;
         }
 
@@ -196,7 +259,7 @@ p {
 }
         input[type="text"] {
             padding: 20px 30px;
-            font-size: 34px;
+            font-size: 24px;
             font-weight: bold;
             border: none;
             color:red;
@@ -204,7 +267,15 @@ p {
             border-radius: 5px;
             border: 2px solid black;
         }
-
+        footer {
+          background-color: red;
+          width:100%;
+          padding: 5px;
+          position: absolute;
+          text-align: center;
+          display: block;
+          margin-top: 10%:
+        }
         .onoff
 {
   width:32px;
