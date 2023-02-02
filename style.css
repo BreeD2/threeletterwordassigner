@@ -126,7 +126,7 @@ button:hover {
 }
 
 input:checked + .slider {
-  background-color: mediumseagreen;
+  background-color: tomato;
 }
 
 input:focus + .slider {
@@ -263,7 +263,7 @@ p {
           position: relative;
           display: block;
           cursor: pointer;
-          background-color: red;
+          background-color: royalblue;;
           transition: 0.4s;
           width: 70px;
           height: 33px;
@@ -329,7 +329,7 @@ p {
   width:18px;
   height:18px;
   min-height:18px;
-  background:green;
+  background:orange;
   overflow:hidden;
 
   margin:0 auto;
@@ -358,8 +358,7 @@ a:hover {
   }
 
   to {
-    transform: scale(2.0);
-            -webkit-transform: scale(2.0);
+
   }
 }
 
