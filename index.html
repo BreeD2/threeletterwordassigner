@@ -32,6 +32,8 @@
  <head>
  </head>
  <body>
+
+
    <div id="content"/>
  </body>
 </html>
@@ -129,6 +131,32 @@
 })();
 </script>
 
+   <title>Change Font Size</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+<body>
+   <center>
+
+
+
+      </div>
+   </center>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+         $(".increaseFont,.decreaseFont").click(function(){
+            var type= $(this).val();
+            var curFontSize = $('.data').css('font-size');
+            if(type=='increase'){
+               $('.data').css('font-size', parseInt(curFontSize)+1);
+            } else{
+               $('.data').css('font-size', parseInt(curFontSize)-1);
+            }
+            // alert($('.data').css('font-size'));
+         });
+      });
+   </script>
+</body>
 
   <div id="google_translate_element"></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -1289,7 +1317,17 @@ if ('speechSynthesis' in window) {
 }
 </script>
 
+<script>
+const speak = new SpeechSynthesisUtterance();
 
+document.addEventListener('mouseup', function() {
+  let selectedText = window.getSelection().toString();
+  if (selectedText) {
+    speak.text = selectedText;
+    speechSynthesis.speak(speak);
+  }
+});
+</script>
 
 
 </body>
