@@ -139,7 +139,7 @@
 
 
 
-      </div>
+
    </center>
 
   <script type="text/javascript">
@@ -1317,17 +1317,7 @@ if ('speechSynthesis' in window) {
 }
 </script>
 
-<script>
-const speak = new SpeechSynthesisUtterance();
 
-document.addEventListener('mouseup', function() {
-  let selectedText = window.getSelection().toString();
-  if (selectedText) {
-    speak.text = selectedText;
-    speechSynthesis.speak(speak);
-  }
-});
-</script>
 
 
 </body>
