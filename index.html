@@ -1342,12 +1342,12 @@ inputForm.onsubmit = (event) => {
 <script>
 /*
  * Check for browser support
+ */
 var supportMsg = document.getElementById('msg');
 
 if ('speechSynthesis' in window) {
 	supportMsg.innerHTML = 'Your browser <strong>supports</strong> speech synthesis.';
 } else {
- */
 	supportMsg.innerHTML = 'Sorry your browser <strong>does not support</strong> speech synthesis.<br>Try this in <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a>.';
 	supportMsg.classList.add('not-supported');
 }
