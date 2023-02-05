@@ -1245,26 +1245,16 @@ btnSearch.addEventListener('click', () => {
 </script>
 
 <script>
-    // Function to get the Selected Text
-    function getSelectedText() {
-        var selectedText = '';
+const synth = window.speechSynthesis;
 
-        // window.getSelection
-        if (window.getSelection) {
-            selectedText = window.getSelection();
-        }
-        // document.getSelection
-        else if (document.getSelection) {
-            selectedText = document.getSelection();
-        }
-        // document.selection
-        else if (document.selection) {
-            selectedText =
-            document.selection.createRange().text;
-        } else return;
-        // To write the selected text into the textarea
-        document.testform.selectedtext.value = selectedText;
-    }
+const speak = (text) => {
+  const utterance = new SpeechSynthesisUtterance(text);
+  synth.speak(utterance);
+};
+
+document.querySelector('button').addEventListener('click', () => {
+  speak(document.querySelector('input').value);
+});
 </script>
 
 <script>
