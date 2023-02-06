@@ -28,135 +28,8 @@
      .fa-anchor,.fa-coffee {font-size:200px}menu {display: none}
      </style>
 
-<html>
- <head>
- </head>
- <body>
 
 
-   <div id="content"/>
- </body>
-</html>
-
-<script>
-// A simple IIFE function.
-(function() {
-  "use strict"; // For the sake of practice.
-
-  if (typeof speechSynthesis === 'undefined')
-    return;
-
-  // Some config stuffs...
-  var voiceSelect = document.getElementById("voiceSelect");
-  var myPhrase = 'Hello World!';
-  var voices = [];
-
-  // This is essentially similar to jQuery's $.ready.
-  var ready = function(callback) {
-    var d = document, s = d.readyState;
-
-    // DOMContentLoaded was fired
-    if (s == "complete" || s == "loaded" || s == "interactive") {
-      callback();
-    } else {
-      if (d.addEventListener) {
-        d.addEventListener("DOMContentLoaded", callback, false);
-      } else {
-        d.attachEvent("onDOMContentLoaded", callback);
-      }
-    }
-  };
-
-  // This is a function to display all possible voice options.
-  function populateVoiceList() {
-    voices = speechSynthesis.getVoices();
-
-    for (var i = 0; i < voices.length; i++) {
-      var option = document.createElement('option');
-      option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
-      option.textContent += voices[i].default ? ' -- DEFAULT' : '';
-      option.setAttribute('data-lang', voices[i].lang);
-      option.setAttribute('data-name', voices[i].name);
-      document.getElementById("voiceSelect").appendChild(option);
-    }
-  }
-
-  // This is the handler for when the select tag is changed.
-  function handler() {
-    var utterThis = new SpeechSynthesisUtterance(myPhrase);
-    var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-
-    for (var i = 0; i < voices.length; i++) {
-      if (voices[i].name === selectedOption) {
-        utterThis.voice = voices[i];
-      }
-    }
-
-    speechSynthesis.speak(utterThis);
-  };
-
-  // This is your code to get the selected text.
-  function getSelectionText() {
-    var text = "";
-    if (window.getSelection) {
-      text = window.getSelection().toString();
-      // for Internet Explorer 8 and below. For Blogger, you should use &amp;&amp; instead of &&.
-    } else if (document.selection && document.selection.type != "Control") {
-      text = document.selection.createRange().text;
-    }
-    return text;
-  }
-
-  // This is the on mouse up event, no need for jQuery to do this.
-  document.onmouseup = function(e) {
-    setTimeout(function() {
-      speechSynthesis.cancel();
-      myPhrase = getSelectionText();
-      handler();
-    }, 1);
-  };
-
-  // Some place for the application to start.
-  function start() {
-    populateVoiceList();
-    if (speechSynthesis.onvoiceschanged !== undefined)
-      speechSynthesis.onvoiceschanged = populateVoiceList;
-
-    voiceSelect.onchange = handler;
-    setTimeout(handler, 75);
-  }
-
-  // Run the start function.
-  ready(start);
-})();
-</script>
-
-   <title>Change Font Size</title>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-</head>
-<body>
-   <center>
-
-
-
-
-   </center>
-
-  <script type="text/javascript">
-      $(document).ready(function(){
-         $(".increaseFont,.decreaseFont").click(function(){
-            var type= $(this).val();
-            var curFontSize = $('.data').css('font-size');
-            if(type=='increase'){
-               $('.data').css('font-size', parseInt(curFontSize)+1);
-            } else{
-               $('.data').css('font-size', parseInt(curFontSize)-1);
-            }
-            // alert($('.data').css('font-size'));
-         });
-      });
-   </script>
-</body>
 
   <div id="google_translate_element"></div>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -199,9 +72,11 @@ h1 {
 
 <div class="header2">
 <h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three-Letter Words Assigner</h1></div>
-<h2 style="color:white ;font-size:10px;margin-bottom:0%">
-<button onclick="myFunction()">Toggle dark/light mode</button><h2>
-  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;width:30%;">Date/Time: <span id="datetime"></span></p>
+
+
+
+<button onclick="myFunction()"style="font-size:20px;color:white">Toggle dark/light mode</button>
+  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;width:50%;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -231,33 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-<div id="page-wrapper">
-  <h1>Web Speech Synthesis Demo</h1>
 
-  <p id="msg"></p>
-
-  <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
-
-	<div class="option">
-		<label for="voice">Voice</label>
-		<select name="voice" id="voice"></select>
-	</div>
-	<div class="option">
-		<label for="volume">Volume</label>
-		<input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
-	</div>
-	<div class="option">
-		<label for="rate">Rate</label>
-		<input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
-	</div>
-	<div class="option">
-		<label for="pitch">Pitch</label>
-		<input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
-	</div>
-
-	<button id="speak">Speak</button>
-
-</div>
 
 <script>
 
@@ -1208,16 +1057,88 @@ function GetValue()
 }
 </script>
 
+<div class="wrapper">
+  <label for="text">Text to speak:</label>
+  <textarea id="text">Enter Three-Letter Word Here.</textarea>
+  <div class="properties">
+    <label for="voice">Voice:</label>
+    <select id="voice"></select>
+    <div></div>
+
+    <label for="pitch">Pitch:</label>
+    <input id="pitch" type="range" min="0.1" max="2" step="0.1" value="1">
+    <output for="pitch"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+
+    <label for="rate">Rate:</label>
+    <input id="rate" type="range" min="0.1" max="2" step="0.1" value="1">
+    <output for="rate"  style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+
+    <label for="volume">Volume:</label>
+    <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
+    <output for="volume"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+  </div>
+  <button id="speak">Speak Text</button>
+</div>
+
+<script>
+// grab the UI elements to work with
+const textEl = document.getElementById('text');
+const voiceInEl = document.getElementById('voice');
+const pitchInEl = document.getElementById('pitch');
+const rateInEl = document.getElementById('rate');
+const volumeInEl = document.getElementById('volume');
+const pitchOutEl = document.querySelector('output[for="pitch"]');
+const rateOutEl = document.querySelector('output[for="rate"]');
+const volumeOutEl = document.querySelector('output[for="volume"]');
+const speakEl = document.getElementById('speak');
+
+// add UI event handlers
+pitchInEl.addEventListener('change', updateOutputs);
+rateInEl.addEventListener('change', updateOutputs);
+volumeInEl.addEventListener('change', updateOutputs);
+speakEl.addEventListener('click', speakText);
+
+// update voices immediately and whenever they are loaded
+updateVoices();
+window.speechSynthesis.onvoiceschanged = updateVoices;
+
+function updateOutputs() {
+  // display current values of all range inputs
+  pitchOutEl.textContent = pitchInEl.value;
+  rateOutEl.textContent = rateInEl.value;
+  volumeOutEl.textContent = volumeInEl.value;
+}
+
+function updateVoices() {
+  // add an option for each available voice that isn't already added
+  window.speechSynthesis.getVoices().forEach(voice => {
+    const isAlreadyAdded = [...voiceInEl.options].some(option => option.value === voice.voiceURI);
+    if (!isAlreadyAdded) {
+      const option = new Option(voice.name, voice.voiceURI, voice.default, voice.default);
+      voiceInEl.add(option);
+    }
+  });
+}
+
+function speakText() {
+  // stop any speaking in progress
+  window.speechSynthesis.cancel();
+
+  // create new utterance with all the properties
+  const text = textEl.value;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.voiceURI === voiceInEl.value);
+  utterance.pitch = pitchInEl.value;
+  utterance.rate = rateInEl.value;
+  utterance.volume = volumeInEl.value;
+
+  // speak that utterance
+  window.speechSynthesis.speak(utterance);
+}
+</script>
 
 
-<label class="toggle">
 
-<br><br>
-  <div class="onoff">OFF</div>
-
-  <input type="checkbox" id="togBtn" value="sup" >
-
-  <span class="slider round"></span></label>
 
 <div class="footer1"><h5><br>© 2023 Three-Letter Word Assigner<h5>
 
@@ -1271,204 +1192,33 @@ btnSearch.addEventListener('click', () => {
 </script>
 
 <script>
-const synth = window.speechSynthesis;
-
-const speak = (text) => {
-  const utterance = new SpeechSynthesisUtterance(text);
-  synth.speak(utterance);
-};
-
-document.querySelector('button').addEventListener('click', () => {
-  speak(document.querySelector('input').value);
-});
-</script>
-<script>
-let utterance = new SpeechSynthesisUtterance("Hello world!");
-speechSynthesis.speak(utterance);
-</script>
-<script>
-const synth = window.speechSynthesis;
-
-const inputForm = document.querySelector('form');
-const inputTxt = document.querySelector('.txt');
-const voiceSelect = document.querySelector('select');
-const pitch = document.querySelector('#pitch');
-const pitchValue = document.querySelector('.pitch-value');
-const rate = document.querySelector('#rate');
-const rateValue = document.querySelector('.rate-value');
-
-let voices = [];
-
-function populateVoiceList() {
-  voices = synth.getVoices();
-
-  for (let i = 0; i < voices.length ; i++) {
-    const option = document.createElement('option');
-    option.textContent = `${voices[i].name} (${voices[i].lang})`;
-
-    if (voices[i].default) {
-      option.textContent += ' — DEFAULT';
-    }
-
-    option.setAttribute('data-lang', voices[i].lang);
-    option.setAttribute('data-name', voices[i].name);
-    voiceSelect.appendChild(option);
-  }
-}
-
-populateVoiceList();
-if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = populateVoiceList;
-}
-
-inputForm.onsubmit = (event) => {
-  event.preventDefault();
-
-  const utterThis = new SpeechSynthesisUtterance(inputTxt.value);
-  const selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-  for (let i = 0; i < voices.length ; i++) {
-    if (voices[i].name === selectedOption) {
-      utterThis.voice = voices[i];
-    }
-  }
-  utterThis.pitch = pitch.value;
-  utterThis.rate = rate.value;
-  synth.speak(utterThis);
-
-  inputTxt.blur();
-}
+speechSynthesis.speak(new SpeechSynthesisUtterance("Hello, this is your browser speaking."));
 </script>
 
 <script>
-/*
- * Check for browser support
- */
-var supportMsg = document.getElementById('msg');
-
-if ('speechSynthesis' in window) {
-	supportMsg.innerHTML = 'Your browser <strong>supports</strong> speech synthesis.';
-} else {
-	supportMsg.innerHTML = 'Sorry your browser <strong>does not support</strong> speech synthesis.<br>Try this in <a href="https://www.google.co.uk/intl/en/chrome/browser/canary.html">Chrome Canary</a>.';
-	supportMsg.classList.add('not-supported');
-}
-
-
-// Get the 'speak' button
-var button = document.getElementById('speak');
-
-// Get the text input element.
-var speechMsgInput = document.getElementById('speech-msg');
-
-// Get the voice select element.
-var voiceSelect = document.getElementById('voice');
-
-// Get the attribute controls.
-var volumeInput = document.getElementById('volume');
-var rateInput = document.getElementById('rate');
-var pitchInput = document.getElementById('pitch');
-
-
-// Fetch the list of voices and populate the voice options.
-function loadVoices() {
-  // Fetch the available voices.
-	var voices = speechSynthesis.getVoices();
-
-  // Loop through each of the voices.
-	voices.forEach(function(voice, i) {
-    // Create a new option element.
-		var option = document.createElement('option');
-
-    // Set the options value and text.
-		option.value = voice.name;
-		option.innerHTML = voice.name;
-
-    // Add the option to the voice selector.
-		voiceSelect.appendChild(option);
-	});
-}
-
-// Execute loadVoices.
-loadVoices();
-
-// Chrome loads voices asynchronously.
-window.speechSynthesis.onvoiceschanged = function(e) {
-  loadVoices();
-};
-
-
-// Create a new utterance for the specified text and add it to
-// the queue.
-function speak(text) {
-  // Create a new instance of SpeechSynthesisUtterance.
-	var msg = new SpeechSynthesisUtterance();
-
-  // Set the text.
-	msg.text = text;
-
-  // Set the attributes.
-	msg.volume = parseFloat(volumeInput.value);
-	msg.rate = parseFloat(rateInput.value);
-	msg.pitch = parseFloat(pitchInput.value);
-
-  // If a voice has been selected, find the voice and set the
-  // utterance instance's voice attribute.
-	if (voiceSelect.value) {
-		msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == voiceSelect.value; })[0];
-	}
-
-  // Queue this utterance.
-	window.speechSynthesis.speak(msg);
-}
-
-
-// Set up an event listener for when the 'speak' button is clicked.
-button.addEventListener('click', function(e) {
-	if (speechMsgInput.value.length > 0) {
-		speak(speechMsgInput.value);
-	}
-});
-</script>
-<script>
-function getSelectionText() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    // for Internet Explorer 8 and below. For Blogger, you should use &amp;&amp; instead of &&.
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    return text;
-}
-$(document).ready(function (){ // when the document has completed loading
-   $(document).mouseup(function (e){ // attach the mouseup event for all div and pre tags
-      setTimeout(function() { // When clicking on a highlighted area, the value stays highlighted until after the mouseup event, and would therefore stil be captured by getSelection. This micro-timeout solves the issue.
-         responsiveVoice.cancel(); // stop anything currently being spoken
-         responsiveVoice.speak(getSelectionText()); //speak the text as returned by getSelectionText
-      }, 1);
-   });
-});
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('voice-form');
+    const input = document.getElementById('speech');
+  });
 </script>
 
 <script>
-function getSelectionText() {
-    var text = "";
-    if (window.getSelection) {
-        text = window.getSelection().toString();
-    // for Internet Explorer 8 and below. For Blogger, you should use &amp;&amp; instead of &&.
-    } else if (document.selection && document.selection.type != "Control") {
-        text = document.selection.createRange().text;
-    }
-    return text;
-}
-$(document).ready(function (){ // when the document has completed loading
-   $(document).mouseup(function (e){ // attach the mouseup event for all div and pre tags
-      setTimeout(function() { // When clicking on a highlighted area, the value stays highlighted until after the mouseup event, and would therefore stil be captured by getSelection. This micro-timeout solves the issue.
-         responsiveVoice.cancel(); // stop anything currently being spoken
-         responsiveVoice.speak(getSelectionText()); //speak the text as returned by getSelectionText
-      }, 1);
-   });
-});
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('voice-form');
+    const input = document.getElementById('speech');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const toSay = input.value.trim();
+      const utterance = new SpeechSynthesisUtterance(toSay);
+      speechSynthesis.speak(utterance);
+      input.value = '';
+    });
+  });
 </script>
+
+
+
 
 </body>
 </html>
