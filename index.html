@@ -1080,46 +1080,26 @@ function GetValue()
   <button id="speak">Speak Text</button>
 </div>
 
-<div id="chatContainer">
-  <div id="chatlogs">
-    <!-- Chat logs will be appended here -->
-  </div>
-  <div id="inputContainer">
-    <input type="text" id="chatInput">
-    <button id="sendBtn">Send</button>
-  </div>
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
 </div>
 
 <script>
-document.getElementById("sendBtn").addEventListener("click", function() {
-  // Get the chat input value
-  var chatInput = document.getElementById("chatInput").value;
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
 
-  // Create a new chat log element
-  var chatLog = document.createElement("div");
-  chatLog.classList.add("chatlog");
-  chatLog.classList.add("request");
-  chatLog.innerHTML = chatInput;
-
-  // Append the chat log to the chat logs container
-  document.getElementById("chatlogs").appendChild(chatLog);
-
-  // Clear the chat input
-  document.getElementById("chatInput").value = "";
-
-  // Simulate a response from server
-  setTimeout(function() {
-    // Create a new chat log element
-    var response = document.createElement("div");
-    response.classList.add("chatlog");
-    response.classList.add("response");
-    response.innerHTML = "Response from server";
-
-    // Append the chat log to the chat logs container
-    document.getElementById("chatlogs").appendChild(response);
-  }, 1000);
-});
-
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
 </script>
 
 <script>
