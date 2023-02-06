@@ -76,17 +76,17 @@ h1 {
 
 
 <button onclick="myFunction()"style="font-size:20px;color:white">Toggle dark/light mode</button>
-  <p style="color:white; background-color:royalblue;margin-bottom:-3%;padding:10px;width:50%;">Date/Time: <span id="datetime"></span></p>
+  <p style="color:white; background-color:royalblue;margin-bottom:-0%;padding:10px;width:50%;">Date/Time: <span id="datetime"></span></p>
 <script>
 var dt = new Date();
 document.getElementById("datetime").innerHTML = dt.toLocaleString();
 </script>
 
-<br><br>
 
-<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" /><br><br>
+
+<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
 <p id="message">Click "New Word"</p>
-
+<br>
 
 
 
@@ -1058,7 +1058,7 @@ function GetValue()
 </script>
 
 <div class="wrapper">
-  <label for="text">Text to speak:</label>
+  <label for="text"style="font-size:20px;">Text to speak:</label>
   <textarea id="text">Enter Three-Letter Word Here.</textarea>
   <div class="properties">
     <label for="voice">Voice:</label>
@@ -1067,18 +1067,60 @@ function GetValue()
 
     <label for="pitch">Pitch:</label>
     <input id="pitch" type="range" min="0.1" max="2" step="0.1" value="1">
-    <output for="pitch"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+    <output for="pitch"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
 
     <label for="rate">Rate:</label>
     <input id="rate" type="range" min="0.1" max="2" step="0.1" value="1">
-    <output for="rate"  style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+    <output for="rate"  style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
 
     <label for="volume">Volume:</label>
     <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
-    <output for="volume"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white">1</output>
+    <output for="volume"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
   </div>
   <button id="speak">Speak Text</button>
 </div>
+
+<div id="chatContainer">
+  <div id="chatlogs">
+    <!-- Chat logs will be appended here -->
+  </div>
+  <div id="inputContainer">
+    <input type="text" id="chatInput">
+    <button id="sendBtn">Send</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("sendBtn").addEventListener("click", function() {
+  // Get the chat input value
+  var chatInput = document.getElementById("chatInput").value;
+
+  // Create a new chat log element
+  var chatLog = document.createElement("div");
+  chatLog.classList.add("chatlog");
+  chatLog.classList.add("request");
+  chatLog.innerHTML = chatInput;
+
+  // Append the chat log to the chat logs container
+  document.getElementById("chatlogs").appendChild(chatLog);
+
+  // Clear the chat input
+  document.getElementById("chatInput").value = "";
+
+  // Simulate a response from server
+  setTimeout(function() {
+    // Create a new chat log element
+    var response = document.createElement("div");
+    response.classList.add("chatlog");
+    response.classList.add("response");
+    response.innerHTML = "Response from server";
+
+    // Append the chat log to the chat logs container
+    document.getElementById("chatlogs").appendChild(response);
+  }, 1000);
+});
+
+</script>
 
 <script>
 // grab the UI elements to work with
