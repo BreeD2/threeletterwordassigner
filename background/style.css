@@ -33,32 +33,15 @@ ro
 
 }
 
+.mytextarea:hover {
+  background-color: yellow;
+}
+
+a {
+  background-color: red;
+}
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-button {
-  width:50%;
-  padding: 10px;
-  background-color: red;
-  color: white;
-
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-button:hover {
-  width:50%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
 }
 
 
@@ -110,18 +93,16 @@ button:hover {
 
 #voice {
   font-size: 15px;
-  color:royalblue;
+  color:black;
   width:100%;
   border-radius: 10px;
-  background-color: white
 
 }
 
-
-
 #speak {
   padding: 10px;
-border:2px solid white;
+  border: 2px solid white;
+
   background-color: royalblue;
   font-size: 15px;
   cursor: pointer;
@@ -130,16 +111,7 @@ border:2px solid white;
   width:100%;
 }
 
-#speak:hover {
-  padding: 10px;
-border:2px solid white;
-  background-color: dodgerblue;
-  font-size: 15px;
-  cursor: pointer;
-  appearance: none;
-  text-align: center;
-  width:100%;
-}
+
 
 a {
   background-color: black;
@@ -337,8 +309,8 @@ button {
 
 
 button:hover {
-  color: white;
-  background-color: orangered;
+  color: ghostwhite;
+  background-color: coral;
   font-size: 20px;
   padding: 10px;
   width:50%;
@@ -438,7 +410,7 @@ body {
           margin-top: 0%;
             width:50%;
             padding: 10px;
-            background-color: orangered;
+            background-color: coral;
             color: white;
             font-size: 20px;
             text-align: center;
@@ -449,79 +421,9 @@ body {
 
           border-radius: 10px;
         }
-        textarea {
-          background-color: white;
-          color:black
-        }
-        textarea:hover {
-          background-color: lightcyan;
-          color:white
-        }
-output {
-  background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;
-}
-
-output:hover {
-  background-color:dodgerblue; color:white;padding: 7px;margin:5px;border:1px solid white;border-radius: 10px;
-}
-
-
-select:hover {
-  background-color: dodgerblue;
-  color:grey;
-}
-
 
 p {
   background-color:royalblue;
-  width:50%;
-  color:white;
-  width: 50%;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 10px;
-    border:2px solid white;
-
-
-}
-
-p{
-  background-color:royalblue;
-  width:50%;
-  color:white;
-  width: 50%;
-  padding: 10px;
-  font-size: 20px;
-  border-radius: 10px;
-    border:2px solid white;
-    margin:0%:
-
-}
-
-h6 {
-  background-color:royalblue;
-   width:50%;
-   color:white;
-   width: 50%;
-   padding: 15px;
-   font-size: 20px;
-   border-radius: 10px;margin-bottom:0%;
-   border: 2px solid white
-}
-h6:hover {
-  background-color:dodgerblue; width:50%;
-    color:white;
-    width: 50%;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 10px;
-      border:2px solid white;
-      animation: none;
-      margin-bottom:0%;
-}
-
-p:hover {
-  background-color:dodgerblue;
   width:50%;
   color:white;
   width: 50%;
@@ -554,7 +456,7 @@ p:hover {
 
         input:hover {
           color:black;
-          background-color: orangered;
+          background-color: lightsalmon;
             border:2px solid black;
         }
 

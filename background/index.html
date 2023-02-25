@@ -1,5 +1,4 @@
 
-
 <html lang="en-US">
 <html>
  <head>
@@ -68,67 +67,38 @@ h1 {
 <div class="header2">
 <h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three-Letter Words Assigner</h1></div>
 
+<a href="..//index.html" style="background-color: tomato;
+color: white;
+width:20%;
+font-size: 20px;
+padding: 10px;
+border-radius: 15px;
+  border:2px solid black;">Go back to background changing at time.
+</a>
 
 
 
+<button onclick="myFunction()"style="font-size:20px;color:white;background-color:royalblue">Toggle dark/light mode</button>
 
-<h6 id='time'style="font-size: 20px;margin-bottom:0%;"></h6>
+<h1 id='time'style="background-color:royalblue; width:50%;
+  color:white;
+  width: 50%;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+    border:2px solid white;
+    animation: none;
+    margin-bottom:0%
 
+  "></h1>
 
-
-<script>
-    var now = new Date();
-    var hours = now.getHours();
-    var ft = now.toLocaleString("en-US", {
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true
-    });
-    if (5 <= hours && hours < 8) {//Morning
-        document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, #3B4371, #F3904F); color: white">');
-        var type = "Morning";
-    }
-    if (8 <= hours && hours < 17) {//Day
-        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, #0083B0, #00B4DB); color: white">');
-        var type = "Daytime";
-    }
-    if (17 <= hours && hours < 19) {//Evening
-        document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
-        var type = "Evening";
-    }
-    if (19 <= hours && hours < 5) {//Night
-        document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color : white">');
-        var type = "Nighttime";
-    }
-    document.getElementById("time").innerHTML = `The Time is ${ft} it is ${type}`;
-    //CSS gradient backgrounds from https://uigradients.com
-</script>
-
-<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
-
-
-
-<p id="message"style="margin:0%;">Click "New Word"</p>
-
-
-    <button onclick="copyText()"style="  font-size: 20px;">Copy Text Above</button>
-
-
-  	<script>
-  		function copyText() {
-  			var myText = document.getElementById("message");
-  			var range = document.createRange();
-  			range.selectNode(message);
-  			window.getSelection().removeAllRanges();
-  			window.getSelection().addRange(range);
-  			document.execCommand("copy");
-  			alert("Text copied to clipboard.");
-  		}
-  	</script>
 
 
 
 
+<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
+<p id="message">Click "New Word"</p>
+<br>
 
 <script>
 function CopyToClipboard(id)
@@ -141,6 +111,16 @@ document.execCommand('copy');
 window.getSelection().removeAllRanges();
 }
 </script>
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
+<p id="message">Click "New Word"</p>
+<br>
 
 <script>
 function CopyToClipboard(id)
@@ -1394,20 +1374,8 @@ function GetValue()
     //alert(random);
     document.getElementById("message").innerHTML=random;
 }
-
 </script>
 
-
-
-<script>
-// Type 1
-document.getElementById('execCopy').addEventListener('click', execCopy);
-function execCopy() {
-  document.querySelector("#input").select();
-  document.execCommand("copy");
-}
-</script>
-<br><br>
 <div class="wrapper">
   <label for="text"style="font-size:20px;">Text-to-Speech:</label>
   <textarea id="text">Enter Three-Letter Word Here.</textarea>
@@ -1418,15 +1386,15 @@ function execCopy() {
 
     <label for="pitch">Pitch:</label>
     <input id="pitch" type="range" min="0.1" max="2" step="0.1" value="1">
-    <output for="pitch"style=" color:white;">1</output>
+    <output for="pitch"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
 
     <label for="rate">Rate:</label>
     <input id="rate" type="range" min="0.1" max="2" step="0.1" value="1">
-    <output for="rate"style=color:white;  >1</output>
+    <output for="rate"  style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
 
     <label for="volume">Volume:</label>
     <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
-    <output for="volume"style=" color:white;">1</output>
+    <output for="volume"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
   </div>
   <button id="speak">Speak Text</button>
 </div>
