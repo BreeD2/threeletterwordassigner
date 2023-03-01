@@ -78,6 +78,22 @@ button:hover {
     border:2px solid black;
 }
 
+.wrapper:hover {
+  display: grid;
+  gap: 15px;
+  width: 50%;
+
+  max-width: calc(100vw - 40px);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: orangered;
+  font-size: 20px;
+  text-align: center;
+  color:white;
+  font-size: 20px;
+    border:2px solid black;
+}
+
 #text {
   display: block;
   height: 100%;
@@ -91,7 +107,7 @@ button:hover {
 }
 
 #output {
-  color:white;
+  color:black;
     border:2px solid black;
 }
 .properties {
@@ -110,13 +126,22 @@ button:hover {
 
 #voice {
   font-size: 15px;
-  color:royalblue;
+  color:white;
   width:100%;
   border-radius: 10px;
-  background-color: white
+  background-color: tomato;
+    border:2px solid black;
 
 }
+#voice:hover {
+  font-size: 15px;
+  color:white;
+  width:100%;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  border:2px solid white;
 
+}
 
 
 #speak {
@@ -158,6 +183,106 @@ a {
   border-radius: 10px;
 
 }
+input[type=range] {
+  height: 40px;
+  -webkit-appearance: none;
+  margin: 0px 0;
+  width: 100%;
+  background: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 19px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 1px #000000;
+  background: #2C5AA9;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+}
+input[type=range]: hover {
+  width: 100%;
+  height: 19px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 1px #000000;
+  background: #2C5AA9;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 2px 2px 1px #FFE0E0;
+  border: 2px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #477EFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #2C5AA9;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 19px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 2px 2px 1px #000000;
+  background: #2C5AA9;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 2px 2px 1px #FFE0E0;
+  border: 2px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #477EFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 19px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2C5AA9;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #2C5AA9;
+  border: 1px solid #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 2px 2px 1px #FFE0E0;
+  border: 2px solid #000000;
+  height: 30px;
+  width: 15px;
+  border-radius: 5px;
+  background: #477EFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #2C5AA9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #2C5AA9;
+}
 
 
 
@@ -169,9 +294,13 @@ body {
   font-size: 15px;
 }
 
+.footer1:hover {
+text-shadow: 2px 2px dodgerblue;
+}
 
-
-
+a:hover {
+  color:red;
+}
 /* Container holding the image and the text */
 .container {
   position:  relative;
@@ -252,6 +381,18 @@ body {
   cursor: pointer;
 }
 
+#sendBtn: hover {
+  padding: 10px 20px;
+  background-color: royalblue;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
 
 button {
   color: white;
@@ -313,6 +454,8 @@ button {
   outline: none;
 }
 
+
+
 /* Set a style for the submit/login button */
 .form-container .btn {
   background-color: #04AA6D;
@@ -324,6 +467,7 @@ button {
   margin-bottom:10px;
   opacity: 0.8;
 }
+
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
@@ -357,6 +501,8 @@ button:hover {
   -webkit-transition: .4s;
   transition: .4s;
 }
+
+
 
 .slider:before {
   position: absolute;
@@ -449,16 +595,20 @@ body {
 
           border-radius: 10px;
         }
+
         textarea {
-          background-color: white;
-          color:black
+          background-color: royalblue;
+            border:2px solid white;
+
         }
         textarea:hover {
-          background-color: lightcyan;
-          color:white
+          color:white;
+          background-color: dodgerblue;
+            border:2px solid white;
+
         }
 output {
-  background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;
+  background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid black;border-radius: 10px;
 }
 
 output:hover {
@@ -620,6 +770,10 @@ p {
     vertical-align: top;
     padding: 8px 13px 6px;
 }
+
+input[type="range"] {
+  background-color: red;
+}
         input[type="text"] {
             padding: 20px 30px;
             font-size: 15px;
@@ -664,9 +818,11 @@ p {
 a:hover {
   color:black
 }
-
+h1: hover {
+  color:red;
+}
 .header2 {
-
+ style="color:red; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;
 
   animation-name: slidein;
   animation-duration:10s;
@@ -675,6 +831,9 @@ a:hover {
   animation-timing-function: ease-in;
   animation: leaves 5s ease-in-out infinite alternate;
        -webkit-animation: leaves 5s ease-in-out infinite alternate;
+}
+.header2: hover {
+   style="color:orange; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;
 }
 @keyframes slidein {
   from {
@@ -685,6 +844,17 @@ a:hover {
   to {
 
   }
+}
+
+.myDiv {
+    text-align: center;
+  color:white;
+  font-size: 50px;
+  text-shadow:2px 2px black
+}
+
+.header2 {
+  background-color:red;
 }
 
 

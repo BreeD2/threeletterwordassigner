@@ -47,6 +47,7 @@ h1 {
   animation-name: slideout;
   animation-direction: reverse;
   animation-timing-function: ease-out;
+  animation-iteration-count: 2;
 }
 
 @keyframes slideout {
@@ -60,16 +61,43 @@ h1 {
   to {
     transform: scale(1.5);
             -webkit-transform: scale(2.0);
+            text-shadow:2px 2px tomato;
+            color:white
   }
 }
 </style>
 
 
+
 <div class="header2">
-<h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three-Letter Words Assigner</h1></div>
+</div>
 
+<style>
+.myDiv {
+    text-align: center;
+  color:white;
+  font-size: 50px;
+  text-shadow:2px 2px royalblue;
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1
+}
+</style>
 
+<style>
+.myDiv:hover {
+  color:white;
+  text-shadow:2px 2px tomato;
 
+}
+</style>
+
+<div class="myDiv">
+Three-Letter Word Assigner
+
+</div>
 
 
 <h6 id='time'style="font-size: 20px;margin-bottom:0%;color:white"></h6>
@@ -103,7 +131,7 @@ h1 {
     }
     if (15 <= hours && hours < 18) {//Day
         document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, deepskyblue,#C06C84); color: white">');
-        var type = "Early Afternoon";
+        var type = "Late Afternoon";
     }
     if (17 <= hours && hours < 19) {//Evening
         document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
@@ -1427,7 +1455,7 @@ function execCopy() {
 <br><br>
 <div class="wrapper">
   <label for="text"style="font-size:20px;">Text-to-Speech:</label>
-  <textarea id="text">Enter Three-Letter Word Here.</textarea>
+  <textarea id="text"style="color:white;border:2px solid white;border-color;coral">Enter Three-Letter Word Here.</textarea>
   <div class="properties">
     <label for="voice">Voice:</label>
     <select id="voice"></select>
