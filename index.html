@@ -1475,8 +1475,27 @@ function execCopy() {
   </div>
   <button id="speak">Speak Text</button>
 </div>
+<script>
+function increaseFontSizeBy100px() {
+    txt = document.getElementById('a');
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+    currentSize = parseFloat(style);
+    txt.style.fontSize = (currentSize + 100) + 'px';
+}
+function increaseFontSizeBy1px() {
+    txt = document.getElementById('b');
+    style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
+    currentSize = parseFloat(style);
+    txt.style.fontSize = (currentSize + 1) + 'px';
+}
+</script>
 
-
+<script type="text/javascript">
+function changemysize(myvalue) {
+    var div = document.getElementById("mymain");
+    div.style.fontSize = myvalue + "px";
+}
+</script>
 
 <script>
 // grab the UI elements to work with
