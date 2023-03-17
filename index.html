@@ -68,6 +68,11 @@ h1 {
 </style>
 
 
+</head>
+
+
+
+
 
 <div class="header2">
 </div>
@@ -94,86 +99,597 @@ h1 {
 }
 </style>
 
+<!-- Dropdown menu -->
+<div class="dropdown">
+  <!-- Dropdown button -->
+  <button class="dropbtn"style="margin-right:100%;">Settings
+    <i class="fa fa-caret-down"></i>
+  </button>
+
+  <!-- Dropdown content -->
+  <div class="dropdown-content"style>
+    <!-- Invert button -->
+    <button class="invert-btn">Invert</button>
+
+    <button id="brightnessUpBtn">Increase Brightness</button>
+    <button id="brightnessDownBtn">Decrease Brightness</button>
+
+    <!-- Background button -->
+  
+
+    <button id="toggle-mode-btn">Toggle Mode</button>
+
+    <!-- Zoom in button -->
+    <button class="zoom-in-btn">Zoom In</button>
+
+    <!-- Zoom out button -->
+    <button class="zoom-out-btn">Zoom Out</button>
+
+    <!-- Color filters -->
+
+    <button class="filter-btn" data-filter="grayscale(100%)">Grayscale</button>
+    <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
+    <button class="filter-btn" data-filter="saturate(200%)">Saturate</button>
+    <button class="filter-btn" data-filter="hue-rotate(90deg)">Hue Rotate</button>
+  </div>
+</div>
+
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-bottom: 0
+
+
+}
+
+#filter-btn {
+  width:100%;
+  padding: 10px;
+  background-color:orangered;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+body {
+  background-color: white;
+}
+
+.red-background {
+  background-color: red;
+}
+
+.dropbtn {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+}
+
+.toggle-btn {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+}
+
+/* Brightness Style */
+.brightness {
+  filter: brightness(1);
+}
+
+body {
+  background-color: #ffffff; /* default light mode background color */
+  color: #333333; /* default light mode text color */
+}
+
+
+
+.dark-mode {
+  background-color: #333333; /* dark mode background color */
+  color: #ffffff; /* dark mode text color */
+}
+
+.zoom-in-btn,
+.zoom-out-btn {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+
+
+#brightnessUpBtn:hover {
+  background-color: orangered;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+#theme-toggle-button {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+#dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-theme #theme-toggle {
+  background-color: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+.change-color-btn:hover {
+  background-color: orangered;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+.invert-btn {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+.invert-btn:hover {
+  background-color: orangered;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+}
+
+.zoom-in-btn:hover,
+.zoom-out-btn:hover {
+
+}
+#brightnessDownBtn:hover {
+  width:100%;
+  padding: 10px;
+  background-color:orangered;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.filter-btn {
+  width:100%;
+  padding: 10px;
+  background-color:tomato;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.zoom-out-btn {
+  width:100%;
+  padding: 10px;
+  background-color:tomato;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.zoom-out-btn:hover {
+  width:100%;
+  padding: 10px;
+  background-color:orangered;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+
+.zoom-in-btn {
+  width:100%;
+  padding: 10px;
+  background-color:tomato;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.zoom-in-btn:hover {
+  width:100%;
+  padding: 10px;
+  background-color:orangered;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.filter-btn:hover {
+  width:100%;
+  padding: 10px;
+  background-color:orangered;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;;
+  border-radius: 10px;
+    border:2px solid black;margin:-5%:
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.saturate {
+  filter: saturate(200%);
+}
+
+.hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+
+
+.filter-btn:active {
+  background-color: orangered;
+}
+
+</style>
+
+
+
+
+
+
+<script>
+
+// Get the mode button element
+var modeButton = document.querySelector(".mode-btn");
+
+// Add event listener for the mode button
+modeButton.addEventListener("click", function() {
+  var body = document.querySelector("body");
+  body.classList.toggle("invert");
+
+  // Save the current mode to local storage
+  if (body.classList.contains("invert")) {
+    localStorage.setItem("mode", "dark");
+  } else {
+    localStorage.setItem("mode", "light");
+  }
+});
+
+// Check local storage for the current mode
+var mode = localStorage.getItem("mode");
+if (mode === "dark") {
+  document.body.classList.add("invert");
+} else if (mode === "light") {
+  document.body.classList.remove("invert");
+}
+</script>
+
+
+<script>
+// Get the brightness up button element
+var brightnessUpButton = document.getElementById("brightnessUpBtn");
+
+// Add event listener for the brightness up button
+brightnessUpButton.addEventListener("click", function() {
+  brightness += brightnessStep;
+  updateBrightness();
+});
+
+// Define the updateBrightness function
+function updateBrightness() {
+  document.body.style.filter = "brightness(" + brightness + "%)";
+}
+</script>
+
+<!-- JavaScript -->
+<script>
+const contrastBtns = document.querySelectorAll('.contrast-inc-btn, .contrast-dec-btn');
+const content = document.querySelector('.content');
+
+let currentContrast = 100;
+
+function adjustContrast(inc) {
+  currentContrast += inc;
+  content.style.filter = `contrast(${currentContrast}%)`;
+}
+
+contrastBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.classList.contains('contrast-inc-btn')) {
+      adjustContrast(10);
+    } else if (btn.classList.contains('contrast-dec-btn')) {
+      adjustContrast(-10);
+    }
+  });
+});
+
+</script>
+
+
+<!-- Script -->
+<script>
+  // Brightness control variables
+  var brightness = 100;
+  var brightnessStep = 10;
+
+  // Brightness control functions
+  function increaseBrightness() {
+    brightness += brightnessStep;
+    updateBrightness();
+  }
+
+  function decreaseBrightness() {
+    brightness -= brightnessStep;
+    updateBrightness();
+  }
+
+  function updateBrightness() {
+    document.body.style.filter = "brightness(" + brightness + "%)";
+  }
+
+  // Add event listeners to brightness control buttons
+  document.getElementById("brightnessUpBtn").addEventListener("click", increaseBrightness);
+  document.getElementById("brightnessDownBtn").addEventListener("click", decreaseBrightness);
+</script>
+
+
+<script>
+// Get the color filter buttons
+var filterButtons = document.querySelectorAll(".filter-btn");
+
+// Add a click event listener to each filter button
+filterButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    var body = document.querySelector("body");
+    var filter = this.getAttribute("data-filter");
+    body.style.filter = filter;
+  });
+});
+
+
+</script>
+
+
+
+
+
+<script>
+// Get the brightness button
+var brightnessButton = document.querySelector(".brightness-btn");
+
+// Add a click event listener to the button
+brightnessButton.addEventListener("click", function() {
+  // Get the body element
+  var body = document.querySelector("body");
+
+  // Get the current brightness value
+  var currentBrightness = parseFloat(window.getComputedStyle(body).getPropertyValue("filter").split("(")[1].split(")")[0]);
+
+  // Increase the brightness by 10%
+  var newBrightness = currentBrightness + 0.1;
+
+  // Set the new brightness value
+  body.style.filter = "brightness(" + newBrightness + ")";
+});
+</script>
+
+<script>
+// Get the zoom-in button
+var zoomInButton = document.querySelector(".zoom-in-btn");
+
+// Add a click event listener to the button
+zoomInButton.addEventListener("click", function() {
+  // Get the body element
+  var body = document.querySelector("body");
+
+  // Get the current zoom value
+  var currentZoom = parseFloat(window.getComputedStyle(body).getPropertyValue("zoom"));
+
+  // Increase the zoom by 10%
+  var newZoom = currentZoom + 0.1;
+
+  // Set the new zoom value
+  body.style.zoom = newZoom;
+});
+
+// Get the zoom-out button
+var zoomOutButton = document.querySelector(".zoom-out-btn");
+
+// Add a click event listener to the button
+zoomOutButton.addEventListener("click", function() {
+  // Get the body element
+  var body = document.querySelector("body");
+
+  // Get the current zoom value
+  var currentZoom = parseFloat(window.getComputedStyle(body).getPropertyValue("zoom"));
+
+  // Decrease the zoom by 10%
+  var newZoom = currentZoom - 0.1;
+
+  // Set the new zoom value
+  body.style.zoom = newZoom;
+});
+
+
+</script>
+
+<script>
+// Get the invert button
+var invertButton = document.querySelector(".invert-btn");
+
+// Add a click event listener to the button
+invertButton.addEventListener("click", function() {
+  // Get the body element
+  var body = document.querySelector("body");
+
+  // Toggle the invert filter
+  body.classList.toggle("invert");
+
+  // Update the button text
+  if (body.classList.contains("invert")) {
+    invertButton.textContent = "Uninvert";
+  } else {
+    invertButton.textContent = "Invert";
+  }
+});
+
+</script>
+
 <div class="myDiv">
 Three-Letter Word Assigner
 
 </div>
 
+<h1 id='time'style="background-color:royalblue; width:50%;
+  color:white;
+  width: 50%;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+    border:2px solid white;
+    animation: none;
+    margin-bottom:0%
 
-<h6 id='time'style="font-size: 20px;margin-bottom:0%;color:white"></h6>
+  "></h1>
 
 
 
 <script>
-    var now = new Date();
-    var hours = now.getHours();
-    var ft = now.toLocaleString("en-US", {
-        hour: "numeric",
-        minute: "numeric",
-        hour12: true
-    });
+var now = new Date();
+var hours = now.getHours();
+var ft = now.toLocaleString("en-US", {
+  hour: "numeric",
+  minute: "numeric",
+  hour12: true
+});
 
-    function toggleMode() {
-        var body = document.getElementsByTagName("body")[0];
-        var btn = document.getElementById("toggleBtn");
-        if (body.classList.contains("dark")) {
-            body.classList.remove("dark");
-            btn.value = "Dark Mode";
-        } else {
-            body.classList.add("dark");
-            btn.value = "Light Mode";
-        }
+// set initial mode to light
+var isDarkMode = false;
+
+function toggleMode() {
+  var body = document.body;
+  var btn = document.getElementById("toggle-mode-btn");
+
+  if (isDarkMode) {
+    // switch to light mode
+    body.style.background = "#F3904F";
+    body.style.background = "-webkit-linear-gradient(to right, #3B4371, #F3904F)";
+    body.style.background = "linear-gradient(to right, #3B4371, #F3904F)";
+    body.style.color = "white";
+    btn.textContent = "Dark Mode";
+    isDarkMode = false;
+  } else {
+    // switch to dark mode
+    body.style.background = "#0f2027";
+    body.style.background = "-webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364)";
+    body.style.background = "linear-gradient(to right, #0f2027, #203a43, #2c5364)";
+    body.style.color = "white";
+    btn.textContent = "Light Mode";
+    isDarkMode = true;
+  }
+}
+
+// add event listener to toggle mode button
+document.getElementById("toggle-mode-btn").addEventListener("click", toggleMode);
+    if (5 <= hours && hours < 8) {//Morning
+        document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, #3B4371, #F3904F); color: white">');
+        var type = "Morning";
     }
-
-    function setBackground() {
-        var type;
-        var body = document.getElementsByTagName("body")[0];
-        if (3 <= hours && hours < 6) {//Morning
-            body.style.background = "linear-gradient(to right, rebeccapurple, lightsteelblue)";
-            body.style.color = "white";
-            type = "Towards Morning";
-        }
-
-        if (6 <= hours && hours < 9) {//Morning
-            body.style.background = "linear-gradient(to right, lightsteelblue, lightskyblue)";
-            body.style.color = "white";
-            type = "Early Morning";
-        }
-        if (9 <= hours && hours < 12) {//Day
-            body.style.background = "linear-gradient(to right, lightskyblue, #00B4DB)";
-            body.style.color = "white";
-            type = "Morning";
-        }
-        if (12 <= hours && hours < 15) {//Day
-            body.style.background = "linear-gradient(to right, deepskyblue, #00B4DB)";
-            body.style.color = "white";
-            type = "Early Afternoon";
-        }
-        if (15 <= hours && hours < 18) {//Day
-            body.style.background = "linear-gradient(to right, deepskyblue,#C06C84)";
-            body.style.color = "white";
-            type = "Late Afternoon";
-        }
-        if (17 <= hours && hours < 19) {//Evening
-            body.style.background = "linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)";
-            body.style.color = "white";
-            type = "Evening";
-        }
-        if (19 <= hours && hours < 24) {//Night
-            body.style.background = "linear-gradient(to right, darkslateblue, midnightblue)";
-            body.style.color = "white";
-            type = "Nighttime";
-        }
-        if (0 <= hours && hours < 3) {//Night
-            body.style.background = "linear-gradient(to right, #0f2027, midnightblue, rebeccapurple)";
-            body.style.color = "white";
-            type = "Late Nighttime";
-        }
-        document.getElementById("time").innerHTML = `The Time is ${ft} it is ${type}`;
+    if (8 <= hours && hours < 17) {//Day
+        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, #0083B0, #00B4DB); color: white">');
+        var type = "Daytime";
     }
-
-    setBackground();
+    if (17 <= hours && hours < 19) {//Evening
+        document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
+        var type = "Evening";
+    }
+    if (19 <= hours && hours < 5) {//Night
+        document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color : white">');
+        var type = "Nighttime";
+    }
+    document.getElementById("time").innerHTML = `The time is ${ft} it is ${type}`;
+    //CSS gradient backgrounds from https://uigradients.com
 </script>
+
+
+
 
 <input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
 
@@ -181,9 +697,9 @@ Three-Letter Word Assigner
 
 <p id="message"style="margin:0%;">Click "New Word"</p>
 
-
-    <button onclick="copyText()"style="  font-size: 20px;color:white">Copy Text Above</button>
-
+<div class="copy"
+    <button onclick="copyText()"style="  font-size: 20px;color:white;width:50%">Copy Text Above</button>
+</div>
 
 
 
@@ -1481,7 +1997,17 @@ function execCopy() {
 }
 </script>
 
+<script>
+const button = document.getElementById("change-color-btn");
+const body = document.querySelector("body");
 
+button.addEventListener("click", function() {
+  body.classList.toggle("red-background");
+});
+
+
+
+</script>
 
 <button id="pasteBtn">Paste</button>
 
@@ -1608,16 +2134,10 @@ function speakText() {
 
 
 
-<input type="button" id="toggleBtn" value="Dark Mode" onclick="toggleMode();" />
-
-
-
 
 <div class="footer1"><h5><br>© 2023 Three-Letter Word Assigner<h5>
 
   <h5 style="font-size:15px; background-color:tomato; color:white">Coded by Bree Dorman<br><br><u><a href="mailto:dormanb@vcu.edu">dormanb@vcu.edu</a><u></h5></div>
-
-
 
 
 

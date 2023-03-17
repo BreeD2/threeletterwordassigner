@@ -7,20 +7,24 @@ body {
 margin:100%;
 background: #fff;
  color: #000;
- transition: all 0.5s ease;
+ transition: background 0.5s ease-in-out;
 
 
-}.container {
-  margin: 20px;
+
 }
 
-.container {
-  margin: 20px;
+.light-mode {
+  background-color: #fff;
+  color: #000;
 }
 
 .dark-mode {
-  background: #222;
+  background-color: #000;
   color: #fff;
+}
+
+#toggleBtn {
+  .background-color: black
 }
 
 .toggle-wrapper {
@@ -110,7 +114,7 @@ button {
 }
 
 button:hover {
-  width:50%;
+  width:100%;
   padding: 10px;
   background-color:orangered;
   color: white;
@@ -497,15 +501,36 @@ text-shadow: 2px 2px dodgerblue;
 
 
 button {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+
+}
+
+button:hover {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
+
+}
+
+
+.whiteblack {
   color: white;
   background-color: tomato;
   font-size: 20px;
   padding: 10px;
   width:50%;
   border-radius: 10px;
+  margin: 0%;
 
 }
-
 {box-sizing: border-box;}
 
 /* Button used to open the chat form - fixed at the bottom of the page */
@@ -582,14 +607,32 @@ button {
 }
 
 
-button:hover {
-  color: white;
-  background-color: orangered;
+
+
+.copy{
+  background-color: tomato;
   font-size: 20px;
   padding: 10px;
+    width:50%;
+      border-radius: 10px;
+      border:2px solid black;
+}
+
+.copy:hover {
+  background-color: orangered;
+  font-size: 20px;
   width:50%;
-  border-radius: 10px;
-  cursor: copy;
+  padding: 10px;
+  cursor:copy
+}
+
+h3 {
+  background-color: tomato;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0%;
+  margin-right: 10%
 }
 /* The slider */
 .slider {
