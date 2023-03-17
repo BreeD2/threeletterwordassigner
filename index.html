@@ -99,315 +99,116 @@ h1 {
 }
 </style>
 
-<!-- Dropdown menu -->
-<div class="dropdown">
+<div class="sidebar">
   <!-- Dropdown button -->
-  <button class="dropbtn"style="margin-right:100%;">Settings
-    <i class="fa fa-caret-down"></i>
-  </button>
+  <div class="dropdown">
+    <button class="dropbtn">Options</button>
+    <!-- Dropdown content -->
+    <div class="dropdown-content">
+      <!-- Invert button -->
 
-  <!-- Dropdown content -->
-  <div class="dropdown-content"style>
-    <!-- Invert button -->
-    <button class="invert-btn">Invert</button>
+      <!-- Background button -->
+      <button id="toggle-mode-btn">Toggle Mode</button>
+      
+      <button class="invert-btn">Invert</button>
 
-    <button id="brightnessUpBtn">Increase Brightness</button>
-    <button id="brightnessDownBtn">Decrease Brightness</button>
+      <button id="brightnessUpBtn">Increase Brightness</button>
+      <button id="brightnessDownBtn">Decrease Brightness</button>
 
-    <!-- Background button -->
-  
+      <button id="contrast-up-btn">Increase Contrast</button>
+     <button id="contrast-down-btn">Decrease Contrast</button>
 
-    <button id="toggle-mode-btn">Toggle Mode</button>
 
-    <!-- Zoom in button -->
-    <button class="zoom-in-btn">Zoom In</button>
 
-    <!-- Zoom out button -->
-    <button class="zoom-out-btn">Zoom Out</button>
+      <!-- Zoom in button -->
+      <button class="zoom-in-btn">Zoom In</button>
 
-    <!-- Color filters -->
+      <!-- Zoom out button -->
+      <button class="zoom-out-btn">Zoom Out</button>
 
-    <button class="filter-btn" data-filter="grayscale(100%)">Grayscale</button>
-    <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
-    <button class="filter-btn" data-filter="saturate(200%)">Saturate</button>
-    <button class="filter-btn" data-filter="hue-rotate(90deg)">Hue Rotate</button>
+      <!-- Color filters -->
+      <button class="filter-btn" data-filter="grayscale(100%)">Grayscale</button>
+      <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
+      <button class="filter-btn" data-filter="saturate(200%)">Saturate</button>
+      <button class="filter-btn" data-filter="hue-rotate(90deg)">Hue Rotate</button>
+
+
+
+    </div>
   </div>
 </div>
 
 <style>
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 50%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
+/* Default styles */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* specify the width you want for the sidebar */
+  position: fixed; /* fixed position to keep it always visible */
+  left: 0; /* position it on the left side */
+  top: 0; /* position it at the top */
+  bottom: 0; /* set the height to cover the whole height of the viewport */
+
+  overflow-y: auto; /* enable vertical scrolling if the content exceeds the height */
+  z-index: 1; /* set a higher z-index to make it appear above other elements */
+
 }
 
-.dark-mode {
-  background-color: #333;
-  color: #fff;
-}
-
+/* Hide the dropdown content by default */
 .dropdown-content {
   display: none;
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-bottom: 0
-
-
 }
 
-#filter-btn {
-  width:100%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
+/* Show the dropdown content on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-body {
-  background-color: white;
-}
-
-.red-background {
-  background-color: red;
-}
-
-.dropbtn {
-  background-color: tomato;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-}
-
-.toggle-btn {
-  background-color: tomato;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-}
-
-/* Brightness Style */
-.brightness {
-  filter: brightness(1);
-}
-
-body {
-  background-color: #ffffff; /* default light mode background color */
-  color: #333333; /* default light mode text color */
-}
-
-
-
-.dark-mode {
-  background-color: #333333; /* dark mode background color */
-  color: #ffffff; /* dark mode text color */
-}
-
-.zoom-in-btn,
-.zoom-out-btn {
-  background-color: tomato;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-
-
-#brightnessUpBtn:hover {
-  background-color: orangered;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-#theme-toggle-button {
-  background-color: tomato;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-#dark-mode {
-  background-color: #333;
-  color: #fff;
-}
-
-body.dark-theme {
-  background-color: #333;
-  color: #fff;
-}
-
-body.dark-theme #theme-toggle {
-  background-color: #333;
-  color: #fff;
-  border-color: #fff;
-}
-
-.change-color-btn:hover {
-  background-color: orangered;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-.invert-btn {
-  background-color: tomato;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-.invert-btn:hover {
-  background-color: orangered;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  margin: 0%;
-  margin-right: 10%
-}
-
-.zoom-in-btn:hover,
-.zoom-out-btn:hover {
-
-}
-#brightnessDownBtn:hover {
-  width:100%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-.filter-btn {
-  width:100%;
-  padding: 10px;
-  background-color:tomato;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-.zoom-out-btn {
-  width:100%;
-  padding: 10px;
-  background-color:tomato;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-.zoom-out-btn:hover {
-  width:100%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-
-.zoom-in-btn {
-  width:100%;
-  padding: 10px;
-  background-color:tomato;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-.zoom-in-btn:hover {
-  width:100%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
-}
-
-.filter-btn:hover {
-  width:100%;
-  padding: 10px;
-  background-color:orangered;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bold;;
-  border-radius: 10px;
-    border:2px solid black;margin:-5%:
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .invert {
   filter: invert(100%);
 }
 
-.grayscale {
-  filter: grayscale(100%);
+
+
+
+
+
+/* Increase contrast */
+.contrast-increase {
+  filter: contrast(1.5);
 }
 
-.sepia {
-  filter: sepia(100%);
+/* Decrease contrast */
+.contrast-decrease {
+  filter: contrast(0.5);
 }
 
-.saturate {
-  filter: saturate(200%);
-}
-
-.hue-rotate {
-  filter: hue-rotate(90deg);
-}
-
-
-
-.filter-btn:active {
-  background-color: orangered;
-}
 
 </style>
+<script>
+// Get the contrast buttons
+var contrastUpBtn = document.getElementById("contrast-up-btn");
+var contrastDownBtn = document.getElementById("contrast-down-btn");
+
+// Add event listener to the contrast up button
+contrastUpBtn.addEventListener('click', () => {
+  document.body.classList.remove('contrast-decrease');
+  document.body.classList.add('contrast-increase');
+});
+
+// Add event listener to the contrast down button
+contrastDownBtn.addEventListener('click', () => {
+  document.body.classList.remove('contrast-increase');
+  document.body.classList.add('contrast-decrease');
+});
+
+
+</script>
 
 
 
@@ -458,29 +259,7 @@ function updateBrightness() {
 }
 </script>
 
-<!-- JavaScript -->
-<script>
-const contrastBtns = document.querySelectorAll('.contrast-inc-btn, .contrast-dec-btn');
-const content = document.querySelector('.content');
 
-let currentContrast = 100;
-
-function adjustContrast(inc) {
-  currentContrast += inc;
-  content.style.filter = `contrast(${currentContrast}%)`;
-}
-
-contrastBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (btn.classList.contains('contrast-inc-btn')) {
-      adjustContrast(10);
-    } else if (btn.classList.contains('contrast-dec-btn')) {
-      adjustContrast(-10);
-    }
-  });
-});
-
-</script>
 
 
 <!-- Script -->
@@ -677,8 +456,8 @@ document.getElementById("toggle-mode-btn").addEventListener("click", toggleMode)
         var type = "Daytime";
     }
     if (17 <= hours && hours < 19) {//Evening
-        document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
-        var type = "Evening";
+      document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, #0083B0, #00B4DB); color: white">');
+      var type = "Daytime";
     }
     if (19 <= hours && hours < 5) {//Night
         document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color : white">');
