@@ -105,7 +105,6 @@ Three-Letter Word Assigner
 
 
 <script>
-
     var now = new Date();
     var hours = now.getHours();
     var ft = now.toLocaleString("en-US", {
@@ -113,41 +112,67 @@ Three-Letter Word Assigner
         minute: "numeric",
         hour12: true
     });
-    if (3 <= hours && hours < 6) {//Morning
-        document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, rebeccapurple, lightsteelblue); color: white">');
-        var type = "Towards Morning";
+
+    function toggleMode() {
+        var body = document.getElementsByTagName("body")[0];
+        var btn = document.getElementById("toggleBtn");
+        if (body.classList.contains("dark")) {
+            body.classList.remove("dark");
+            btn.value = "Dark Mode";
+        } else {
+            body.classList.add("dark");
+            btn.value = "Light Mode";
+        }
     }
 
-    if (6 <= hours && hours < 9) {//Morning
-        document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, lightsteelblue, lightskyblue); color: white">');
-        var type = "Early Morning";
+    function setBackground() {
+        var type;
+        var body = document.getElementsByTagName("body")[0];
+        if (3 <= hours && hours < 6) {//Morning
+            body.style.background = "linear-gradient(to right, rebeccapurple, lightsteelblue)";
+            body.style.color = "white";
+            type = "Towards Morning";
+        }
+
+        if (6 <= hours && hours < 9) {//Morning
+            body.style.background = "linear-gradient(to right, lightsteelblue, lightskyblue)";
+            body.style.color = "white";
+            type = "Early Morning";
+        }
+        if (9 <= hours && hours < 12) {//Day
+            body.style.background = "linear-gradient(to right, lightskyblue, #00B4DB)";
+            body.style.color = "white";
+            type = "Morning";
+        }
+        if (12 <= hours && hours < 15) {//Day
+            body.style.background = "linear-gradient(to right, deepskyblue, #00B4DB)";
+            body.style.color = "white";
+            type = "Early Afternoon";
+        }
+        if (15 <= hours && hours < 18) {//Day
+            body.style.background = "linear-gradient(to right, deepskyblue,#C06C84)";
+            body.style.color = "white";
+            type = "Late Afternoon";
+        }
+        if (17 <= hours && hours < 19) {//Evening
+            body.style.background = "linear-gradient(to right, #C06C84, #6C5B7B, #355C7D)";
+            body.style.color = "white";
+            type = "Evening";
+        }
+        if (19 <= hours && hours < 24) {//Night
+            body.style.background = "linear-gradient(to right, darkslateblue, midnightblue)";
+            body.style.color = "white";
+            type = "Nighttime";
+        }
+        if (0 <= hours && hours < 3) {//Night
+            body.style.background = "linear-gradient(to right, #0f2027, midnightblue, rebeccapurple)";
+            body.style.color = "white";
+            type = "Late Nighttime";
+        }
+        document.getElementById("time").innerHTML = `The Time is ${ft} it is ${type}`;
     }
-    if (9 <= hours && hours < 12) {//Day
-        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, lightskyblue, #00B4DB); color: white">');
-        var type = "Morning";
-    }
-    if (12 <= hours && hours < 15) {//Day
-        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, ,deepskyblue); color: white">');
-        var type = "Early Afternoon";
-    }
-    if (15 <= hours && hours < 18) {//Day
-        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, deepskyblue,#C06C84); color: white">');
-        var type = "Late Afternoon";
-    }
-    if (17 <= hours && hours < 19) {//Evening
-        document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
-        var type = "Evening";
-    }
-    if (19 <= hours && hours < 24) {//Night
-        document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, );  background: linear-gradient(to right, darkslateblue, midnightblue); color : white;">');
-        var type = "Nighttime";
-    }
-    if (0 <= hours && hours < 3) {//Night
-        document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, midnightblue, rebeccapurple); color : white">');
-        var type = "Late Nighttime";
-    }
-    document.getElementById("time").innerHTML = `The Time is ${ft} it is ${type}`;
-    //CSS gradient backgrounds from https://uigradients.com
+
+    setBackground();
 </script>
 
 <input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
@@ -1580,6 +1605,10 @@ function speakText() {
 
 
 
+
+
+
+<input type="button" id="toggleBtn" value="Dark Mode" onclick="toggleMode();" />
 
 
 
