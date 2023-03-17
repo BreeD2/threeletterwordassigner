@@ -5,7 +5,9 @@
 body {
 
 margin:100%;
-
+background: #fff;
+ color: #000;
+ transition: all 0.5s ease;
 
 
 }
@@ -125,6 +127,8 @@ button:hover {
 
 }
 
+
+
 #voice {
   font-size: 15px;
   color:white;
@@ -167,12 +171,11 @@ border:2px solid white;
   width:100%;
 }
 
-a {
-  background-color: black;
-  color:white;
-  width:100%;
-  font-size:15px
-}
+
+
+
+
+
 
 .footer1 {
   background-color: tomato;
@@ -299,9 +302,7 @@ body {
 text-shadow: 2px 2px dodgerblue;
 }
 
-a:hover {
-  color:red;
-}
+
 /* Container holding the image and the text */
 .container {
   position:  relative;
@@ -311,6 +312,8 @@ a:hover {
 
 
 }
+
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -324,6 +327,12 @@ a:hover {
   opacity: 0;
   width: 0;
   height: 0;
+}
+
+.wrapper2 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
 #chatContainer {
@@ -392,7 +401,41 @@ a:hover {
   cursor: pointer;
 }
 
+.properties2 {
+  background-color:royalblue;
+   width:50%;
+   color:white;
+   width: 50%;
+   padding: 15px;
+   font-size: 20px;
+   border-radius: 10px;margin-bottom:0%;
+   border: 2px solid white
+}
 
+#pasteBtn {
+  background-color:royalblue;
+  width:50%;
+  color:white;
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+    border:2px solid white;
+    margin:0%:
+}
+
+#pasteBtn:hover {
+  background-color:dodgerblue; width:50%;
+  width:50%;
+  color:white;
+  width: 50%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 10px;
+    border:2px solid white;
+    margin:0%;
+    cursor:cell
+}
 
 
 button {
@@ -542,21 +585,81 @@ input:checked + .slider:before {
 }
 
 
-<style>
-body {
-  padding: 25px;
-  background-color: white;
-  color: black;
-  font-size: 15px;
+
+
+/* Styles for toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-top: 20px;
 }
 
-.dark-mode {
-  background-color: black;
-  color: white;
-  border-radius: 10px;
-    border:2px solid black;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
-</style>
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.round {
+  border-radius: 34px;
+}
+
+/* Styles for dark mode */
+.dark-mode .container {
+  background-color: #222;
+}
+
+.dark-mode .toggle-container {
+  color: #fff;
+}
+
+/* Styles for light mode */
+.light-mode .container {
+  background-color: #fff;
+  color: #000;
+}
+
+.light-mode .toggle-container {
+  color: #000;
+}
+
+
+
+
 
 
     <!-- for styling -->
@@ -818,7 +921,8 @@ input[type="range"] {
 }
 
 a:hover {
-  color:black
+  cursor:.help;
+  color:white
 }
 h1: hover {
   color:red;
