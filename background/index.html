@@ -1,79 +1,1617 @@
 
-<div class="dropdown">
-  <button class="dropbtn">Menu</button>
-  <div class="dropdown-content">
-    <!-- Contrast button -->
-    <button id="contrast-up-btn">Increase Contrast</button>
-    <button id="contrast-down-btn">Decrease Contrast</button>
-  </div>
-</div>
+<html lang="en-US">
+<html>
+ <head>
 
+   <title>Three-Letter Word Assigner</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+   <center>
+
+     <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+     <meta charset="UTF-8">
+        <link rel="stylesheet"href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+     body,h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+     .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+     .fa-anchor,.fa-coffee {font-size:200px}menu {display: none}
+     </style>
+<script src="//code.tidio.co/ysmmcjau1sm1we7brxeshemvjiomtftp.js" async></script>
+
+
+
+  <div id="google_translate_element"></div>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+<br>
+
+<br>
 
 <style>
-
-
-body {
-
-
-background: red;
- color: #000;
-
-
-
-
+h1 {
+  animation-duration: 1s;
+  animation-name: slideout;
+  animation-direction: reverse;
+  animation-timing-function: ease-out;
 }
 
+@keyframes slideout {
+  from {
+    transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+  }
 
-/* Default styles */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-}
 
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Increase contrast */
-.contrast-increase {
-  filter: contrast(1.5);
-}
-
-/* Decrease contrast */
-.contrast-decrease {
-  filter: contrast(0.5);
+  to {
+    transform: scale(1.5);
+            -webkit-transform: scale(2.0);
+  }
 }
 </style>
 
+
+<div class="header2">
+<h1 style="color:mediumgray; font-size:55px;text-shadow: 1px 1px ghostwhite;margin-bottom:2%;">Three-Letter Words Assigner</h1></div>
+
+<a href="background/index.html" style="background-color: tomato;
+color: white;
+width:20%;
+font-size: 20px;
+padding: 10px;
+border-radius: 15px;
+  border:2px solid black;">Go back 
+</a>
+
+
+
+<h1 id='time'style="background-color:royalblue; width:50%;
+  color:white;
+  width: 50%;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+    border:2px solid white;
+    animation: none;
+    margin-bottom:0%
+
+  "></h1>
+
+
+
 <script>
-const contrastUpBtn = document.getElementById('contrast-up-btn');
-const contrastDownBtn = document.getElementById('contrast-down-btn');
-const content = document.querySelector('.content');
+    var now = new Date();
+    var hours = now.getHours();
+    var ft = now.toLocaleString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true
+    });
+    if (5 <= hours && hours < 8) {//Morning
+        document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, #3B4371, #F3904F); color: white">');
+        var type = "Morning";
+    }
+    if (8 <= hours && hours < 17) {//Day
+        document.write('<body style="background: #00B4DB; background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); background: linear-gradient(to right, #0083B0, #00B4DB); color: white">');
+        var type = "Daytime";
+    }
+    if (17 <= hours && hours < 19) {//Evening
+        document.write('<body style="background: #355C7D; background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);\n color: white">');
+        var type = "Evening";
+    }
+    if (19 <= hours && hours < 5) {//Night
+        document.write('<body style="background: #0f2027; background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364);  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); color : white">');
+        var type = "Nighttime";
+    }
+    document.getElementById("time").innerHTML = `The time is ${ft} it is ${type}`;
+    //CSS gradient backgrounds from https://uigradients.com
+</script>
 
-contrastUpBtn.addEventListener('click', () => {
-  content.classList.add('contrast-increase');
-});
+<input type="button" id="btnSearch" value="New Word" onclick="GetValue();" />
+<p id="message">Click "New Word"</p>
+<br>
 
-contrastDownBtn.addEventListener('click', () => {
-  content.classList.add('contrast-decrease');
+<script>
+function CopyToClipboard(id)
+{
+var r = document.createRange();
+r.selectNode(document.getElementById(id));
+window.getSelection().removeAllRanges();
+window.getSelection().addRange(r);
+document.execCommand('copy');
+window.getSelection().removeAllRanges();
+}
+</script>
+
+
+<script>
+function GetValue();{
+     //select the element with ID = "CopyMeID", can be a div, p, or a span, possibly others
+     var textToCopy = document.getElementById("btnSearch");
+
+     //you can target the same element using querySelector() as well
+     //example below:
+     //var textToCopy = document.querySelector('.CopyMeClass');
+
+     //check and see if the user had a text selection range
+     var currentRange;
+     if(document.getSelection().rangeCount > 0)
+     ;{
+          //the user has a text selection range, store it
+          currentRange = document.getSelection().getRangeAt(0);
+          //remove the current selection
+          window.getSelection().removeRange(currentRange);
+     }
+     else
+     {
+          //they didn't have anything selected
+          currentRange = false;
+     }
+
+     //create a selection range
+     var CopyRange = document.createRange();
+     //choose the element we want to select the text of
+     CopyRange.selectNode(textToCopy);
+     //select the text inside the range
+     window.getSelection().addRange(CopyRange);
+     //copy the text to the clipboard
+     document.execCommand("copy");
+
+     //remove our selection range
+     window.getSelection().removeRange(CopyRange);
+
+     //return the old selection range
+     if(currentRange)
+     {
+          window.getSelection().addRange(currentRange);
+     }
+}
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var checkbox = document.querySelector('input[type="checkbox"]');
+
+  checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      console.log('Checked');
+    } else {
+      // do that
+      console.log('Not checked');
+    }
+  });
 });
 </script>
 
 
-<p id="message"style="margin:0%;">Click "New Word"</p>
+<script>
+
+
+To switch the display-style between block and none you can do something like this:
+
+function toggleDiv(id) {
+    var div = document.getElementById(id);
+    div.style.display = div.style.display == "none" ? "block" : "none";
+}
+</script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+
+
+<script>
+function GetValue()
+{
+    var myarray= new Array("aad","aah",
+    "aak",
+    "aal",
+    "aam",
+    "aas",
+    "aba",
+    "abb",
+    "abd",
+    "abo",
+    "abs",
+    "aby",
+    "ace",
+    "ach",
+    "ack",
+    "acs",
+    "act",
+    "add",
+    "ado",
+    "ads",
+    "adz",
+    "aes",
+    "aff",
+    "afs",
+    "aft",
+    "aga",
+    "age",
+    "ago",
+    "ags",
+    "agt",
+    "aha",
+    "ahi",
+    "ahs",
+    "ahu",
+    "aid",
+    "ail",
+    "aim",
+    "ain",
+    "air",
+    "ais",
+    "ait",
+    "ake",
+    "ala",
+    "alb",
+    "ald",
+    "ale",
+    "all",
+    "alp",
+    "als",
+    "alt",
+    "and",
+    "ant",
+    "any",
+    "ama",
+    "amb",
+    "ami",
+    "amp",
+    "amu",
+    "amt",
+    "amy",
+    "ana",
+    "and",
+    "ane",
+    "ani",
+    "ant",
+    "any",
+    "ape",
+    "apo",
+    "app",
+    "apt",
+    "arb",
+    "arc",
+    "are",
+    "arf",
+    "ark",
+    "arm",
+    "aro",
+    "ars",
+    "art",
+    "ary",
+    "ash",
+    "ask",
+    "asp",
+    "ass",
+    "ate",
+    "ats",
+    "att",
+    "auk",
+    "aus",
+    "aux",
+    "ava",
+    "ave",
+    "avo",
+    "awa",
+    "awe",
+    "awk",
+    "awl",
+    "awn",
+    "aww",
+"axe",
+"aye",
+"ayn",
+"azo",
+"ayu",
+"baa",
+"bac",
+"bad",
+"bae",
+"bag",
+"bah",
+"bai",
+"bal",
+"bam",
+"ban",
+"bao",
+"bap",
+"bar",
+"bas",
+"bat",
+"bay",
+"baz",
+"bed",
+"bee",
+"beg",
+"bel",
+"ben",
+"bes",
+"bet",
+"bev",
+"bey",
+"bib",
+"bid",
+"big",
+"bin",
+"bio",
+"bis",
+"bin",
+"bio",
+"bis",
+"bit",
+"bix",
+"biz",
+"boa",
+"bob",
+"bod",
+"bog",
+"boi",
+"boo",
+"bop",
+"bot",
+"bow",
+"box",
+"boy",
+"bra",
+"bro",
+"brr",
+"bub",
+"bud",
+"bug",
+"bum",
+"bun",
+"bur",
+"bus",
+"but",
+"buy",
+"bye",
+"bys",
+"bzz",
+"cab",
+"cad",
+"cam",
+"can",
+"cap",
+"car",
+"cat",
+"caw",
+"cay",
+"cee",
+"cel",
+"chi",
+"cig",
+"cob",
+"cod",
+"cog",
+"col",
+"com",
+"con",
+"coo",
+"cop",
+"cor",
+"cos",
+"cot",
+"cow",
+"cox",
+"coy",
+"coz",
+"cru",
+"cry",
+"cub",
+"cue",
+"cum",
+"cup",
+"cur",
+"cut",
+"cwm",
+"dab",
+"dad",
+"dag",
+"dah",
+"dak",
+"dal",
+"dam",
+"dan",
+"dap",
+"das",
+"dau",
+"daw",
+"day",
+"dba",
+"deb",
+"dee",
+"def",
+"del",
+"den",
+"des",
+"der",
+"dev",
+"dew",
+"dex",
+"dey",
+"dia",
+"dib",
+"did",
+"die",
+"dig",
+"dim",
+"din",
+"dip",
+"dis",
+"dit",
+"div",
+"dna",
+"doc",
+"doe",
+"dog",
+"dol",
+"dom",
+"don",
+"dop",
+"dor",
+"dos",
+"dot",
+"dow",
+"dox",
+"dpi",
+"dry",
+"dub",
+"dud",
+"due",
+"dug",
+"duh",
+"dui",
+"dun",
+"duo",
+"dup",
+"dur",
+"dux",
+"dwy",
+"dye",
+"dyn",
+"ear",
+"eat",
+"eau",
+"ebb",
+"eco",
+"ecu",
+"eda",
+"edd",
+"edh",
+"eds",
+"eel",
+"eek",
+"eff",
+"efs",
+"eft",
+"efs",
+"eft",
+"egg",
+"ego",
+"eke",
+"eld",
+"elf",
+"elk",
+"ell",
+"elm",
+"els",
+"eme",
+"emo",
+"emu",
+"end",
+"eng",
+"ens",
+"eon",
+"era",
+"ere",
+"erg",
+"ern",
+"err",
+"ers",
+"ess",
+"eta",
+"eth",
+"exe",
+"eve",
+"ewe",
+"exy",
+"eye",
+"fab",
+"fad",
+"fag",
+"fah",
+"fam",
+"fan",
+"far",
+"fas",
+"fat",
+"fav",
+"fax",
+"fay",
+"fed",
+"fee",
+"feh",
+"fem",
+"fen",
+"fer",
+"fet",
+"feu",
+"few",
+"fey",
+"fez",
+"fib",
+"fid",
+"fie",
+"fig",
+"fil",
+"fin",
+"fir",
+"fis",
+"fit",
+"fix",
+"flu",
+"fly",
+"fob",
+"foe",
+"fog",
+"foh",
+"fon",
+"fop",
+"for",
+"fou",
+"fox",
+"foy",
+"fro",
+"fry",
+"fub",
+"fud",
+"fug",
+"fun",
+"fur",
+"gab",
+"gad",
+"gae",
+"gag",
+"gah",
+"gal",
+"gam",
+"gan",
+"gap",
+"gar",
+"gas",
+"gat",
+"gaw",
+"gay",
+"ged",
+"gee",
+"gel",
+"gem",
+"gen",
+"get",
+"gey",
+"ghi",
+"gib",
+"gib",
+"gid",
+"gie",
+"gif",
+"gig",
+"gin",
+"gip",
+"gis",
+"git",
+"gnu",
+"goa",
+"gob",
+"god",
+"goe",
+"gog",
+"goi",
+"gol",
+"gom",
+"gon",
+"goo",
+"gor",
+"gos",
+"got",
+"gox",
+"goy",
+"grr",
+"gsm",
+"gua",
+"gub",
+"que",
+"gul",
+"gum",
+"gun",
+"gup",
+"gur",
+"gus",
+"gut",
+"guv",
+"guy",
+"gym",
+"gyn",
+"gyp",
+"had",
+"hae",
+"hag",
+"hah",
+"haj",
+"ham",
+"hao",
+"hap",
+"has",
+"hat",
+"haw",
+"hay",
+"heh",
+"hem",
+"hen",
+"hep",
+"her",
+"hes",
+"het",
+"hew",
+"hex",
+"hey",
+"hic",
+"hid",
+"hie",
+"him",
+"hin",
+"hip",
+"his",
+"hit",
+"hmm",
+"hoa",
+"hob",
+"hod",
+"hoe",
+"hog",
+"hon",
+"hop",
+"hos",
+"hot",
+"how",
+"hoy",
+"hub",
+"hue",
+"hug",
+"huh",
+"hum",
+"hun",
+"hut",
+"hyp",
+"ibn",
+"ice",
+"ich",
+"ick",
+"icy",
+"ids",
+"iff",
+"ifs",
+"igg",
+"ilk",
+"ill",
+"imp",
+"imu",
+"ink",
+"inn",
+"ins",
+"ion",
+"ire",
+"irk",
+"ism",
+"its",
+"ivy",
+"jab",
+"jac",
+"jag",
+"jak",
+"jam",
+"jar",
+"jay",
+"jee",
+"jet",
+"jeu",
+"jew",
+"jib",
+"jig",
+"jin",
+"job",
+"joe",
+"jog",
+"jon",
+"jot",
+"jow",
+"joy",
+"jug",
+"jun",
+"jus",
+"jut",
+"kab",
+"kae",
+"kaf",
+"kar",
+"kas",
+"kat",
+"kay",
+"kea",
+"ked",
+"kef",
+"keg",
+"ken",
+"kep",
+"kex",
+"key",
+"khi",
+"kid",
+"kif",
+"kin",
+"kip",
+"kir",
+"kit",
+"koa",
+"kob",
+"koi",
+"kop",
+"kor",
+"kos",
+"kue",
+"kye",
+"lab",
+"lac",
+"lad",
+"lag",
+"lai",
+"lam",
+"lap",
+"las",
+"lat",
+"lav",
+"law",
+"lax",
+"lay",
+"lea",
+"led",
+"leg",
+"lei",
+"lek",
+"let",
+"leu",
+"lex",
+"lex",
+"ley",
+"lez",
+"lib",
+"lid",
+"lie",
+"lin",
+"lip",
+"lis",
+"lit",
+"lob",
+"log",
+"lol",
+"lop",
+"lor",
+"lot",
+"low",
+"lox",
+"loy",
+"lud",
+"lug",
+"lum",
+"lun",
+"luv",
+"lux",
+"lye",
+"mac",
+"mad",
+"mae",
+"mag",
+"mam",
+"man",
+"map",
+"mar",
+"mas",
+"mat",
+"maw",
+"max",
+"may",
+"mec",
+"med",
+"meg",
+"meh",
+"mel",
+"mem",
+"men",
+"met",
+"mew",
+"mho",
+"mib",
+"mic",
+"mid",
+"mig",
+"mil",
+"mim",
+"min",
+"mir",
+"mis",
+"mix",
+"moa",
+"mob",
+"moc",
+"mod",
+"mog",
+"mol",
+"mom",
+"mon",
+"moo",
+"mop",
+"mor",
+"mos",
+"mot",
+"mow",
+"mud",
+"mug",
+"mum",
+"mun",
+"mus",
+"mut",
+"mux",
+"myc",
+"mym",
+"myx",
+"nab",
+"nae",
+"nag",
+"nah",
+"nan",
+"nap",
+"nat",
+"naw",
+"nay",
+"neb",
+"nef",
+"net",
+"new",
+"nib",
+"nil",
+"nim",
+"nip",
+"nit",
+"nix",
+"nob",
+"nod",
+"nog",
+"noh",
+"nom",
+"non",
+"noo",
+"nop",
+"not",
+"nor",
+"nos",
+"now",
+"nth",
+"nub",
+"nun",
+"nus",
+"nut",
+"oaf",
+"oak",
+"oar",
+"oat",
+"oba",
+"obe",
+"obi",
+"oca",
+"oda",
+"odd",
+"ode",
+"ods",
+"oes",
+"off",
+"oft",
+"ohm",
+"oho",
+"ohs",
+"oik",
+"oil",
+"oka",
+"oke",
+"oks",
+"old",
+"ole",
+"one",
+"ons",
+"oms",
+"one",
+"ono",
+"ons",
+"oof",
+"ooh",
+"oot",
+"ope",
+"ops",
+"opt",
+"ora",
+"orb",
+"orc",
+"ore",
+"oro",
+"ors",
+"ort",
+"ose",
+"oud",
+"oui",
+"our",
+"ous",
+"out",
+"ova",
+"owe",
+"owl",
+"own",
+"oxo",
+"oxy",
+"oye",
+"oys",
+"pac",
+"pad",
+"pah",
+"pak",
+"pal",
+"pam",
+"pan",
+"pap",
+"par",
+"pas",
+"pat",
+"paw",
+"pax",
+"pay",
+"pci",
+"pea",
+"ped",
+"pee",
+"peg",
+"peh",
+"pel",
+"pen",
+"pep",
+"per",
+"pes",
+"pet",
+"pew",
+"phi",
+"pho",
+"pht",
+"pia",
+"pic",
+"pie",
+"pig",
+"pin",
+"pip",
+"pir",
+"pis",
+"pit",
+"piu",
+"pix",
+"pli",
+"plu",
+"ply",
+"pod",
+"poi",
+"pol",
+"pom",
+"poo",
+"pop",
+"pot",
+"pow",
+"pox",
+"pro",
+"pry",
+"psi",
+"pst",
+"pub",
+"pud",
+"pug",
+"pul",
+"pun",
+"pup",
+"pur",
+"pus",
+"put",
+"pya",
+"pye",
+"pyx",
+"qaf",
+"qat",
+"qin",
+"qis",
+"qua",
+"quo",
+"rab",
+"rad",
+"rag",
+"rah",
+"rai",
+"raj",
+"ram",
+"ran",
+"rap",
+"ras",
+"rat",
+"raw",
+"rax",
+"ray",
+"rbi",
+"reb",
+"rec",
+"red",
+"ree",
+"ref",
+"reg",
+"rei",
+"rem",
+"rep",
+"res",
+"ret",
+"rev",
+"rex",
+"rhe",
+"rho",
+"ria",
+"rib",
+"rid",
+"rif",
+"rig",
+"rim",
+"rin",
+"rip",
+"rob",
+"roc",
+"rod",
+"roe",
+"rot",
+"row",
+"rub",
+"rue",
+"rug",
+"rum",
+"run",
+"rut",
+"rya",
+"rye",
+"sab",
+"sac",
+"sad",
+"sae",
+"sag",
+"sal",
+"sap",
+"sat",
+"sau",
+"saw",
+"sax",
+"say",
+"sea",
+"sec",
+"see",
+"seg",
+"sei",
+"sel",
+"sen",
+"ser",
+"ses",
+"sew",
+"sex",
+"sey",
+"sez",
+"sha",
+"she",
+"shh",
+"shu",
+"shy",
+"sib",
+"sic",
+"sig",
+"sim",
+"sin",
+"sip",
+"sir",
+"sis",
+"sit",
+"six",
+"ska",
+"ski",
+"sly",
+"sny",
+"sob",
+"soc",
+"sod",
+"sol",
+"son",
+"sop",
+"sos",
+"sou",
+"sox",
+"sow",
+"soy",
+"spa",
+"spy",
+"sri",
+"sty",
+"sub",
+"sue",
+"suk",
+"sum",
+"sun",
+"sup",
+"suq",
+"sur",
+"swy",
+"syn",
+"tab",
+"tad",
+"tae",
+"tag",
+"tai",
+"taj",
+"tam",
+"tan",
+"tao",
+"tap",
+"tar",
+"tas",
+"tat",
+"tau",
+"tav",
+"taw",
+"tax",
+"tea",
+"tec",
+"ted",
+"tee",
+"teg",
+"tel",
+"ten",
+"ter",
+"tes",
+"tev",
+"tew",
+"tha",
+"the",
+"tho",
+"thy",
+"tic",
+"tie",
+"til",
+"tin",
+"tip",
+"tis",
+"tit",
+"tix",
+"tmi",
+"tob",
+"tod",
+"toe",
+"tog",
+"tom",
+"ton",
+"too",
+"top",
+"tor",
+"tot",
+"tow",
+"toy",
+"tpi",
+"try",
+"tsi",
+"tsk",
+"tub",
+"tug",
+"tui",
+"tum",
+"tun",
+"tup",
+"tut",
+"tux",
+"twa",
+"two",
+"tye",
+"uck",
+"udo",
+"ugh",
+"uhf",
+"uke",
+"ule",
+"ulu",
+"umm",
+"ump",
+"uns",
+"upo",
+"ups",
+"urb",
+"urn",
+"urp",
+"use",
+"uta",
+"ute",
+"uts",
+"vac",
+"vai",
+"van",
+"var",
+"vas",
+"vat",
+"vau",
+"vav",
+"vaw",
+"vee",
+"veg",
+"vet",
+"vex",
+"via",
+"vie",
+"vig",
+"vim",
+"vis",
+"voe",
+"vow",
+"vox",
+"vug",
+"wab",
+"wad",
+"wae",
+"wag",
+"wan",
+"wap",
+"war",
+"was",
+"wat",
+"waw",
+"wax",
+"way",
+"web",
+"wed",
+"wee",
+"wen",
+"wet",
+"wha",
+"who",
+"why",
+"wig",
+"win",
+"wis",
+"wit",
+"wiz",
+"woe",
+"wog",
+"wok",
+"won",
+"woo",
+"wop",
+"wos",
+"wot",
+"wow",
+"wry",
+"wud",
+"wye",
+"wyn",
+"xat",
+"xes",
+"xis",
+"yad",
+"yah",
+"yak",
+"yam",
+"yap",
+"yar",
+"yaw",
+"yay",
+"yea",
+"yee",
+"yeh",
+"yen",
+"yep",
+"yes",
+"yet",
+"yew",
+"yex",
+"yid",
+"yin",
+"yip",
+"yob",
+"yod",
+"yok",
+"yom",
+"yon",
+"you",
+"yow",
+"yuk",
+"yum",
+"yup",
+"zag",
+"zap",
+"xas",
+"zax",
+"zed",
+"zee",
+"zek",
+"zen",
+"zho",
+"zig",
+"zin",
+"zip",
+"zit",
+"zoa",
+"zoo",
+"zuz",);
+    var random = myarray[Math.floor(Math.random() * myarray.length)];
+    //alert(random);
+    document.getElementById("message").innerHTML=random;
+}
+</script>
+
+<div class="wrapper">
+  <label for="text"style="font-size:20px;">Text-to-Speech:</label>
+  <textarea id="text">Enter Three-Letter Word Here.</textarea>
+  <div class="properties">
+    <label for="voice">Voice:</label>
+    <select id="voice"></select>
+    <div></div>
+
+    <label for="pitch">Pitch:</label>
+    <input id="pitch" type="range" min="0.1" max="2" step="0.1" value="1">
+    <output for="pitch"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
+
+    <label for="rate">Rate:</label>
+    <input id="rate" type="range" min="0.1" max="2" step="0.1" value="1">
+    <output for="rate"  style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
+
+    <label for="volume">Volume:</label>
+    <input id="volume" type="range" min="0" max="1" step="0.1" value="1">
+    <output for="volume"style="background-color:tomato; color:white;padding: 5px;margin:5px;border:1px solid white;border-radius: 10px;">1</output>
+  </div>
+  <button id="speak">Speak Text</button>
+</div>
+
+
+
+<script>
+// grab the UI elements to work with
+const textEl = document.getElementById('text');
+const voiceInEl = document.getElementById('voice');
+const pitchInEl = document.getElementById('pitch');
+const rateInEl = document.getElementById('rate');
+const volumeInEl = document.getElementById('volume');
+const pitchOutEl = document.querySelector('output[for="pitch"]');
+const rateOutEl = document.querySelector('output[for="rate"]');
+const volumeOutEl = document.querySelector('output[for="volume"]');
+const speakEl = document.getElementById('speak');
+
+// add UI event handlers
+pitchInEl.addEventListener('change', updateOutputs);
+rateInEl.addEventListener('change', updateOutputs);
+volumeInEl.addEventListener('change', updateOutputs);
+speakEl.addEventListener('click', speakText);
+
+// update voices immediately and whenever they are loaded
+updateVoices();
+window.speechSynthesis.onvoiceschanged = updateVoices;
+
+function updateOutputs() {
+  // display current values of all range inputs
+  pitchOutEl.textContent = pitchInEl.value;
+  rateOutEl.textContent = rateInEl.value;
+  volumeOutEl.textContent = volumeInEl.value;
+}
+
+function updateVoices() {
+  // add an option for each available voice that isn't already added
+  window.speechSynthesis.getVoices().forEach(voice => {
+    const isAlreadyAdded = [...voiceInEl.options].some(option => option.value === voice.voiceURI);
+    if (!isAlreadyAdded) {
+      const option = new Option(voice.name, voice.voiceURI, voice.default, voice.default);
+      voiceInEl.add(option);
+    }
+  });
+}
+
+function speakText() {
+  // stop any speaking in progress
+  window.speechSynthesis.cancel();
+
+  // create new utterance with all the properties
+  const text = textEl.value;
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.voice = window.speechSynthesis.getVoices().find(voice => voice.voiceURI === voiceInEl.value);
+  utterance.pitch = pitchInEl.value;
+  utterance.rate = rateInEl.value;
+  utterance.volume = volumeInEl.value;
+
+  // speak that utterance
+  window.speechSynthesis.speak(utterance);
+}
+</script>
+
+
+
+
+<div class="footer1"><h5><br>© 2023 Three-Letter Word Assigner<h5>
+
+  <h5 style="font-size:15px; background-color:tomato; color:white">Coded by Bree Dorman<br><br><u><a href="mailto:dormanb@vcu.edu">dormanb@vcu.edu</a><u></h5></div>
+
+
+
+
+
+
+<script>
+const toggle = document.querySelector('.toggle input')
+
+toggle.addEventListener('click', () => {
+    const onOff = toggle.parentNode.querySelector('.onoff',  '.btnSearch' )
+    onOff.textContent = toggle.checked ? 'ON' : 'OFF'
+    toggle.parentNode
+
+})
+
+</script>
+<script>
+var button = document.getElementsByClassName("button");
+for (var i = 0; i < buttons.length; i++) {
+    buttons.item(i).addEventListener("click", function () {
+         this.parentNode.parentNode.classList.toggle("flip");
+    });
+}
+</script>
+
+
+
+
+
+<script>
+
+  // Prompt the user for their name
+  var name = prompt("What is your name?", "Type your name here");
+
+  // Show personalized message
+  alert("Hi, " + name + "! It is very nice to meet you. Welcome to Three Letter Words Assigner");
+
+</script>
+
+<script>
+btnSearch.addEventListener('click', () => {
+    const  = toggle.parentNode.querySelector( '.btnSearch')
+
+
+})
+</script>
+
+<script>
+speechSynthesis.speak(new SpeechSynthesisUtterance("Hello, this is your browser speaking."));
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('voice-form');
+    const input = document.getElementById('speech');
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('voice-form');
+    const input = document.getElementById('speech');
+
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      const toSay = input.value.trim();
+      const utterance = new SpeechSynthesisUtterance(toSay);
+      speechSynthesis.speak(utterance);
+      input.value = '';
+    });
+  });
+</script>
+
+<script>
+window.onload = function(){
+        var hour = (new Date()).getHours(); // get the current hours (0-24)
+        var bg = document.getElementById('myBody'); // grab the bg obj
+        if (hour > 10){ // if its past 10am
+          bg.style.backgroundColor = 'red'; // set the bg color
+        } else if (hour > 14){ // if its past 2pm
+          bg.style.backgroundColor = 'blue';
+        }
+
+	//create canvas
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+
+	//set canvas fullscreen
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+	canvas.height = H;
+	canvas.width = W;
+
+	//generate snowflakes and atts
+	var mf = 100; //max flakes
+	var flakes = [];
+
+
+	//loop through empty flakes and apply atts
+for(var i = 0; i < mf; i++){
+		flakes.push({
+			x: Math.random()*W, //set width of flake to random nr between 0 and 1 * width of screen
+			y: Math.random()*H, //set height of flake to random nr between 0 and 1 * height of screen
+			r: Math.random()*5+2, //set radius between 2 and 5
+			d: Math.random() + 1
+		})
+
+	}
+
+
+	//draw flakes
+	function drawFlakes(){
+		ctx.clearRect(0, 0, W, H);
+		ctx.fillStyle = "White";
+		ctx.beginPath();
+		for(var i = 0; i < mf; i++){
+			var f = flakes[i];
+			ctx.moveTo(f.x, f.y);
+			ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+		}
+		ctx.fill();
+		moveFlakes();
+	}
+	var angle = 0;
+	//move flakes
+	function moveFlakes(){
+		angle += 0.01;
+		for(var i = 0; i < mf; i++){
+			var f = flakes[i];
+			f.y += Math.pow(f.d, 2) + 1;
+			f.x += Math.cos(angle)*2;
+
+			if(f.y > H){
+				flakes[i] = {x: Math.random()*W, y: 0, r: f.r, d: f.d};
+			}
+		}
+	}
+
+
+
+	setInterval(drawFlakes, 25);
+}
+</script>
+
+
+
+</body>
+</html>
