@@ -119,6 +119,7 @@ h1 {
       <button id="contrast-up-btn">Increase Contrast</button>
      <button id="contrast-down-btn">Decrease Contrast</button>
 
+     
 
 
       <!-- Zoom in button -->
@@ -166,6 +167,8 @@ h1 {
   background-color: royalblue;
   color:white
 }
+
+
 
 #keyboard-input:hover {
   background-color: dodgerblue;
@@ -251,44 +254,13 @@ blurButton.addEventListener('click', () => {
 });
 </script>
 
-
-
 <script>
-// Get the keyboard elements
-const keyboard = document.getElementById('keyboard');
-const keyboardButtons = document.querySelectorAll('#keyboard-buttons button');
-const textArea = document.getElementById('text');
-
-// Show/hide the keyboard when the button is clicked
-document.getElementById('keyboard-button').addEventListener('click', () => {
-  keyboard.style.display = keyboard.style.display === 'none' ? 'flex' : 'none';
+const opacityButton = document.querySelector('.opacity-btn');
+opacityButton.addEventListener('click', function() {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.style.opacity = '0.5';
 });
 
-// Add event listener for each keyboard button
-keyboardButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const value = button.textContent;
-    if (value === 'Backspace') {
-      textArea.value = textArea.value.slice(0, -1);
-    } else if (value === 'Clear') {
-      textArea.value = '';
-    } else {
-      textArea.value += value;
-    }
-  });
-});
-
-// Add event listener to textarea to update its value when keyboard buttons are pressed
-textArea.addEventListener('keydown', (event) => {
-  const keyPressed = event.key;
-  if (keyPressed === 'Backspace') {
-    textArea.value = textArea.value.slice(0, -1);
-  } else if (keyPressed === 'Enter') {
-    // Do something when Enter is pressed
-  } else {
-    textArea.value += keyPressed;
-  }
-});
 
 </script>
 
