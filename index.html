@@ -132,6 +132,10 @@ h1 {
       <button class="filter-btn" data-filter="sepia(100%)">Sepia</button>
       <button class="filter-btn" data-filter="saturate(200%)">Saturate</button>
       <button class="filter-btn" data-filter="hue-rotate(90deg)">Hue Rotate</button>
+      <button class="filter-btn" data-filter="blur(1px)">Blur</button>
+
+
+
 
 
 
@@ -230,6 +234,26 @@ h1 {
 </style>
 
 <script>
+const buttons = document.querySelectorAll('.buttons button');
+const blurButton = document.getElementById('blur-button');
+const img = document.querySelector('img');
+let currentFilter = '';
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    currentFilter = button.getAttribute('data-filter');
+    img.style.filter = currentFilter;
+  });
+});
+
+blurButton.addEventListener('click', () => {
+  img.style.filter = 'blur(5px)';
+});
+</script>
+
+
+
+<script>
 // Get the keyboard elements
 const keyboard = document.getElementById('keyboard');
 const keyboardButtons = document.querySelectorAll('#keyboard-buttons button');
@@ -271,21 +295,26 @@ textArea.addEventListener('keydown', (event) => {
 
 
 <script>
-// Get the contrast buttons
-var contrastUpBtn = document.getElementById("contrast-up-btn");
-var contrastDownBtn = document.getElementById("contrast-down-btn");
+// Get the HTML element that you want to modify the contrast of
+const htmlElement = document.documentElement;
 
-// Add event listener to the contrast up button
-contrastUpBtn.addEventListener('click', () => {
-  document.body.classList.remove('contrast-decrease');
-  document.body.classList.add('contrast-increase');
-});
+// Get the buttons for increasing and decreasing contrast
+const contrastUpBtn = document.getElementById("contrast-up-btn");
+const contrastDownBtn = document.getElementById("contrast-down-btn");
 
-// Add event listener to the contrast down button
-contrastDownBtn.addEventListener('click', () => {
-  document.body.classList.remove('contrast-increase');
-  document.body.classList.add('contrast-decrease');
-});
+// Set up event listeners for the buttons
+contrastUpBtn.addEventListener("click", increaseContrast);
+contrastDownBtn.addEventListener("click", decreaseContrast);
+
+// Function to increase contrast
+function increaseContrast() {
+  htmlElement.style.filter = "contrast(1.5)";
+}
+
+// Function to decrease contrast
+function decreaseContrast() {
+  htmlElement.style.filter = "contrast(0.5)";
+}
 
 
 </script>
