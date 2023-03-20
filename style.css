@@ -1024,7 +1024,8 @@ input[type="range"] {
 
 a:hover {
   cursor:.help;
-  color:white
+  color:white;
+  background-color: black
 }
 h1: hover {
   color:red;
