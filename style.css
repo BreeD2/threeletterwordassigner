@@ -14,6 +14,268 @@ background: #fff;
 
 }
 
+
+
+#share-buttons {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid white;
+  width:50%
+
+}
+
+
+
+.share-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.share-button:last-child {
+  margin-bottom: 0; /* remove bottom margin from last button */
+}
+This will make the share buttons stack vertically in a column. The align-items: center property centers the buttons horizontally within the container. The margin-bottom property on each button creates a gap between the buttons, and the :last-child pseudo-class is used to remove the bottom margin from the last button in the column.
+
+.sidebar2 {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  overflow-y: auto;
+  z-index: 1;
+  overflow: auto;
+}
+
+.dropup-btn2 {
+  background-color: royalblue;
+  border: 2px solid white;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width:100%;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+  width:15%;
+  margin-left: 85%;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: royalblue;
+  min-width: 160px;
+  bottom: 50px;
+  color:white;
+  z-index: 1;
+  width:100%;
+  spacing:
+}
+
+.dropup-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border:2px solid white;
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  margin: 50px; /* Add equal margin on all sides */
+}
+
+#search-input {
+  flex-grow: 1;
+  padding: 10px;
+  background-color: tomato;
+  color: white;
+}
+
+#search-input::placeholder {
+  color: white; /* Change the color here to your desired color */
+}
+
+#search-button {
+  background-color: royalblue;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#search-input {
+  padding: 10px;
+  font-size: 18px;
+  width: 300px;
+}
+
+#search-button {
+  padding: 10px;
+  font-size: 18px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#definition-container {
+  margin-top: 50px;
+  display: none;
+  text-align: center;
+}
+
+#definition-title {
+  font-size: 24px;
+}
+
+#definition-text {
+  font-size: 18px;
+}
+
+#search-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#search-button {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result-container {
+    margin-top: 30px;
+}
+
+#result-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.result-item {
+    margin-bottom: 10px;
+}
+
+
+ul {
+  color:white;
+  background-color: orangered;
+  color: white;
+  font-size: 20px;
+width:50%;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+
+}
+
+.dropup-content a:hover {
+  background-color: dodgerblue;
+  color:white;
+  border:2px solid white;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+.dropup:hover .dropbtn {
+  background-color: dodgerblue;
+}
+
+.dropup-btn2:hover {
+  background-color: dodgerblue;
+  font-size: 20px;
+  border: 2px solid white;
+}
+
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  top: 100%;
+  margin-top: 5px;
+}
+
+.dropdown-content2 a {
+  display: block;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: royalblue;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.dropdown-content2 a:hover {
+  background-color: dodgerblue;
+}
+
+.show {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
 .light-mode {
   background-color: #fff;
   color: #000;

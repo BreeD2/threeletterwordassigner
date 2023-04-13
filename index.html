@@ -2074,7 +2074,149 @@ function speakText() {
 }
 </script>
 
+<br>
 
+
+
+<div class="sidebar2">
+  <div class="dropup">
+    <button class="dropbtn2"style="background-color: royalblue;
+    border: 2px solid white;
+    color: #fff;" onclick="toggleDropdown()">Share</button>
+    <div class="dropup-content" id="myDropdown">
+      <a href="#" class="share-button" data-platform="twitter">Twitter</a>
+      <a href="#" class="share-button" data-platform="facebook">Facebook</a>
+      <a href="#" class="share-button" data-platform="linkedin">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<h1>Three-Letter Word Search</h1>
+ <div id="search-container">
+     <input type="text" id="search-input" placeholder="Enter a three-letter word">
+     <button id="search-button">Search</button>
+ </div>
+ <div id="result-container">
+     <ul id="result-list"></ul>
+ </div>
+
+<script>
+const words = [
+    { word: 'aad', definition: 'Active Directory: A directory service developed by Microsoft for managing users, computers, and other resources in a Windows network environment. It is commonly used for authentication, authorization, and identity management in enterprise networks.' },
+{ word: 'aal', definition: 'American Airlines: A major airline company based in the United States, providing domestic and international air transportation services.' },
+{ word: 'aam', definition: 'Asset and Archive Management: A term used in the field of digital asset management (DAM) to refer to the processes and systems used for managing digital assets, such as images, videos, audio files, and other multimedia content, throughout their lifecycle, including creation, organization, storage, retrieval, and preservation.' },
+
+    { word: 'dog', definition: 'a domesticated carnivorous mammal' },
+    { word: 'cat', definition: 'a small domesticated carnivorous mammal' },
+    // Add more words and definitions here
+];
+
+const searchInput = document.getElementById('search-input');
+const searchButton = document.getElementById('search-button');
+const resultList = document.getElementById('result-list');
+
+searchButton.addEventListener('click', searchWords);
+
+function searchWords() {
+    const searchTerm = searchInput.value.toLowerCase();
+    resultList.innerHTML = '';
+
+    if (searchTerm.length === 3) {
+        const matchingWords = words.filter(word => word.word === searchTerm);
+        if (matchingWords.length > 0) {
+            matchingWords.forEach(word => {
+                const li = document.createElement('li');
+                li.className = 'result-item';
+                li.textContent = `${word.word}: ${word.definition}`;
+                resultList.appendChild(li);
+            });
+        } else {
+            const li = document.createElement('li');
+            li.className = 'result-item';
+            li.textContent = 'No matching words found';
+            resultList.appendChild(li);
+        }
+    } else {
+        const li = document.createElement('li');
+        li.className = 'result-item';
+        li.textContent = 'Please enter a three-letter word';
+        resultList.appendChild(li);
+    }
+}
+</script>
+
+
+<script>
+document.getElementById('search-button').addEventListener('click', function() {
+  var searchInput = document.getElementById('search-input').value;
+  // Replace the below code with your own logic to fetch definition
+  var definitionTitle = document.getElementById('definition-title');
+  var definitionText = document.getElementById('definition-text');
+  // Example definition
+  definitionTitle.innerText = searchInput;
+  definitionText.innerText = "This is the definition of " + searchInput;
+  document.getElementById('definition-container').style.display = 'block';
+});
+</script>
+<script>
+document.getElementById('search-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Retrieve search query from input field
+  var searchQuery = document.getElementById('search-input').value;
+
+  // Perform search operation with search query
+  search(searchQuery);
+});
+
+function search(query) {
+  // Implement your search logic here
+  // ... Your code for searching goes here ...
+  // You can use AJAX, fetch, or other methods to send the search query to a server and retrieve search results
+  // Once you have the search results, you can update the DOM to display the results
+}
+</script>
+
+<script>
+function toggleDropdown() {
+  var dropdown = document.getElementById("myDropdown");
+  if (dropdown.style.display === "block") {
+    dropdown.style.display = "none";
+    document.getElementById("share-button").style.marginTop = "10px"; // Adjust button position
+  } else {
+    dropdown.style.display = "block";
+    document.getElementById("share-button").style.marginTop = "calc(-1 * (100% - 40px))"; // Adjust button position
+  }
+}
+</script>
+
+
+<script>
+var shareButtons = document.querySelectorAll(".share-button");
+
+shareButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+    var shareUrl = "https://example.com"; // Change this to the URL you want to share
+    var title = "Check out this website!"; // Change this to the title of the page you want to share
+    var shareText = "I found this website and thought you might like it!"; // Change this to the text you want to share
+    var shareVia = button.getAttribute("data-platform");
+
+    switch (shareVia) {
+      case "twitter":
+        var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText) + "&hashtags=example";
+        break;
+      case "facebook":
+        var url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title);
+        break;
+      case "linkedin":
+        var url = "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title) + "&summary=" + encodeURIComponent(shareText);
+        break;
+    }
+
+    window.open(url, "_blank");
+  });
+});
+</script>
 
 
 
@@ -2224,6 +2366,32 @@ for(var i = 0; i < mf; i++){
 
 	setInterval(drawFlakes, 25);
 }
+</script>
+
+
+
+
+<script>
+document.getElementById("share-button").addEventListener("click", function() {
+  var shareUrl = "https://example.com"; // Change this to the URL you want to share
+  var title = "Check out this website!"; // Change this to the title of the page you want to share
+  var shareText = "I found this website and thought you might like it!"; // Change this to the text you want to share
+  var shareVia = "twitter"; // Change this to the social media platform you want to share on
+
+  switch (shareVia) {
+    case "twitter":
+      var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText) + "&hashtags=example";
+      break;
+    case "facebook":
+      var url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title);
+      break;
+    case "linkedin":
+      var url = "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title) + "&summary=" + encodeURIComponent(shareText);
+      break;
+  }
+
+  window.open(url, "_blank");
+});
 </script>
 
 
