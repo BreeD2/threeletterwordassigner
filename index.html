@@ -159,6 +159,40 @@ h1 {
     </div>
   </div>
 </div>
+<div class="sidebar2">
+  <!-- Dropdown button -->
+  <div class="dropdown2">
+    <button class="dropbtn2" onclick="toggleDropdown()">Share</button>
+
+    <!-- Dropdown content -->
+    <div class="dropdown-content2" id="myDropdown2">
+      <a href="#" class="share-button" data-platform="twitter">Twitter</a>
+      <a href="#" class="share-button" data-platform="facebook">Facebook</a>
+      <a href="#" class="share-button" data-platform="linkedin">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleDropdown() {
+  var dropdownContent = document.getElementById("myDropdown2");
+  dropdownContent.classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content2");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
 
 <style>
 /* Default styles */
@@ -2078,20 +2112,12 @@ function speakText() {
 
 
 
-<div class="sidebar2">
-  <div class="dropup">
-    <button class="dropbtn2"style="background-color: royalblue;
-    border: 2px solid white;
-    color: #fff;" onclick="toggleDropdown()">Share</button>
-    <div class="dropup-content" id="myDropdown">
-      <a href="#" class="share-button" data-platform="twitter">Twitter</a>
-      <a href="#" class="share-button" data-platform="facebook">Facebook</a>
-      <a href="#" class="share-button" data-platform="linkedin">LinkedIn</a>
-    </div>
-  </div>
-</div>
 
-<h2>Three-Letter Word Definition</h2>
+
+<div class="definition">
+Three-Letter Word Assigner Definition
+
+</div>
 <div id="search-container">
     <input type="text" id="search-input" placeholder="Enter a three-letter word here">
     <button id="search-button">Search Word</button>

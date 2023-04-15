@@ -102,6 +102,20 @@ This will make the share buttons stack vertically in a column. The align-items: 
   border:2px solid white;
 }
 
+.definition {
+  text-align: center;
+color:white;
+font-size: 37px;
+text-shadow:2px 2px royalblue
+}
+
+.definition:hover {
+  text-align: center;
+color:white;
+font-size: 37px;
+text-shadow:2px 2px tomato
+}
+
 #search-container {
   width:100%;
   border-radius: 10%;
@@ -209,6 +223,71 @@ padding: 10px;
   border: 2px solid black
 
 }
+
+.sidebar2 {
+  /* Default styles */
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* specify the width you want for the sidebar */
+  position: fixed; /* fixed position to keep it always visible */
+  right: 100; /* position it on the left side */
+  top: 0; /* position it at the top */
+  bottom: 0; /* set the height to cover the whole height of the viewport */
+  overflow-y: auto; /* enable vertical scrolling if the content exceeds the height */
+  z-index: 1; /* set a higher z-index to make it appear above other elements */
+  overflow: auto;
+}
+
+.dropdown2 {
+  /* Add your dropdown styles here */
+  position: relative;
+}
+
+.dropbtn2 {
+  /* Add your dropbtn styles here */
+  background-color: royalblue;
+  border: 2px solid white;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* Style for the buttons and links */
+.dropbtn, .share-button {
+  background-color: royalblue;
+  border: 2px solid white;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content2 {
+  display: none;
+  font-size: 10px;
+}
+
+.dropdown-content2 a {
+  /* Add your share-button styles here */
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 8px 0;
+  font-size: 10px;
+}
+
+.dropdown-content2 a:hover {
+  /* Add your hover styles here */
+  background-color: #ddd;
+}
+
+.show {
+  /* Add your show styles here */
+  display: block;
+}
+
 
 .dropup-content a:hover {
   background-color: dodgerblue;
