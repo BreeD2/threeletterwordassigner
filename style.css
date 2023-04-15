@@ -230,7 +230,7 @@ padding: 10px;
   flex-direction: column;
   width: 200px; /* specify the width you want for the sidebar */
   position: fixed; /* fixed position to keep it always visible */
-  right: 100; /* position it on the left side */
+  right: 0; /* position it on the left side */
   top: 0; /* position it at the top */
   bottom: 0; /* set the height to cover the whole height of the viewport */
   overflow-y: auto; /* enable vertical scrolling if the content exceeds the height */
@@ -252,10 +252,71 @@ padding: 10px;
   cursor: pointer;
 }
 
+.share-button:hover {
+  /* Add your hover styles here */
+  background-color: #3e8ca9; /* update the background color on hover */
+}
+
+.share-button[data-platform="twitter"] {
+  color:white;
+  background-color: tomato;
+  font-size: 15px;
+  border:2px solid black;
+}
+.share-button:hover[data-platform="twitter"] {
+  color:white;
+  background-color: orangered;
+  font-size: 15px;
+  border:2px solid black;
+}
+
+.share-button[data-platform="facebook"] {
+  color:white;
+  background-color: tomato;
+  font-size: 15px;
+  border:2px solid black;
+
+}
+
+.share-button:hover[data-platform="facebook"] {
+  color:white;
+  background-color: orangered;
+  font-size: 15px;
+  border:2px solid black;
+
+}
+
+.share-button[data-platform="linkedin"] {
+  color:white;
+  background-color: tomato;
+  font-size: 15px;
+  border:2px solid black;
+}
+
+.share-button:hover[data-platform="linkedin"] {
+  color:white;
+  background-color: orangered;
+  font-size: 15px;
+  border:2px solid black;
+}
+
+
 /* Style for the buttons and links */
 .dropbtn, .share-button {
   background-color: royalblue;
   border: 2px solid white;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the buttons and links */
+.dropbtn2:hover, .share-button2:hover {
+  background-color: tomato;
+  border: 2px solid black;
   color: #fff;
   cursor: pointer;
   padding: 8px 12px;
