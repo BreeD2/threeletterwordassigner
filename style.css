@@ -266,7 +266,7 @@ padding: 10px;
 .share-button:hover[data-platform="twitter"] {
   color:white;
   background-color: orangered;
-  font-size: 15px;
+  font-size: 20px;
   border:2px solid black;
 }
 
@@ -281,7 +281,7 @@ padding: 10px;
 .share-button:hover[data-platform="facebook"] {
   color:white;
   background-color: orangered;
-  font-size: 15px;
+  font-size: 20px;
   border:2px solid black;
 
 }
@@ -296,10 +296,34 @@ padding: 10px;
 .share-button:hover[data-platform="linkedin"] {
   color:white;
   background-color: orangered;
-  font-size: 15px;
+  font-size: 20px;
   border:2px solid black;
 }
+.share-button[data-platform="instagram"] {
+  color:white;
+  background-color: tomato;
+  font-size: 15px;
+  border:2px solid black
+}
 
+.share-button:hover[data-platform="instagram"] {
+  color:white;
+  background-color: orangered;
+  font-size: 20px;
+  border:2px solid black;
+}
+.share-button[data-platform="pinterest"] {
+  color:white;
+  background-color: tomato;
+  font-size: 15px;
+  border:2px solid black
+}
+.share-button:hover[data-platform="pinterest"] {
+  color:white;
+  background-color: orangered;
+  font-size: 20px;
+  border:2px solid black;
+}
 
 /* Style for the buttons and links */
 .dropbtn, .share-button {
@@ -323,6 +347,7 @@ padding: 10px;
   text-align: center;
   text-decoration: none;
   display: block;
+  font-size: 20px;
 }
 
 .dropdown-content2 {
