@@ -2091,14 +2091,18 @@ function speakText() {
   </div>
 </div>
 
-<h1>Three-Letter Word Search</h1>
- <div id="search-container">
-     <input type="text" id="search-input" placeholder="Enter a three-letter word">
-     <button id="search-button">Search</button>
- </div>
- <div id="result-container">
-     <ul id="result-list"></ul>
- </div>
+<h2>Three-Letter Word Definition</h2>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Enter a three-letter word here">
+    <button id="search-button">Search Word</button>
+      <ul id="result-list"></ul>
+
+</div>
+
+
+
+
+
 
 <script>
 const words = [
@@ -3008,6 +3012,333 @@ const words = [
 { word: "sir", definition: "A respectful term of address for a man, typically one of higher rank or status." },
 { word: "sis", definition: "A colloquial term for a sister." },
 { word: "sit", definition: "To rest in a seated position with the weight supported by the buttocks and thighs." },
+{ word: "six", definition: "The number following five and preceding seven." },
+{ word: "ska", definition: "A style of fast-paced Jamaican music that originated in the 1950s and influenced the development of rocksteady and reggae." },
+{ word: "ski", definition: "A long, narrow, flat-bottomed device designed for gliding over snow, typically attached to boots or shoes." },
+{ word: "sly", definition: "Cunning or deceitful in behavior or actions; characterized by a secret or sly manner." },
+{ word: "sny", definition: "A colloquial term for a sneeze." },
+{ word: "sob", definition: "To cry or weep loudly, often accompanied by convulsive or gasping sounds." },
+{ word: "soc", definition: "An abbreviation for 'soccer'." },
+{ word: "sod", definition: "A surface layer of soil that includes grass and the plant's underlying roots, often used for lawns or playing fields." },
+{ word: "sol", definition: "A musical note that represents the fifth step of a major or minor scale." },
+{ word: "son", definition: "A male child or offspring." },
+{ word: "sop", definition: "A piece of food used to soak up liquid, such as bread or biscuit dipped in gravy or soup." },
+{ word: "sos", definition: "A Morse code distress signal used to request help or assistance." },
+{ word: "sou", definition: "A former French coin, equal to one twentieth of a franc." },
+{ word: "sox", definition: "A colloquial term for socks." },
+{ word: "sow", definition: "To plant seeds in the ground in order to grow crops." },
+{ word: "soy", definition: "A protein-rich legume commonly used in the production of various food products, such as tofu and soy milk." },
+{ word: "spa", definition: "A commercial establishment that offers health and relaxation treatments, such as massages, facials, and baths." },
+{ word: "spy", definition: "A person employed by a government or organization to secretly collect information about enemies or competitors." },
+{ word: "sri", definition: "A title of respect used before the name of a Hindu god or a Buddhist monk." },
+{ word: "sty", definition: "A pen or enclosure for keeping pigs or other livestock." },
+{ word: "sub", definition: "An abbreviation for 'submarine' or 'substitute'." },
+{ word: "sue", definition: "To initiate legal proceedings against someone in a court of law." },
+{ word: "suk", definition: "A colloquial term for sugar." },
+{ word: "sum", definition: "The total or aggregate amount of something; the result of adding together multiple numbers or quantities." },
+{ word: "sun", definition: "The star that is the central body of the solar system and the primary source of light and heat for Earth." },
+{ word: "sup", definition: "To eat or drink something, especially in a slow, leisurely manner; to take a meal or a drink." },
+{ word: "suq", definition: "A marketplace or bazaar, typically found in Middle Eastern or North African countries." },
+{ word: "sur", definition: "A prefix denoting a person who acts as a substitute or temporary replacement for someone else." },
+{ word: "swy", definition: "A colloquial term for a public house or tavern." },
+{ word: "syn", definition: "A colloquial term for synthetic marijuana, a type of designer drug that mimics the effects of cannabis." },
+{ word: "tab", definition: "A small, flat piece of material, typically rectangular in shape, used for labeling or indexing purposes." },
+{ word: "tad", definition: "A small child or young person." },
+{ word: "tae", definition: "A colloquial term for toe." },
+{ word: "tag", definition: "A label or marker attached to an object for identification or tracking purposes." },
+{ word: "tai", definition: "A cocktail made with rum, curaçao, and lime juice, typically served over crushed ice." },
+{ word: "taj", definition: "A tall, conical cap worn by Muslim men in South Asia and the Middle East, often made of fine muslin or silk." },
+{ word: "tam", definition: "A type of Scottish cap traditionally made of wool or tweed, often worn as part of Scottish Highland dress." },
+{ word: "tan", definition: "To cause the skin to become brown by exposure to the sun or other sources of ultraviolet radiation." },
+{ word: "tao", definition: "A Chinese philosophy or way of life that emphasizes living in harmony with the Tao, the natural way of the universe." },
+{ word: "tap", definition: "A device used to control the flow of liquid from a container, typically a barrel or keg." },
+{ word: "tar", definition: "A dark, sticky substance obtained from the distillation of wood or coal, used for various purposes, such as road surfacing and roofing." },
+{ word: "tas", definition: "An abbreviation for 'taste,' often used in culinary contexts to refer to the sense of taste or the act of tasting." },
+{ word: "tat", definition: "To make decorative or repetitive stitches with a needle and thread, often used in reference to traditional or folk embroidery." },
+{ word: "tau", definition: "The 19th letter of the Greek alphabet, often used to represent the mathematical constant equal to 2π." },
+{ word: "tav", definition: "A horizontal mark or stroke, used as a graphic element in writing systems or music notation." },
+{ word: "taw", definition: "To convert animal hides into leather by soaking them in a solution containing tannin." },
+{ word: "tax", definition: "A compulsory financial charge or levy imposed by a government on individuals, businesses, or properties to fund public expenditures." },
+{ word: "tea", definition: "An aromatic beverage made by steeping the leaves of the Camellia sinensis plant in hot water." },
+{ word: "tec", definition: "A colloquial term for a private investigator or detective." },
+{ word: "ted", definition: "To spread out, arrange, or tidy something, typically used in reference to straw or hay." },
+{ word: "tee", definition: "A small peg or support used to hold a golf ball above the ground for the first stroke of each hole." },
+{ word: "teg", definition: "A young sheep or lamb." },
+{ word: "tel", definition: "A suffix used in biology and medicine to refer to a structure or part of an organism that is associated with distance, such as telecommunications or telescope." },
+{ word: "ten", definition: "The number that follows nine and precedes eleven in the base-10 numeral system." },
+{ word: "ter", definition: "A colloquial abbreviation for 'terrific' or 'terrifying,' often used to express enthusiasm or excitement." },
+{ word: "tes", definition: "A unit of magnetic flux density in the International System of Units (SI), symbolized by 'T'." },
+{ word: "tev", definition: "A unit of energy equivalent to one trillion electron volts (1 TeV = 10^12 eV), used in particle physics." },
+{ word: "tew", definition: "To work hard or laboriously; to exert effort or energy to accomplish a task." },
+{ word: "tha", definition: "A colloquial abbreviation for 'that,' often used in informal writing or speech." },
+{ word: "the", definition: "A definite article used to specify one or more particular things or people." },
+{ word: "tho", definition: "A colloquial abbreviation for 'though,' often used in informal writing or speech." },
+{ word: "thy", definition: "An archaic or poetic form of the possessive pronoun 'your,' used to indicate ownership by the person or people being spoken to." },
+{ word: "tic", definition: "A sudden, rapid, repetitive, nonrhythmic movement or sound, typically associated with certain medical conditions or nervous disorders." },
+{ word: "tie", definition: "A strip of material, typically fabric or leather, that is used to fasten or secure two or more things together." },
+{ word: "til", definition: "A colloquial abbreviation for 'until,' often used in informal writing or speech." },
+{ word: "tin", definition: "A soft, silvery-white metallic element with atomic number 50, often used as a protective coating for other metals or as an alloy in various applications." },
+{ word: "tip", definition: "The pointed or tapered end of something; a small piece of advice or suggestion; to give a gratuity or small amount of money as a reward for service." },
+{ word: "tis", definition: "A colloquial abbreviation for 'it is' or 'it's,' often used in informal writing or speech." },
+{ word: "tit", definition: "A small bird of various species, typically with a slender bill and often known for its cheerful songs." },
+{ word: "tix", definition: "A colloquial abbreviation for 'tickets,' often used in informal writing or speech." },
+{ word: "tmi", definition: "A colloquial abbreviation for 'too much information,' used to indicate that someone has shared an excessive or overly personal amount of information." },
+{ word: "tob", definition: "A colloquial abbreviation for 'tobacco,' often used in informal writing or speech." },
+{ word: "tod", definition: "A unit of weight used in the tanning industry, equal to 28 pounds (12.7 kilograms)." },
+{ word: "toe", definition: "One of the five digits of the foot, typically ending in a rounded portion that makes contact with the ground when walking or running." },
+{ word: "tog", definition: "A garment worn for warmth or comfort, such as a coat or sweater; to dress or clothe oneself." },
+{ word: "tom", definition: "A colloquial abbreviation for 'tomorrow,' often used in informal writing or speech." },
+{ word: "ton", definition: "A unit of weight, equal to 2,000 pounds (907.185 kilograms) in the United States, or 2,240 pounds (1,016.047 kilograms) in the United Kingdom." },
+{ word: "too", definition: "An adverb meaning 'in addition' or 'also'; an excessive or larger amount or degree." },
+{ word: "top", definition: "The highest or uppermost part of something; a garment that covers the upper body; to surpass or exceed in amount, degree, or performance." },
+{ word: "tor", definition: "A rocky hill or peak, especially a prominent one in a mountain range; a high, craggy rock or pile of rocks." },
+{ word: "tot", definition: "A very young child; a small amount or quantity; to count or add up a total." },
+{ word: "tow", definition: "To pull or haul something behind, typically using a rope or chain; the act of pulling or hauling something behind." },
+{ word: "toy", definition: "An object for play, often designed for children, that is typically small, movable, and used for amusement or entertainment." },
+{ word: "tpi", definition: "A colloquial abbreviation for 'teeth per inch,' often used in the context of describing the density or coarseness of a cutting tool or blade." },
+{ word: "try", definition: "To make an attempt or effort to do something; to test or experiment with; a test or attempt to accomplish something." },
+{ word: "tsi", definition: "A colloquial abbreviation for 'trillium security integrator,' often used in the context of security and surveillance systems." },
+{ word: "tsk", definition: "A sound made by clicking the tongue against the roof of the mouth, often used to express disapproval, annoyance, or disappointment." },
+{ word: "tub", definition: "A large, open container, typically made of plastic, metal, or ceramic, used for holding or storing liquids or solids; to wash or bathe in a tub." },
+{ word: "tug", definition: "To pull or haul something with force, typically using a rope or chain; a strong, forceful pull or haul." },
+{ word: "tui", definition: "A species of bird native to New Zealand, known for its distinctive plumage and unique song." },
+{ word: "tum", definition: "A colloquial abbreviation for 'tumor,' often used in informal writing or speech." },
+{ word: "tun", definition: "A large barrel or cask used for holding liquids, especially wine or beer; a measure of liquid capacity, equal to 252 gallons (954 liters)." },
+{ word: "tup", definition: "A male sheep, especially one used for breeding; to copulate or mate, especially in reference to sheep." },
+{ word: "tut", definition: "A sound made to express disapproval, annoyance, or impatience; to make such a sound." },
+{ word: "tux", definition: "A colloquial abbreviation for 'tuxedo,' a formal evening suit typically worn by men on special occasions." },
+{ word: "twa", definition: "A colloquial abbreviation for 'time-weighted average,' often used in the context of financial calculations or investment performance." },
+{ word: "two", definition: "The cardinal number that is equal to the sum of one and one; a numerical value or amount representing the quantity '2'." },
+{ word: "tye", definition: "A knot or fastening made by tying a cord, rope, or ribbon; to fasten or secure with a knot." },
+{ word: "uck", definition: "A colloquial abbreviation for 'ukulele,' a small, four-stringed musical instrument similar to a guitar, often associated with Hawaiian music." },
+{ word: "udo", definition: "A Japanese plant of the genus Aralia, often used as a decorative foliage plant in gardens." },
+{ word: "ugh", definition: "An exclamation used to express disgust, frustration, or annoyance." },
+{ word: "uhf", definition: "A colloquial abbreviation for 'ultra-high frequency,' often used in the context of radio waves, television signals, or communication technology." },
+{ word: "uke", definition: "A colloquial abbreviation for 'ukulele,' a small, four-stringed musical instrument similar to a guitar, often associated with Hawaiian music." },
+
+{ word: "ule", definition: "A suffix used to form nouns denoting smallness or a diminutive size, often used in technical or scientific terms." },
+{ word: "ulu", definition: "A traditional Inuit or Eskimo knife, typically with a broad curved blade made of stone or bone, used for cutting and slicing." },
+{ word: "umm", definition: "A vocalized sound or expression used to indicate hesitation, uncertainty, or a pause in speech." },
+{ word: "ump", definition: "A colloquial abbreviation for 'umpire,' a person who officiates a game or contest and enforces the rules, especially in sports." },
+{ word: "uns", definition: "A colloquial abbreviation for 'unsaturated,' often used in the context of chemistry or nutrition to refer to a compound or food that contains double or triple bonds between carbon atoms." },
+{ word: "upo", definition: "A type of gourd, also known as bottle gourd or calabash, used for culinary or decorative purposes in many cultures." },
+{ word: "ups", definition: "A colloquial abbreviation for 'upsilon,' the 20th letter of the Greek alphabet, often used in mathematical or scientific contexts." },
+{ word: "urb", definition: "A colloquial abbreviation for 'urban,' often used to describe characteristics, activities, or culture associated with cities or densely populated areas." },
+{ word: "urn", definition: "A container, typically made of metal, glass, or ceramics, used for holding the ashes of a cremated body or for decorative purposes." },
+{ word: "urp", definition: "A colloquial term for vomiting or regurgitation, often used in informal or humorous contexts." },
+{ word: "use", definition: "To employ or utilize something for a purpose; the act or process of employing or utilizing something." },
+{ word: "uta", definition: "A genus of lizards native to Australia and New Guinea, known for their unique appearance and behavior." },
+{ word: "ute", definition: "A colloquial abbreviation for 'utility vehicle,' a type of motor vehicle, typically with an open bed for carrying cargo, often used in farming, construction, or recreational activities." },
+{ word: "uts", definition: "A colloquial abbreviation for 'unit trusts,' a type of investment fund that pools money from multiple investors to invest in a diversified portfolio of assets." },
+{ word: "vac", definition: "A colloquial abbreviation for 'vacuum' or 'vacation,' often used in informal writing or speech." },
+{ word: "vai", definition: "A colloquial abbreviation for 'variable annuity,' a type of investment product that combines elements of insurance and investment, often used for retirement planning." },
+{ word: "van", definition: "A type of vehicle, typically with a covered body and used for transporting goods or people; a short form of 'vanguard,' meaning the forefront or leading position in a particular field." },
+{ word: "var", definition: "A colloquial abbreviation for 'variable,' a symbol or value that can change in a mathematical or logical expression." },
+
+{ word: "vas", definition: "Short for 'vasectomy,' a surgical procedure for male sterilization by cutting or blocking the vas deferens, preventing sperm from reaching the semen that is ejaculated." },
+
+{ word: "vat", definition: "A large container, typically made of wood or metal, used for holding or storing liquids, solids, or food products." },
+
+{ word: "vau", definition: "The 22nd letter of the Hebrew alphabet (ו), transliterated as 'v' or 'w,' with a numerical value of 6." },
+
+{ word: "vav", definition: "The 6th letter of the Hebrew alphabet (ו), transliterated as 'v' or 'w,' with a numerical value of 6." },
+
+{ word: "vaw", definition: "A variant spelling of 'vav,' the 6th letter of the Hebrew alphabet (ו), transliterated as 'v' or 'w,' with a numerical value of 6." },
+
+{ word: "vee", definition: "The letter 'V' or 'v' in the alphabet." },
+
+{ word: "veg", definition: "Short for 'vegetarian' or 'vegetarianism,' a person who abstains from eating meat or animal products for ethical, environmental, or health reasons." },
+
+{ word: "vet", definition: "A short form of 'veterinarian,' a person who practices veterinary medicine and provides medical care for animals." },
+
+{ word: "vex", definition: "To annoy, irritate, or provoke someone, typically with petty or persistent actions or behavior." },
+
+{ word: "via", definition: "By way of, through, or with the help of a particular place, route, or means." },
+
+{ word: "vie", definition: "To compete eagerly or strive for superiority, often in a rivalry or contest." },
+
+{ word: "vig", definition: "A colloquial abbreviation for 'vigorish,' a percentage charged by a bookmaker or lender as a fee or commission for services, typically on bets or loans." },
+
+{ word: "vim", definition: "Energy, vitality, or enthusiasm in doing something." },
+
+{ word: "vis", definition: "Short for 'viscosity,' a measure of a fluid's resistance to flow or deformation, often used in physics, engineering, and fluid mechanics." },
+
+{ word: "voe", definition: "A deep inlet or bay, especially in Scotland or Shetland." },
+
+{ word: "vow", definition: "A solemn promise or commitment, typically made to a deity or a loved one." },
+
+{ word: "vox", definition: "A Latin word meaning 'voice,' often used in medical, scientific, or technical contexts to refer to vocal sounds or communications." },
+{ word: "vug", definition: "A small cavity or hollow space, often found in rocks or minerals, typically formed by gas bubbles or other geological processes." },
+
+{ word: "wab", definition: "A colloquial abbreviation for 'web,' referring to the World Wide Web, a system of interconnected hypertext documents accessed through the internet." },
+
+{ word: "wad", definition: "A small mass, bundle, or lump of a soft or compressible material, often used for padding, packing, or stuffing." },
+
+{ word: "wae", definition: "A Scottish or Northern English word meaning 'woe' or 'sorrow,' often used in expressions of sympathy or condolence." },
+
+{ word: "wag", definition: "To move briskly or repeatedly from side to side or up and down, typically with a swinging or swaying motion." },
+
+{ word: "wan", definition: "Pale or sickly in appearance, lacking color or vitality." },
+
+{ word: "wap", definition: "A colloquial abbreviation for 'whack' or 'hit,' typically used to describe a heavy blow or strike." },
+
+{ word: "war", definition: "A state of armed conflict between nations, often involving organized armies or forces." },
+
+{ word: "was", definition: "The past tense of the verb 'be,' used to indicate a state, condition, or action that occurred in the past." },
+
+{ word: "wat", definition: "A colloquial abbreviation for 'what,' often used in informal or dialectal speech." },
+
+{ word: "waw", definition: "A variant spelling of 'whew,' an exclamation used to express relief, surprise, or amazement." },
+
+{ word: "wax", definition: "A solid, yellowish, malleable substance obtained from the honeycomb of bees, used in candles, polishes, and other products." },
+
+{ word: "way", definition: "A method, manner, or mode of doing something; a route, path, or direction to a destination." },
+
+{ word: "web", definition: "A network of interconnected hypertext documents accessed through the internet, also known as the World Wide Web." },
+
+{ word: "wed", definition: "To join together in marriage; to unite or connect closely." },
+
+{ word: "wee", definition: "Very small in size, extent, or duration; tiny or diminutive." },
+
+{ word: "wen", definition: "A benign, non-cancerous growth or tumor, typically on the skin or in other soft tissues." },
+
+{ word: "wet", definition: "Covered or saturated with liquid, moisture, or water." },
+
+{ word: "wha", definition: "A colloquial abbreviation for 'what' or 'who,' often used in informal or dialectal speech." },
+{ word: "who", definition: "Used to ask or refer to the identity of a person or people." },
+{ word: "why", definition: "For what reason or purpose; the reason or cause for something." },
+
+{ word: "wig", definition: "A covering for the head made of artificial or natural hair, typically worn to conceal hair loss, as part of a costume, or for fashion purposes." },
+
+{ word: "win", definition: "To be successful or victorious in a competition, contest, or battle; to achieve a desired outcome." },
+
+{ word: "wis", definition: "A Scottish or Northern English word meaning 'know,' often used in informal or dialectal speech." },
+
+{ word: "wit", definition: "The ability to think, reason, or understand; intelligence or mental acumen." },
+
+{ word: "wiz", definition: "A colloquial abbreviation for 'wizard,' typically used to refer to a person who is highly skilled or knowledgeable in a particular field or activity." },
+
+{ word: "woe", definition: "Great sorrow, distress, or misery; a state of suffering or affliction." },
+
+{ word: "wog", definition: "A derogatory term that has been used historically as a racial slur against people from countries in West Asia, North Africa, and the Middle East." },
+
+{ word: "wok", definition: "A versatile round-bottomed cooking pan, originating from China, used for stir frying, deep frying, searing, and boiling." },
+
+{ word: "won", definition: "The past participle of the verb 'win,' used to indicate a successful outcome or victory in the past." },
+
+{ word: "woo", definition: "To seek the favor, affection, or attention of someone, typically with the intent of establishing a romantic relationship." },
+
+{ word: "wop", definition: "A derogatory term that has been used historically as a racial slur against people of Italian descent." },
+
+{ word: "wos", definition: "A colloquial abbreviation for 'was' or 'were,' used in informal or dialectal speech." },
+
+{ word: "wot", definition: "A colloquial abbreviation for 'what,' often used in informal or dialectal speech." },
+
+{ word: "wow", definition: "An expression of astonishment, admiration, or excitement; to impress or amaze greatly." },
+
+{ word: "wry", definition: "Twisted or bent to one side; dryly humorous or mocking in tone or expression." },
+
+{ word: "wud", definition: "A Scottish or Northern English word meaning 'mad' or 'crazy,' often used in informal or dialectal speech." },
+
+{ word: "wye", definition: "A letter of the alphabet, typically used as a vowel in Welsh or a consonant in English." },
+{ word: "wyn", definition: "An obsolete word meaning 'to decrease,' 'to diminish,' or 'to wane,' typically used in Old English and Middle English literature." },
+
+{ word: "xat", definition: "A colloquial abbreviation for 'chat,' often used in online messaging or social media." },
+
+{ word: "xes", definition: "A colloquial abbreviation for 'kisses,' often used in online messaging or social media to convey affection or greetings." },
+
+{ word: "xis", definition: "The 14th letter of the Greek alphabet (ξ), used in some technical or mathematical contexts." },
+
+{ word: "yad", definition: "A hand or arm, typically used in dialectal or informal speech." },
+
+{ word: "yah", definition: "A colloquial abbreviation for 'yes,' often used in informal speech or writing." },
+
+{ word: "yak", definition: "A large, long-haired bovine mammal native to the Himalayas and Central Asia, known for its shaggy coat and curved horns; also, to talk continuously or at length in a loud, tedious, or repetitive manner." },
+
+{ word: "yam", definition: "A type of edible tuberous root, typically used in cooking or as a dietary staple in some cultures." },
+
+{ word: "yap", definition: "To bark sharply or repeatedly, typically in a high-pitched voice, as a small dog; also, to talk noisily or annoyingly." },
+
+{ word: "yar", definition: "A colloquial abbreviation for 'year,' often used in informal speech or writing." },
+
+{ word: "yaw", definition: "To deviate from a straight course or path; to swerve or veer." },
+
+{ word: "yay", definition: "An exclamation of joy, approval, or enthusiasm; often used to express excitement or celebration." },
+
+{ word: "yea", definition: "An archaic or formal word meaning 'yes' or 'indeed,' often used in formal or poetic language." },
+
+{ word: "yee", definition: "A colloquial exclamation used to express excitement, surprise, or enthusiasm; often used in online or informal contexts." },
+
+{ word: "yeh", definition: "A colloquial abbreviation for 'yeah' or 'yes,' often used in informal speech or writing." },
+
+{ word: "yen", definition: "A strong desire or craving for something; also, the basic unit of currency in Japan." },
+
+{ word: "yep", definition: "A colloquial abbreviation for 'yes,' often used in informal speech or writing." },
+
+{ word: "yes", definition: "An affirmative response or answer; an expression of agreement or approval." },
+{ word: "yet", definition: "Up to the present or a specified time; still; also, in addition; moreover." },
+
+{ word: "yew", definition: "A type of coniferous tree, typically with dark green needles and red, berry-like cones; also, the hard, fine-grained wood of this tree, often used in carpentry or for making furniture." },
+
+{ word: "yex", definition: "An obsolete word meaning 'to hiccup' or 'to belch,' typically used in Old English and Middle English literature." },
+
+{ word: "yid", definition: "A derogatory term for a Jewish person, often considered offensive and used to express discrimination or prejudice." },
+
+{ word: "yin", definition: "In Chinese philosophy, the passive, negative, feminine principle of the universe, characterized by darkness, cold, and weakness; also, a concept used in traditional Chinese medicine to represent the dark, feminine, and receptive qualities in nature and the human body, in contrast to yang." },
+
+{ word: "yip", definition: "A short, sharp cry or bark, typically made by a small dog; also, to make such a cry or bark." },
+
+{ word: "yob", definition: "A colloquial term for a young man, often associated with a working-class or rough background; also, an informal abbreviation for 'yobbo,' meaning a rowdy or disorderly person." },
+
+{ word: "yod", definition: "The 10th letter of the Hebrew alphabet (י), used in the Hebrew language and Jewish scriptural texts; also, a unit of linear measurement used in typesetting, equal to 1/72 of an inch." },
+
+{ word: "yok", definition: "A colloquial abbreviation for 'yoke,' meaning a wooden or metal bar used to connect a pair of animals, typically oxen or horses, for pulling a load; also, to join or connect things together." },
+
+{ word: "yom", definition: "A Hebrew word meaning 'day,' often used in Jewish religious or cultural contexts to refer to a day of significance or observance." },
+
+{ word: "yon", definition: "At or to a distance, especially within sight; over there; also, a dialectal word meaning 'yonder' or 'that' used in informal or regional speech." },
+
+{ word: "you", definition: "Used as the second person pronoun to refer to the person or people being spoken to or addressed; also, used in a general or indefinite sense to refer to anyone or everyone." },
+
+{ word: "yow", definition: "A colloquial exclamation used to express surprise, pain, or excitement; also, a cry made by a cat or other animal." },
+
+{ word: "yuk", definition: "A colloquial term meaning 'disgust' or 'disgusting,' often used to express distaste or aversion." },
+{ word: "yum", definition: "An informal exclamation used to express pleasure or satisfaction, typically in response to good food or drink; also, an onomatopoeic word imitating the sound of someone eating heartily." },
+
+{ word: "yup", definition: "A colloquial and informal contraction of 'yes' or 'yeah,' used to express agreement or affirmation; also, a variant spelling of 'yep' or 'yuppie,' meaning a young urban professional." },
+
+{ word: "zag", definition: "To make a sudden change in direction, typically with a sharp turn or angle; also, a zigzag pattern or course." },
+
+{ word: "zap", definition: "To make a sudden, forceful effect or movement; also, a sudden burst of energy or sound; to attack or destroy suddenly or with intense effect; also, a colloquial term for an electric shock or jolt." },
+
+{ word: "xas", definition: "A unit of currency used in Iran, equivalent to one hundredth of a rial; also, an obsolete unit of currency used in South Africa, equivalent to one hundredth of a rand." },
+
+{ word: "zax", definition: "A tool or weapon resembling an axe or hatchet, typically with a curved or hooked blade; also, a colloquial term for an axe or hatchet." },
+
+{ word: "zed", definition: "The name of the letter 'Z' in the British and Canadian alphabets, derived from the Greek letter 'zeta'; also, a colloquial term for zero or nothing." },
+
+{ word: "zee", definition: "The name of the letter 'Z' in the American and Australian alphabets, derived from the pronunciation of the letter's name; also, a colloquial term for a buzzing or humming sound." },
+
+{ word: "zek", definition: "A colloquial term for a prisoner or inmate in a labor camp, especially in the former Soviet Union or other communist countries; also, a slang term for a prisoner or convict." },
+
+{ word: "zen", definition: "A school of Mahayana Buddhism that emphasizes meditation and intuition as a means to enlightenment, often associated with simplicity, mindfulness, and self-discipline; also, a state of calm and tranquility." },
+
+{ word: "zho", definition: "An informal abbreviation for the Chinese language or Zhongwen, one of the Sino-Tibetan languages spoken by the Chinese people." },
+
+{ word: "zig", definition: "To make a sudden change in direction, typically with a sharp turn or angle; also, a sharp change or variation in a process or situation." },
+
+{ word: "zin", definition: "A colloquial term for wine, often used to refer to red wine or a particular type of wine; also, a slang term for excitement or enthusiasm." },
+
+{ word: "zip", definition: "To move or travel quickly or with energy; also, a fastener consisting of two rows of interlocking teeth that are closed or opened by a sliding tab; a sound or effect imitating something moving quickly." },
+{ word: "zit", definition: "A colloquial term for a pimple, a small, inflamed bump on the skin, typically caused by acne or other skin conditions; also, a minor problem or annoyance." },
+
+{ word: "zoa", definition: "A plural form of the word 'zoon,' which is a general term for an animal, especially one belonging to a particular group or classification; also, a colloquial term for zoology, the scientific study of animals." },
+
+{ word: "zoo", definition: "A place where live animals are kept for public exhibition, often organized by species or type of animal; also, a colloquial term for a chaotic or disorderly situation or place." },
+
+{ word: "zuz", definition: "A colloquial term for a unit of currency, especially a small or insignificant amount; also, a slang term for a kiss, often used in affectionate or playful contexts." },
+
+
 
     // Add more words and definitions here
 ];
@@ -3040,7 +3371,7 @@ function searchWords() {
     } else {
         const li = document.createElement('li');
         li.className = 'result-item';
-        li.textContent = 'Please enter a three-letter word';
+        li.textContent = 'Results';
         resultList.appendChild(li);
     }
 }
@@ -3056,7 +3387,7 @@ document.getElementById('search-button').addEventListener('click', function() {
   // Example definition
   definitionTitle.innerText = searchInput;
   definitionText.innerText = "This is the definition of " + searchInput;
-  document.getElementById('definition-container').style.display = 'block';
+  document.getElementById('definition-container').style.display = 'visible';
 });
 </script>
 <script>
@@ -3078,18 +3409,6 @@ function search(query) {
 }
 </script>
 
-<script>
-function toggleDropdown() {
-  var dropdown = document.getElementById("myDropdown");
-  if (dropdown.style.display === "block") {
-    dropdown.style.display = "none";
-    document.getElementById("share-button").style.marginTop = "10px"; // Adjust button position
-  } else {
-    dropdown.style.display = "block";
-    document.getElementById("share-button").style.marginTop = "calc(-1 * (100% - 40px))"; // Adjust button position
-  }
-}
-</script>
 
 
 <script>
