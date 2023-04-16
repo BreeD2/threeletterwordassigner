@@ -477,6 +477,8 @@ background-color: tomato;
         margin: 0%;
 }
 
+
+
 #pronounceBtn {
   color:white;
   background-color: tomato;
@@ -486,6 +488,12 @@ background-color: tomato;
   margin: 0%;
 }
 
+/* CSS code for styling the Word of the Day */
+#wordOfTheDay {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
 
 
 .light-mode {

@@ -3505,6 +3505,45 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 
 <!-- JavaScript code for the quiz/game logic here -->
 
+<!-- HTML code for displaying the Word of the Day -->
+<h2>Word of the Day:</h2>
+<p id="wordOfTheDay">Word</p>
+
+<!-- JavaScript code for randomly selecting and displaying the Word of the Day -->
+<script>
+// JavaScript code for randomly selecting and displaying the Word of the Day
+var words = ["cat", "dog", "bat", "sky", "joy", "sun", "moon", "sea", "man", "cup"];
+
+function getRandomWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
+
+function displayWordOfTheDay() {
+  var wordElement = document.getElementById("wordOfTheDay");
+  var currentDate = new Date();
+  var currentDay = currentDate.getDate();
+  var storedDay = localStorage.getItem("wordOfTheDayDate");
+
+  // Check if stored day matches current day, if not, generate a new word
+  if (!storedDay || parseInt(storedDay) !== currentDay) {
+    var wordOfTheDay = getRandomWord();
+    wordElement.textContent = wordOfTheDay;
+
+    // Store the current day in localStorage to keep track
+    localStorage.setItem("wordOfTheDayDate", currentDay);
+  } else {
+    // If stored day matches current day, retrieve the stored word
+    var storedWord = localStorage.getItem("wordOfTheDay");
+    wordElement.textContent = storedWord;
+  }
+}
+
+// Call the displayWordOfTheDay function to display the Word of the Day on page load
+displayWordOfTheDay();
+
+</script>
+
+
 <script>
     // JavaScript code for the quiz/game logic
     var questions = [
