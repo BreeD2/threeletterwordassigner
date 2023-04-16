@@ -3544,6 +3544,18 @@ for (var i = 0; i < buttons.length; i++) {
 
 
 
+<input type="text" id="wordInput">
+<button id="pronounceBtn">Pronounce Word</button>
+
+<script>
+// JavaScript code
+document.getElementById("pronounceBtn").addEventListener("click", function() {
+  var inputWord = document.getElementById("wordInput").value; // get input word
+  var synth = window.speechSynthesis;
+  var utterance = new SpeechSynthesisUtterance(inputWord); // create utterance with input word
+  synth.speak(utterance); // trigger text-to-speech with input word
+});
+</script>
 
 
 <script>

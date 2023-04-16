@@ -316,7 +316,9 @@ text-shadow:2px 2px orangered
   text-decoration: none;
   display: block;
   position: sticky;
+  top: 0; /* Specify the position where you want the element to become sticky */
 }
+
 
 /* Style for the buttons and links */
 .dropbtn2:hover, .share-button2:hover {
