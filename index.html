@@ -4705,6 +4705,44 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     });
 </script>
 
+<!-- HTML markup for the "Word of the Day" feature -->
+<h2>Word of the Day:</h2>
+<p id="wordOfTheDay">Word</p>
+
+<!-- JavaScript code for randomly selecting and displaying the Word of the Day -->
+<script>
+// JavaScript code for randomly selecting and displaying the Word of the Day
+var words = ["cat", "dog", "bat", "sky", "joy", "sun", "moon", "sea", "man", "cup"];
+
+function getRandomWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
+
+function displayWordOfTheDay() {
+  var wordElement = document.getElementById("wordOfTheDay");
+  wordElement.textContent = getRandomWord();
+}
+
+// Call the displayWordOfTheDay function to display the Word of the Day on page load
+displayWordOfTheDay();
+
+</script>
+
+<!-- Optional CSS for styling the "Word of the Day" feature -->
+<style>
+/* CSS styles for the "Word of the Day" feature */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#wordOfTheDay {
+  font-size: 20px;
+  color: white;
+}
+</style>
+
+
 <div class="feedback">Feedback Form</div>
  <button id="openForm">Open Form</button>
  <div id="feedbackForm" class="feedback-form">
