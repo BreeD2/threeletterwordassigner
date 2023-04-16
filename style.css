@@ -106,7 +106,8 @@ This will make the share buttons stack vertically in a column. The align-items: 
   text-align: center;
 color:white;
 font-size: 37px;
-text-shadow:2px 2px royalblue
+text-shadow:2px 2px royalblue;
+margin-top: 2%;
 }
 
 .definition:hover {
