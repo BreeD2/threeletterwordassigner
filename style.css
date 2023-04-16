@@ -320,6 +320,7 @@ text-shadow:2px 2px orangered
 }
 
 
+
 /* Style for the buttons and links */
 .dropbtn2:hover, .share-button2:hover {
   background-color: tomato;
@@ -416,9 +417,40 @@ text-shadow:2px 2px orangered
 
 
 
+#wordQuestion {
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin: 0;
+}
+
+#wordAnswer {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#submitAnswerBtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
 
 
 
+#result {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#pronounceBtn {
+  color:white;
+  background-color: tomato;
+  border:2px solid black;
+  border-radius: 10px;
+  width:50%;
+  margin: 0%;
+}
 
 
 

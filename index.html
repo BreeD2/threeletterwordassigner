@@ -2122,7 +2122,7 @@ Three-Letter Word Assigner Definition
 <div id="search-container">
     <input type="text" id="search-input" placeholder="Enter a three-letter word here">
     <button id="search-button">Search Word</button>
-    <ul id="result-list"style="background-color:royalblue"></ul>
+    <ul id="result-list"style="background-color:royalblue;margin-top:10%:">Results</ul>
 </div>
 
 
@@ -3513,6 +3513,62 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 });
 </script>
 
+<h1>Three-Letter Word Quiz</h1>
+<p id="wordQuestion" style="font-size: 18px; margin-bottom: 20px;">Can you name three-letter words?</p>
+<input type="text" id="wordAnswer" placeholder="Enter your answer...">
+<button id="submitAnswerBtn">Submit</button>
+<p id="resultMessage" style="width: 50%; font-size: 20px; margin-top: 10px;">&nbsp;</p>
+
+<!-- JavaScript code for the quiz/game logic here -->
+
+
+ <script>
+ // JavaScript code for the quiz/game logic
+ var questions = [
+     {
+         question: "What is a three-letter word for a round fruit?",
+         answer: "apple"
+     },
+     {
+         question: "What is a three-letter word for a domestic animal?",
+         answer: "cat"
+     },
+     {
+         question: "What is a three-letter word for a cold season?",
+         answer: "ice"
+     }
+     // Add more questions here
+ ];
+
+ var currentQuestionIndex = 0;
+ var submitBtn = document.getElementById("submitAnswerBtn");
+ var answerInput = document.getElementById("wordAnswer");
+ var result = document.getElementById("resultMessage");
+
+ submitBtn.addEventListener("click", function() {
+     var userAnswer = answerInput.value.toLowerCase();
+     var correctAnswer = questions[currentQuestionIndex].answer;
+
+     if (userAnswer === correctAnswer) {
+         result.textContent = "Correct!";
+     } else {
+         result.textContent = "Incorrect. The correct answer is: " + correctAnswer;
+     }
+
+     // Move to the next question
+     currentQuestionIndex++;
+     if (currentQuestionIndex < questions.length) {
+         document.getElementById("wordQuestion").textContent = questions[currentQuestionIndex].question;
+         answerInput.value = "";
+     } else {
+         document.getElementById("wordQuestion").textContent = "Quiz completed!";
+         answerInput.disabled = true;
+         submitBtn.disabled = true;
+     }
+ });
+
+
+ </script>
 
 
 <div class="footer1"><h5><br>© 2023 Three-Letter Word Assigner<h5>
@@ -3544,18 +3600,7 @@ for (var i = 0; i < buttons.length; i++) {
 
 
 
-<input type="text" id="wordInput">
-<button id="pronounceBtn">Pronounce Word</button>
 
-<script>
-// JavaScript code
-document.getElementById("pronounceBtn").addEventListener("click", function() {
-  var inputWord = document.getElementById("wordInput").value; // get input word
-  var synth = window.speechSynthesis;
-  var utterance = new SpeechSynthesisUtterance(inputWord); // create utterance with input word
-  synth.speak(utterance); // trigger text-to-speech with input word
-});
-</script>
 
 
 <script>
