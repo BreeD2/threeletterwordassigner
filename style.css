@@ -107,24 +107,24 @@ This will make the share buttons stack vertically in a column. The align-items: 
 .definition {
   text-align: center;
 color:white;
-font-size: 37px;
-text-shadow:2px 2px royalblue;
-margin-top: 2%;
+font-size: 40px;
+text-shadow:2px 2px tomato;
+margin-top: 1%;
 }
 
 .definition:hover {
   text-align: center;
 color:white;
-font-size: 37px;
-text-shadow:2px 2px tomato
+font-size: 40px;
+text-shadow:2px 2px orangered
 }
 
 #search-input {
   flex-grow: 1;
   padding: 10px;
-  background-color: tomato;
+  background-color: royalblue;
   color: white;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 10px;
   font-size: 18px;
   text-align: center;
@@ -132,7 +132,7 @@ text-shadow:2px 2px tomato
 }
 
 #search-input:hover {
-  background-color: orangered;
+  background-color: dodgerblue;
 }
 
 #search-input::placeholder {
@@ -140,19 +140,19 @@ text-shadow:2px 2px tomato
 }
 
 #search-button {
-  background-color: royalblue;
+  background-color: tomato;
   color: #fff;
   padding: 10px;
-  border: 2px solid white;
+  border: 2px solid black;
   font-size: 18px;
   cursor: pointer;
   border-radius: 10px;
 }
 
 #search-button:hover {
-  background-color: #007bff;
+  background-color: orangered;
   color: #fff;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -174,13 +174,15 @@ text-shadow:2px 2px tomato
   margin: 0;
   visibility: visible;
   color: white;
-  background-color: tomato;
+  background-color: royalblue;
   border-radius: 10px;
+  border: 2px solid white
 }
 
 #result-list:hover {
-  background-color: orangered;
-  border-radius: 10%;
+  background-color: dodgerblue;
+  border-radius: 10px;
+    border: 2px solid white
 }
 
 .result-item {
@@ -1241,8 +1243,15 @@ textarea:invalid {
 }
 .feedback{
   color:white;
-  font-size: 35px;
-  text-shadow: 2px 2px tomato
+  font-size: 50px;
+  text-shadow: 2px 2px royalblue;
+  margin-bottom: 1%;
+}
+.feedback{
+  color:white;
+  font-size: 50px;
+  text-shadow: 2px 2px dodgerblue;
+  margin-bottom: 1%;
 }
 input[type="submit"] {
   background-color: tomato;
