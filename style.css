@@ -315,6 +315,7 @@ text-shadow:2px 2px orangered
   text-align: center;
   text-decoration: none;
   display: block;
+  position: sticky;
 }
 
 /* Style for the buttons and links */
