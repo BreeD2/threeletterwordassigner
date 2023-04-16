@@ -3435,67 +3435,7 @@ function search(query) {
 
 
 
-<script>
-var shareButtons = document.querySelectorAll(".share-button");
 
-shareButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-    var shareUrl = "https://example.com"; // Change this to the URL you want to share
-    var title = "Check out this website!"; // Change this to the title of the page you want to share
-    var shareText = "I found this website and thought you might like it!"; // Change this to the text you want to share
-    var shareVia = button.getAttribute("data-platform");
-
-    switch (shareVia) {
-      case "twitter":
-        var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText) + "&hashtags=example";
-        break;
-      case "facebook":
-        var url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title);
-        break;
-      case "linkedin":
-        var url = "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title) + "&summary=" + encodeURIComponent(shareText);
-        break;
-    }
-
-    window.open(url, "_blank");
-  });
-});
-</script>
-
-
- <script>
- var openFormButton = document.getElementById('openForm');
-var closeFormButton = document.getElementById('closeForm');
-var feedbackForm = document.getElementById('feedbackForm');
-
-openFormButton.addEventListener('click', function() {
-  feedbackForm.style.display = 'block'; // Show the feedback form
-});
-
-closeFormButton.addEventListener('click', function() {
-  feedbackForm.style.display = 'none'; // Hide the feedback form
-});
-
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // prevent form submission
-  var name = document.getElementById('name').value;
-  var email = document.getElementById('email').value;
-  var feedback = document.getElementById('feedback').value;
-
-  // You can perform further validation or data processing here before submitting the form
-  // For simplicity, we'll just log the data to the console
-  console.log('Name:', name);
-  console.log('Email:', email);
-  console.log('Feedback:', feedback);
-
-  // You can also send the form data to a server using AJAX or other methods
-  // For example, you can use the Fetch API or XMLHttpRequest to send the data to a backend server for processing
-
-  // After form submission, you can show a success message or close the popup
-  alert('Thank you for your feedback!');
-  feedbackForm.style.display = 'none'; // Hide the feedback form
-});
-</script>
 
 <div class="quiz">Three-Letter Word Quiz</div>
 <p id="wordQuestion">Can you name all the three-letter words?</p>
@@ -4760,7 +4700,67 @@ h2 {
    <button id="closeForm">Close</button>
  </div>
 
+ <script>
+ var shareButtons = document.querySelectorAll(".share-button");
 
+ shareButtons.forEach(function(button) {
+   button.addEventListener("click", function() {
+     var shareUrl = "https://example.com"; // Change this to the URL you want to share
+     var title = "Check out this website!"; // Change this to the title of the page you want to share
+     var shareText = "I found this website and thought you might like it!"; // Change this to the text you want to share
+     var shareVia = button.getAttribute("data-platform");
+
+     switch (shareVia) {
+       case "twitter":
+         var url = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText) + "&hashtags=example";
+         break;
+       case "facebook":
+         var url = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title);
+         break;
+       case "linkedin":
+         var url = "https://www.linkedin.com/shareArticle?url=" + encodeURIComponent(shareUrl) + "&title=" + encodeURIComponent(title) + "&summary=" + encodeURIComponent(shareText);
+         break;
+     }
+
+     window.open(url, "_blank");
+   });
+ });
+ </script>
+
+
+  <script>
+  var openFormButton = document.getElementById('openForm');
+ var closeFormButton = document.getElementById('closeForm');
+ var feedbackForm = document.getElementById('feedbackForm');
+
+ openFormButton.addEventListener('click', function() {
+   feedbackForm.style.display = 'block'; // Show the feedback form
+ });
+
+ closeFormButton.addEventListener('click', function() {
+   feedbackForm.style.display = 'none'; // Hide the feedback form
+ });
+
+ document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+   event.preventDefault(); // prevent form submission
+   var name = document.getElementById('name').value;
+   var email = document.getElementById('email').value;
+   var feedback = document.getElementById('feedback').value;
+
+   // You can perform further validation or data processing here before submitting the form
+   // For simplicity, we'll just log the data to the console
+   console.log('Name:', name);
+   console.log('Email:', email);
+   console.log('Feedback:', feedback);
+
+   // You can also send the form data to a server using AJAX or other methods
+   // For example, you can use the Fetch API or XMLHttpRequest to send the data to a backend server for processing
+
+   // After form submission, you can show a success message or close the popup
+   alert('Thank you for your feedback!');
+   feedbackForm.style.display = 'none'; // Hide the feedback form
+ });
+ </script>
 
 
 
