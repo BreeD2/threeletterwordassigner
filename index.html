@@ -5851,10 +5851,25 @@ function getRandomWord() {
 
 function displayWordOfTheDay() {
   var wordElement = document.getElementById("wordOfTheDay");
-  wordElement.textContent = getRandomWord();
+  var currentDate = new Date();
+  var currentDay = currentDate.getDate();
+  var storedDay = localStorage.getItem("wordOfTheDayDate");
+
+  // Check if stored day matches current day, if not, generate a new word
+  if (!storedDay || parseInt(storedDay) !== currentDay) {
+    var wordOfTheDay = getRandomWord();
+    wordElement.textContent = wordOfTheDay;
+
+    // Store the current day in localStorage to keep track
+    localStorage.setItem("wordOfTheDayDate", currentDay);
+  } else {
+    // If stored day matches current day, retrieve the stored word
+    var storedWord = localStorage.getItem("wordOfTheDay");
+    wordElement.textContent = storedWord;
+  }
 }
 
-// Call the displayWordOfTheDay function to display the Word of the Day on page load
+// Call the displayWordOfTheDay function to display the Word of the Day on page load and refresh
 displayWordOfTheDay();
 
 </script>
