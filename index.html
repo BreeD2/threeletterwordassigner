@@ -3514,10 +3514,10 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
 </script>
 
 <h1>Three-Letter Word Quiz</h1>
-<p id="wordQuestion" style="font-size: 18px; margin-bottom: 20px;">Can you name three-letter words?</p>
-<input type="text" id="wordAnswer" placeholder="Enter your answer...">
+<p id="wordQuestion">Can you name three-letter words?</p>
+<input type="text" id="wordAnswer" placeholder="Enter your answer..."style="color: white;">
 <button id="submitAnswerBtn">Submit</button>
-<p id="resultMessage" style="width: 50%; font-size: 20px; margin-top: 10px;">&nbsp;</p>
+<p id="resultMessage"style="font-size:15px">Are You Right or Wrong?</p>
 
 <!-- JavaScript code for the quiz/game logic here -->
 
@@ -3526,7 +3526,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
  // JavaScript code for the quiz/game logic
  var questions = [
      {
-         question: "What is a three-letter word for a round fruit?",
+         question: "Are You Right or Wrong",
          answer: "apple"
      },
      {

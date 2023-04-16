@@ -419,28 +419,55 @@ text-shadow:2px 2px orangered
 
 #wordQuestion {
     font-size: 18px;
-    margin-bottom: 20px;
+  background-color: royalblue;
     margin: 0;
+    border-radius:10px;
+    border:2px solid white;
+
 }
 
 #wordAnswer {
     padding: 10px;
-    margin-bottom: 10px;
+    background-color: tomato;
+    width:50%;
+    border-radius:10px;
+    border:2px solid black;
+        margin: 0%;
+        text-align: center
+}
+
+#resultMessage {
+  border-radius:10px;
+  border:2px solid white;
+  background-color: royalblue;
+  color:white;
+  font-size:15px;
+      margin: 0%;
 }
 
 #submitAnswerBtn {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: royalblue;
     color: #fff;
     border: none;
     cursor: pointer;
+    width:50%;
+    margin: 0%;
+    border-radius:10px;
+    border:2px solid white;
 }
 
+#wordAnswer::placeholder {
+            color: white;
+        }
 
-
-#result {
+#resultMessage {
     font-size: 18px;
-    margin-top: 20px;
+color:white;
+background-color: tomato;
+    border-radius:10px;
+    border:2px solid black;
+        margin: 0%;
 }
 
 #pronounceBtn {
