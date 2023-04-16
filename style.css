@@ -119,19 +119,6 @@ font-size: 37px;
 text-shadow:2px 2px tomato
 }
 
-#search-container {
-  width:100%;
-  border-radius: 10%;
-
-}
-
-#search-form {
-  display: flex;
-  align-items: center;
-  margin: 50px; /* Add equal margin on all sides */
-
-}
-
 #search-input {
   flex-grow: 1;
   padding: 10px;
@@ -141,16 +128,11 @@ text-shadow:2px 2px tomato
   border-radius: 10px;
   font-size: 18px;
   text-align: center;
-
-
+  margin: 0%;
 }
 
 #search-input:hover {
-
   background-color: orangered;
-
-
-
 }
 
 #search-input::placeholder {
@@ -162,10 +144,9 @@ text-shadow:2px 2px tomato
   color: #fff;
   padding: 10px;
   border: 2px solid white;
-
   font-size: 18px;
   cursor: pointer;
-    border-radius: 10%;
+  border-radius: 10px;
 }
 
 #search-button:hover {
@@ -177,55 +158,49 @@ text-shadow:2px 2px tomato
 }
 
 #search-container {
+  width: 50%;
   margin-top: 50px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-    border-radius: 10%;
+  border-radius: 10%;
 }
 
 #result-container {
   margin-top: 30px;
-    visibility: visible;
+  visibility: visible;
 }
 
 #result-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
-    visibility: visible;
-    color:white;
-    background-color: tomato;
-      border-radius: 10%;
-
+  visibility: visible;
+  color: white;
+  background-color: tomato;
+  border-radius: 10px;
 }
 
 #result-list:hover {
-
-    background-color: orangered;
-      border-radius: 10%;
-
+  background-color: orangered;
+  border-radius: 10%;
 }
 
-  .result-item {
-    margin-bottom: 5px; /* Example: reduce margin for smaller screens */
-      visibility: visible;
-
+.result-item {
+  /* Example: reduce margin for smaller screens */
+  visibility: visible;
 }
-
 
 #result-list {
-  color:white;
+  color: white;
   background-color: tomato;
-margin-bottom: 5%;
-font-size: 20px;
-padding: 10px;
+  margin-bottom: 5%;
+  font-size: 20px;
+  padding: 10px;
   font-size: 18px;
   text-align: center;
   visibility: visible;
-  border: 2px solid black
-
+  border: 2px solid black;
 }
+
+
 
 .sidebar2 {
   /* Default styles */
@@ -1200,6 +1175,7 @@ input:checked + .slider:before {
 
 form {
   margin-bottom: 10px;
+
 }
 
 label, input, textarea {
@@ -1236,7 +1212,7 @@ textarea {
 /* Required field indicator styles */
 label[for]:after {
   content: ' *';
-  color: red;
+  color: tomato;
 }
 
 #feedback {
@@ -1255,7 +1231,7 @@ border:2px solid black;
 /* Form validation error styles */
 input:invalid,
 textarea:invalid {
-  border-color: red;
+  border-color: orangered;
 }
 
 /* Form submission success message styles (you can customize this based on your design) */
