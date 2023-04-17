@@ -4691,7 +4691,7 @@ background-color: tomato;
 </head>
 <body>
   <div class="word-of-the-day">
-      <h2>Word of the Day:</h2>
+      <div class="wordaday">Word of the Day</div>
       <p id="wordOfTheDay">Word</p>
       <button id="getWordOfTheDay">Get Word</button>
       <p class="streak">Streak: <span id="streakCount">0</span></p>
@@ -4701,8 +4701,13 @@ background-color: tomato;
 
   <style>
 
+.wordaday {
+  color:white;
+  text-shadow: 2px 2px tomato;
+  font-size: 50px
+}
   #getWordOfTheDay {
-    background-color: tomato;
+    background-color:tomato;
     color: #fff;
     border: 2px solid black;
     border-radius: 10px;
