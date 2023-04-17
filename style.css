@@ -107,7 +107,7 @@ This will make the share buttons stack vertically in a column. The align-items: 
 .definition {
   text-align: center;
 color:white;
-font-size: 40px;
+font-size: 50px;
 text-shadow:2px 2px tomato;
 margin-top: 1%;
 }
@@ -115,7 +115,7 @@ margin-top: 1%;
 .definition:hover {
   text-align: center;
 color:white;
-font-size: 40px;
+font-size: 50px;
 text-shadow:2px 2px orangered
 }
 
@@ -174,7 +174,7 @@ text-shadow:2px 2px orangered
   margin: 0;
   visibility: visible;
   color: white;
-  background-color: royalblue;
+  background-color: red;
   border-radius: 10px;
   border: 2px solid white
 }
@@ -192,14 +192,14 @@ text-shadow:2px 2px orangered
 
 #result-list {
   color: white;
-  background-color: tomato;
+  background-color: royalblue;
   margin-bottom: 5%;
   font-size: 20px;
   padding: 10px;
   font-size: 18px;
   text-align: center;
   visibility: visible;
-  border: 2px solid black;
+  border: 2px solid white;
 }
 
 
@@ -426,6 +426,13 @@ text-shadow:2px 2px orangered
 
 }
 
+.quiz {
+  color:white;
+  font-size: 50px;
+  text-shadow: 2px 2px tomato;
+
+  margin-bottom: 1%;
+}
 #wordAnswer {
     padding: 10px;
     background-color: tomato;
@@ -1231,6 +1238,7 @@ input:checked + .slider:before {
 
   width: 50%;
   margin: 0 auto;
+
   padding: 20px;
   background-color: royalblue;
   border: 2px solid white;
@@ -1308,12 +1316,13 @@ textarea:invalid {
   font-size: 50px;
   text-shadow: 2px 2px royalblue;
   margin-bottom: 1%;
+  margin-top: 1%;
 }
-.feedback{
+.feedback:hover{
   color:white;
   font-size: 50px;
   text-shadow: 2px 2px dodgerblue;
-  margin-bottom: 1%;
+
 }
 input[type="submit"] {
   background-color: tomato;
