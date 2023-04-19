@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $feedback = $_POST['feedback'];
 
   // TODO: Send email with form data
-  $to = 'you@example.com'; // Replace with your email address
+  $to = 'dormanb@vcu.edu'; // Replace with your email address
   $subject = 'Feedback Submission';
   $message = "Name: $name\nEmail: $email\nFeedback: $feedback";
   $headers = 'From: webmaster@example.com' . "\r\n" .
