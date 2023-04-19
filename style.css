@@ -477,6 +477,89 @@ background-color: tomato;
         margin: 0%;
 }
 
+<style>
+
+
+
+
+    /* CSS for the word playlist */
+    #wordPlaylist {
+      font-size: 18px;
+  color:white;
+  background-color: tomato;
+      border-radius:10px;
+      border:2px solid black;
+          margin: 0%;
+          width:50%
+    }
+
+
+    #displayPlaylistBtn {
+      font-size: 18px;
+    color:white;
+    background-color: royalblue;
+      border-radius:10px;
+      border:2px solid white;
+          margin: 0%;
+          width:50%
+    }
+#addToPlaylistBtn {
+  font-size: 18px;
+color:white;
+background-color: tomato;
+  border-radius:10px;
+  border:2px solid black;
+      margin: 0%;
+      width:50%
+}
+    #wordPlaylist ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #wordPlaylist li {
+      margin-bottom: 5px;
+    }
+
+    #wordPlaylist li::before {
+      content: "• ";
+    }
+
+    #wordPlaylist h3 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    #addToPlaylistBtn,
+    #displayPlaylistBtn {
+
+    }
+
+    /* CSS for word playlist items */
+
+/* Style for the playlist container */
+#playlistContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+
+/* Style for the playlist item text */
+#playlistItems li span {
+
+}
+
+/* Style for the delete playlist item button */
+.deletePlaylistItemBtn {
+  cursor: pointer;
+  color: #f00;
+}
+
+
+  </style>
+
 
 
 #pronounceBtn {
