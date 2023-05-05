@@ -4714,27 +4714,7 @@ background-color: tomato;
     <button id="closeForm">Close</button>
   </div>
 
-  <script>
-  const form = document.querySelector('#feedbackForm');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
 
-  const formData = new FormData(form);
-
-  fetch('/feedback.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert(data.message);
-    form.reset();
-  })
-  .catch(error => {
-    alert(error);
-  });
-});
-</script>
  <style>
 
  #addToPlaylistBtn {
@@ -4917,6 +4897,27 @@ var words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi", "lemon
    alert('Thank you for your feedback!');
    feedbackForm.style.display = 'none'; // Hide the feedback form
  });
+
+ const form = document.querySelector('#feedbackForm');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch('/feedback.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.message);
+    form.reset();
+  })
+  .catch(error => {
+    alert(error);
+  });
+});
+
  </script>
 
 
