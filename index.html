@@ -4713,6 +4713,28 @@ background-color: tomato;
     </form>
     <button id="closeForm">Close</button>
   </div>
+
+  <script>
+  const form = document.querySelector('#feedbackForm');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch('/feedback.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.message);
+    form.reset();
+  })
+  .catch(error => {
+    alert(error);
+  });
+});
+</script>
  <style>
 
  #addToPlaylistBtn {
