@@ -4697,6 +4697,22 @@ background-color: tomato;
    <button id="displayPlaylistBtn">Display Playlist</button>
  </div>
 
+ <div class="feedback">Feedback Form</div>
+  <button id="openForm">Open Form</button>
+  <div id="feedbackForm" class="feedback-form">
+    <h2>Submit Feedback</h2>
+    <form id="feedbackForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="feedback">Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="5" required></textarea>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+    <button id="closeForm">Close</button>
+  </div>
  <style>
 
  #addToPlaylistBtn {
@@ -4743,6 +4759,8 @@ background-color: tomato;
    /* Remove "text-align: center" as it's not needed when using Flexbox */
  }
  </style>
+
+
 
  <!-- JavaScript code for word playlists -->
  <script>
@@ -4815,45 +4833,6 @@ var words = ["apple", "banana", "cherry", "date", "fig", "grape", "kiwi", "lemon
 </script>
 
 
-<!-- HTML code for your form -->
-<div class="feedback">Feedback Form</div>
-<button id="openForm">Open Form</button>
-<div id="feedbackForm" class="feedback-form">
-  <h2>Submit Feedback</h2>
-  <form id="form">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <label for="feedback">Feedback:</label>
-    <textarea id="feedback" name="feedback" rows="5" required></textarea>
-    <br>
-    <input type="submit" value="Submit">
-  </form>
-  <button id="closeForm">Close</button>
-</div>
-
-<script>
-document.getElementById('form').addEventListener('submit', function(event) {
-  event.preventDefault();
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'submit-feedback.php', true); // Update to your PHP script URL
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-      if (xhr.status === 200) {
-        // Success response from server
-        console.log(xhr.responseText);
-      } else {
-        // Error response from server
-        console.error('Error:', xhr.responseText);
-      }
-    }
-  };
-  xhr.send(new FormData(event.target));
-});
-</script>
 
 
  <script>
